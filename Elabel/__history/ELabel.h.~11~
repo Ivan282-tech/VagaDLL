@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+
+#ifndef ELabelH
+#define ELabelH
+//---------------------------------------------------------------------------
+#include "Vaga.h"
+   #include "dll_export.h"
+
+//
+//---------------------------------------------------------------------------
+class __declspec(dllexport)  TELabel : public TVaga
+{
+
+private:
+
+public:
+//   virtual void stampajNefiskalniText(TStringList *lista);
+//   virtual int fajlIspravan(String fajl);
+//   virtual int fiskalGreskaFajla(String putanja);
+   TELabel (int idVage, int sifraMagacina);
+   TELabel ();
+   ~TELabel (){}
+   void ubaciSveArtikle(int sve);
+   Currency procitajTezinu(callbackTezinaIzmerena OnTezinaIzmerena, Currency *tezina);
+};
+#endif

@@ -1,0 +1,104 @@
+//---------------------------------------------------------------------------
+
+#ifndef fromUnos_tip_vageH
+#define fromUnos_tip_vageH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Data.DB.hpp>
+#include <Data.FMTBcd.hpp>
+#include <Data.SqlExpr.hpp>
+#include <Datasnap.DBClient.hpp>
+#include <Datasnap.Provider.hpp>
+#include "cxClasses.hpp"
+#include "cxControls.hpp"
+#include "cxCustomData.hpp"
+#include "cxData.hpp"
+#include "cxDataStorage.hpp"
+#include "cxDBData.hpp"
+#include "cxEdit.hpp"
+#include "cxFilter.hpp"
+#include "cxGraphics.hpp"
+#include "cxGrid.hpp"
+#include "cxGridCustomTableView.hpp"
+#include "cxGridCustomView.hpp"
+#include "cxGridDBTableView.hpp"
+#include "cxGridLevel.hpp"
+#include "cxGridTableView.hpp"
+#include "cxLookAndFeelPainters.hpp"
+#include "cxLookAndFeels.hpp"
+#include "cxNavigator.hpp"
+#include "cxStyles.hpp"
+#include "dxDateRanges.hpp"
+#include "dxScrollbarAnnotations.hpp"
+#include <Data.DBXFirebird.hpp>
+#include "cxButtons.hpp"
+#include "cxContainer.hpp"
+#include "cxDBEdit.hpp"
+#include "cxLabel.hpp"
+#include "cxPC.hpp"
+#include "cxTextEdit.hpp"
+#include "dxBarBuiltInMenu.hpp"
+#include <Vcl.Menus.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm2 : public TForm
+{
+__published:	// IDE-managed Components
+	TDataSource *dsTip_vage;
+	TClientDataSet *cdsTip_vage;
+	TDataSetProvider *dspTip_vage;
+	TSQLDataSet *sdsTip_vage;
+	TSQLQuery *qlDtip_vage;
+	TSQLConnection *Konekcija;
+	TcxGridDBTableView *cxGrid1DBTableView1;
+	TcxGridLevel *cxGrid1Level1;
+	TcxGrid *cxGrid1;
+	TIntegerField *sdsTip_vageID;
+	TIntegerField *sdsTip_vageTIP;
+	TStringField *sdsTip_vageNAZIV;
+	TIntegerField *cdsTip_vageID;
+	TIntegerField *cdsTip_vageTIP;
+	TStringField *cdsTip_vageNAZIV;
+	TcxGridDBColumn *cxGrid1DBTableView1ID;
+	TcxGridDBColumn *cxGrid1DBTableView1TIP;
+	TcxGridDBColumn *cxGrid1DBTableView1NAZIV;
+	TcxPageControl *cxPageControl1;
+	TcxLabel *cxLabel1;
+	TcxLabel *cxLabel2;
+	TcxLabel *cxLabel3;
+	TcxDBTextEdit *dteID_vage;
+	TcxDBTextEdit *dteNaziv_vage;
+	TcxDBTextEdit *dteTip_vage;
+	TcxButton *izlaz;
+	TcxButton *odustani;
+	TcxButton *obisi;
+	TcxButton *izmeni;
+	TcxButton *dodaj;
+	TcxButton *snimi;
+	TcxButton *osvezi;
+	TDataSource *dsRola;
+	TClientDataSet *cdsRola;
+	TDataSetProvider *dspRola;
+	TSQLDataSet *sqlRola;
+	TStringField *cdsRolaID_FORME;
+	TIntegerField *cdsRolaSIFRA_AKCIJE;
+	TIntegerField *cdsRolaZABRANA;
+	TStringField *cdsRolaOPIS;
+	void __fastcall izlazClick(TObject *Sender);
+	void __fastcall odustaniClick(TObject *Sender);
+	void __fastcall osveziClick(TObject *Sender);
+	void __fastcall dodajClick(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+private:	// User declarations
+			TClientDataSet* cdsV;
+public:		// User declarations
+	__fastcall TForm2(TComponent* Owner);
+};
+bool ProveraPrava(int sifra_akcije, WideString id_forme);
+//---------------------------------------------------------------------------
+extern PACKAGE TForm2 *Form2;
+//---------------------------------------------------------------------------
+#endif

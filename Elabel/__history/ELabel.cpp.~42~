@@ -1,0 +1,161 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include "ELabel.h"
+
+#include <Vcl.Dialogs.hpp>
+
+extern int GODINA;
+//---------------------------------------------------------------------------
+TELabel::TELabel () : TVaga ()
+{
+//
+}
+TELabel::TELabel (int idVage, int sifraMagacina) : TVaga (idVage, sifraMagacina)
+{
+//  mesara strand
+}
+Currency TELabel::procitajTezinu(callbackTezinaIzmerena OnTezinaIzmerena, Currency *tezina)
+{
+	//
+	return 0;
+}
+
+void TELabel::ubaciSveArtikle(int sve)
+{
+
+	char cr = 13;
+	char lf = 10;
+//	UnicodeString sql =  "select V.plu, v.artikal, v.cena, v.bcf, v.tip_nalepnice, v.barkod, v.komad, v.kod_vage from PROC_MP_VAGA_ELAB(:ID, :DATUM, :GODINA) V";
+//	UnicodeString name = "dspVaga" ;
+
+	THelper* helper = new THelper(nullptr);
+
+	TFDConnection* konekcija = new TFDConnection(nullptr);
+
+	TRezultatOperacije<TFDConnection*>* rezultat = helper->NapraviKonekciju(true);
+
+	if(rezultat->OperacijaUspela()){
+			konekcija = rezultat->DohvatiRezultat();
+	}   else{
+		  AnsiString greska = rezultat->DohvatiGresku();
+	}
+
+	TFDQuery *query = new TFDQuery(nullptr);
+
+
+	query->Connection = konekcija;
+
+    query->SQL->Text = "select V.plu, v.artikal, v.cena, v.bcf, v.tip_nalepnice, v.barkod, v.komad, v.kod_vage "
+                       "from PROC_MP_VAGA_ELAB(:ID, :DATUM, :GODINA) V";
+
+	query->Params->ParamByName("ID")->AsInteger = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+    query->Params->ParamByName("DATUM")->AsDateTime = Date();
+	query->Params->ParamByName("GODINA")->AsInteger = GODINA;
+
+	ShowMessage(dmV->cdsVaga->FieldByName("ID")->AsInteger);
+	ShowMessage(Date());
+	ShowMessage(GODINA);
+
+	query->Open();
+
+//	DataPackInstance *dbVaga = new DataPackInstance(konekcija,  sql,  name);
+//
+//	dbVaga->sds->ParamCheck = true;
+//	dbVaga->sds->ParamByName("ID")->AsInteger = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+//	dbVaga->sds->ParamByName("DATUM")->AsDateTime = Date();
+//	dbVaga->sds->ParamByName("GODINA")->AsInteger = GODINA;
+//	dbVaga->cds->Active = true;
+//	dbVaga->cds->First();
+
+
+
+	dmV->cdsPodaci->Close();
+	dmV->sdsPodaci->ParamByName("godina")->AsInteger = GODINA;
+	dmV->sdsPodaci->ParamByName("datum")->AsDateTime = Date();
+	dmV->sdsPodaci->ParamByName("id")->AsInteger = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+	dmV->cdsPodaci->Open();
+	dmV->cdsPodaci->First();
+
+	/*
+	plu, cena, 2,8, vaga+plu,naziv, 0=kg, 1=kom, vaga, tip nalepnice> 5=bg 17=kula
+	0001;11999;2;8;10001;BANANA;0;010;17
+	*/
+
+	String putanja =  dmV->cdsVaga->FieldByName("adresa")->AsString;
+
+	int tacka =  dmV->cdsVaga->FieldByName("databits")->AsInteger;
+	String naredba = "";
+
+	try {
+
+		if (!DirectoryExists(ExtractFilePath(putanja)))
+			CreateDir(ExtractFilePath(putanja));
+
+	} catch (...) {
+	}
+
+	if (FileExists(putanja))
+		DeleteFile(putanja);
+
+	AnsiString naziv , cena;
+	if(!query->IsEmpty()){
+		ShowMessage("kveri pun");
+	}else{
+        ShowMessage("kveri prazan");
+    }
+		while (!query->Eof) {
+
+		naredba =query->FieldByName("plu")->AsString +  ";";
+		if (tacka == 0) {
+			cena = IntToStr((int)(query->FieldByName("cena")->AsCurrency * 100)) ;
+		}
+		else if (tacka == 1) { //cornus bg
+			cena = FormatFloat("0.00", double(query->FieldByName("cena")->AsCurrency));
+		}
+//
+		naredba = naredba + cena +  ";";
+		naredba = naredba +  "2;8;";
+		naredba = naredba +  query->FieldByName("barkod")->AsString+  ";";
+		naziv = query->FieldByName("artikal")->AsString + ";";
+		naredba = naredba + naziv  ;
+		naredba = naredba + query->FieldByName("komad")->AsString + ";";
+		naredba = naredba + query->FieldByName("bcf")->AsString + ";";
+
+		naredba = naredba +  query->FieldByName("tip_nalepnice")->AsString;
+//		naredba = naredba + naziv + Strutils::DupeString(' ', 250 - naziv.Length());// + cr + lf;
+//		UpisiUFile(putanja, naredba, 2);
+		Upis(putanja, naredba);
+		query->Next();
+	}
+
+//	ShowMessage("Zavrseno pravljenje fajla za vagu. " + dmV->cdsVaga->FieldByName("adresa")->AsString );
+//	MessageDlg( "Zavrseno pravljenje fajla za vagu. " + dmV->cdsVaga->FieldByName("adresa")->AsString, mtInformation, TMsgDlgButtons() << mbOK ,0) ;
+
+      	delete rezultat;
+		delete konekcija;
+		delete helper;
+		delete query;
+}
+void Upis(String putanja, String naredba){
+		 TStringList* fajl = new TStringList();
+
+
+		if (FileExists(putanja)) {
+			fajl->LoadFromFile(putanja);
+		}
+
+		fajl->Add(naredba);
+
+		fajl->SaveToFile(putanja, TEncoding::Default);
+
+		delete fajl;
+}
+//---------------------------------------------------------------------------
+/*
+plu, cena, 2,8, vaga+plu,naziv, 0=kg, 1=kom, vaga, tip nalepnice> 5=bg 17=kula
+0001;11999;2;8;10001;BANANA;0;010;17
+0002;11999;2;8;10002;LIMUN;0;010;17
+0003;8999;2;8;10003;POMORANDZA;0;010;17
+*/
+#pragma package(smart_init)

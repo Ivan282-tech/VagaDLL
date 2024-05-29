@@ -1,0 +1,370 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "fromUnos_tip_vage.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "cxButtons"
+#pragma link "cxCheckBox"
+#pragma link "cxClasses"
+#pragma link "cxContainer"
+#pragma link "cxControls"
+#pragma link "cxCustomData"
+#pragma link "cxData"
+#pragma link "cxDataStorage"
+#pragma link "cxDBData"
+#pragma link "cxDBEdit"
+#pragma link "cxDBLookupComboBox"
+#pragma link "cxDBLookupEdit"
+#pragma link "cxDropDownEdit"
+#pragma link "cxEdit"
+#pragma link "cxFilter"
+#pragma link "cxGraphics"
+#pragma link "cxGrid"
+#pragma link "cxGridCustomTableView"
+#pragma link "cxGridCustomView"
+#pragma link "cxGridDBTableView"
+#pragma link "cxGridLevel"
+#pragma link "cxGridTableView"
+#pragma link "cxLabel"
+#pragma link "cxLookAndFeelPainters"
+#pragma link "cxLookAndFeels"
+#pragma link "cxLookupEdit"
+#pragma link "cxMaskEdit"
+#pragma link "cxNavigator"
+#pragma link "cxPC"
+#pragma link "cxStyles"
+#pragma link "cxTextEdit"
+#pragma link "dxBarBuiltInMenu"
+#pragma link "dxDateRanges"
+#pragma link "dxScrollbarAnnotations"
+#pragma link "frxClass"
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::IzlazClick(TObject *Sender)
+{
+      Close();
+}
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+        cdsVaga->Active = false;
+		cdsVaga->Active = true;
+
+		cdsTip_Vage->Active = false;
+		cdsTip_Vage->Active = true;
+
+		cdsMGSetup->Active = false;
+		cdsMGSetup->Active = true;
+
+		if (cdsVaga->RecordCount <= 1) {
+			cxSveVage->Checked = true;
+		}
+		edPodrazumevanaVaga->Caption = "Podrazumevana vaga: " + cdsVagaID->AsString + ",  Vaga = " + cdsVagaNAZIV->AsString + ",   Magacin = " + cdsVagaMAGACIN->AsString + ",  Adresa = " +cdsVagaADRESA->AsString + ",   Tip vage = " + cdsVagaTIP_VAGE->AsString;
+
+}
+//-
+void __fastcall TForm1::InputController(){
+
+		  	cbMagacin->Enabled = true;
+			dbTip_vage->Enabled = true;
+			dteNaziv_vage->Enabled = true;
+			dteAdresa->Enabled = true;
+			cxKomanda->Enabled = true;
+			tip_nalepnice->Enabled = true;
+			dtbaud->Enabled = true;
+			dteParity->Enabled = true;
+			dteStopbits->Enabled = true;
+			dteComport->Enabled = true;
+			dteDatabits->Enabled = true;
+			cxPrekoFajla->Enabled = true;
+			cxAktivan->Enabled = true;
+
+			odustani->Enabled = true;
+			snimi->Enabled = true;
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::DodajClick(TObject *Sender)
+{
+	InputController();
+	cdsVaga->Append();
+}
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::IzmeniClick(TObject *Sender)
+{
+		AnsiString podesavanje_vage = APP_DIR + "\\podesavanje\\podesavanje_vage.txt";
+
+		if (FileExists(podesavanje_vage))  {
+			TFile::Copy(podesavanje_vage, podesavanje_vage + "1");
+			DeleteFile(podesavanje_vage);
+			edPodrazumevanaVaga->Caption = "Podrazumevana vaga: " + cdsVagaID->AsString + ",  Vaga = " + cdsVagaNAZIV->AsString + ",   Magacin = " + cdsVagaMAGACIN->AsString + ",  adresa = " +cdsVagaADRESA->AsString + ",   tip_vage = " + cdsVagaTIP_VAGE->AsString;
+	 }
+	InputController();
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TForm1::snimiClick(TObject *Sender)
+{
+	cdsMGSetup->Open();
+	cdsMGSetup->Edit();
+	cdsTip_Vage->Open();
+	cdsTip_Vage->Edit();
+    if (cdsVaga->State != dsEdit || cdsVaga->State != dsInsert) {
+		cdsVaga->Edit();
+	}
+	cdsVaga->FieldByName("SIFRA_MAGACINA")->AsInteger = cdsMGSetup->FieldByName("SIFRA_MAGACINA")->AsInteger;
+	cdsVaga->FieldByName("TIP_VAGE")->AsInteger = cdsTip_Vage->FieldByName("TIP")->AsInteger;
+
+    if (cdsVaga->State == dsEdit || cdsVaga->State == dsInsert){
+		 cdsVaga->ApplyUpdates( 0 );
+		 cdsVaga->Refresh();
+	 }
+
+	TIniFile *ini;
+	AnsiString podesavanje_vage = APP_DIR + "\\podesavanje\\podesavanje_vage.ini";
+	ini = new TIniFile( podesavanje_vage );
+	if (cxPrekoFajla->Checked == true) {
+		ini->WriteInteger ( "Vaga", "id", cdsVaga->FieldByName("ID")->AsInteger );
+		ini->WriteInteger ( "Vaga", "tip_vage", cdsVaga->FieldByName("TIP_VAGE")->AsInteger );
+		ini->WriteString ( "Vaga", "naziv_vage", cdsVaga->FieldByName("NAZIV_VAGE")->AsString );
+		ini->WriteString ( "Vaga", "adresa", cdsVaga->FieldByName("ADRESA")->AsString );
+		ini->WriteInteger ( "Vaga", "sifra_magacina", cdsVaga->FieldByName("SIFRA_MAGACINA")->AsInteger );
+		ini->WriteInteger ( "Vaga", "aktivan", cdsVaga->FieldByName("AKTIVAN")->AsInteger );
+		ini->WriteInteger ( "Vaga", "broj_karaktera", cdsVaga->FieldByName("BROJ_KARAKTERA")->AsInteger );
+		ini->WriteInteger ( "Vaga", "comport", cdsVaga->FieldByName("COMPORT")->AsInteger );
+		ini->WriteInteger ( "Vaga", "baud", cdsVaga->FieldByName("BAUD")->AsInteger );
+		ini->WriteInteger ( "Vaga", "parity", cdsVaga->FieldByName("PARITY")->AsInteger );
+		ini->WriteInteger ( "Vaga", "stoppits", cdsVaga->FieldByName("STOPBITS")->AsInteger );
+		ini->WriteInteger ( "Vaga", "databits", cdsVaga->FieldByName("DATABITS")->AsInteger );
+		ini->WriteInteger ( "Vaga", "automatska_vaga", cdsVaga->FieldByName("AUTOMATSKA_VAGA")->AsInteger );
+	}
+
+	delete ini;
+
+   InputController();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::odustaniClick(TObject *Sender)
+{
+	InputController();
+	cdsVaga->Cancel();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::obrisiClick(TObject *Sender)
+{
+	if (MessageDlg("Da li ste sigurni?", mtConfirmation, TMsgDlgButtons() << mbYes << mbNo, 0) == mrYes){
+
+			qID_vage->SQL->Clear();
+			qID_vage->SQL->Text = "delete from vaga v where v.id = " + IntToStr( cdsVaga->FieldByName( "ID" )->AsInteger );
+			qID_vage->ExecSQL();
+			qID_vage->Close();
+
+			cdsVaga->Refresh();
+		}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::stampaClick(TObject *Sender)
+{
+		if ( frxReport1->LoadFromFile( APP_DIR + "\\stampa\\fr_stampa_artikala_za_vagu.fr3" ) )
+		{
+			frxReport1->ShowReport( );
+		}
+		else
+			ShowMessage( "Ne postoji fajl: " + APP_DIR + "\\stampa\\fr_stampa_artikala_za_vagu.fr3" );
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::posaljiClick(TObject *Sender){
+		TLogger* log = new TLogger(nullptr);
+
+		  try {
+			PosaljiPoruku("Saljem podatke na vagu: " + cdsVaga->FieldByName("naziv_vage")->AsString);
+			TVaga *vaga;
+
+			TVagaController *vk = new TVagaController();
+			vaga = vk->napraviVagu(cdsVaga->FieldByName("id")->AsInteger, -1 );
+			if (cxSveVage->Checked == true) {
+				vaga->ubaciSveArtikle(1);
+			}
+			else
+				vaga->ubaciSveArtikle(0);
+
+			delete vaga;
+			delete vk;
+			Application->ProcessMessages();
+	//		MessageDlg( "Zavrseno punjenje vage.", mtInformation, TMsgDlgButtons() << mbOK ,0) ;
+	//		ShowMessage("Zavrseno punjenje vage.");
+
+		} catch (Exception &e) {
+
+			log->Log("void __fastcall TForm1::posaljiClick(TObject *Sender)",llInfo,LOG_FAJL);
+		}
+		String komanda = cdsVaga->FieldByName("komanda")->AsString;
+
+		try {
+			if (!cdsVaga->FieldByName("komanda")->IsNull) {
+				ShellExecute(this->Handle, 0, komanda.c_str() , 0, 0, SW_NORMAL);
+			}
+
+		} catch (...) {
+		}
+        delete log;
+}
+
+void  PosaljiPoruku(AnsiString poruka, TColor boja, int vremePrikazivanja)
+{
+	TThread::Synchronize(nullptr, [poruka, boja, vremePrikazivanja]()
+	{
+		Tfrm_poruka* frm_poruka = new Tfrm_poruka(poruka, boja, vremePrikazivanja);
+		frm_poruka->Show();
+	});
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::PretragaChange(TObject *Sender)
+{
+	int id = 0;
+	if(Pretraga->Text.Length() >= 2)
+	{
+		id = StrToIntDef(Pretraga->Text, -2);
+		if(id != -2)
+		{
+
+			cdsVaga->Filtered 	= false;
+			cdsVaga->Filter   	= "id = " + Pretraga->Text;
+			cdsVaga->Filtered 	= true;
+
+			if(cdsVaga->RecordCount <= 0)
+			{
+				cdsVaga->Filtered = false;
+				cdsVaga->Filter   = "id like '%" + Pretraga->Text +"%'";
+				cdsVaga->Filtered = true;
+
+			}
+		}
+		else
+		{
+			cdsVaga->Filtered = false;
+			cdsVaga->Filter   = "upper(NAZIV_VAGE) like '%"+UpperCase(Pretraga->Text)+"%'";
+			cdsVaga->Filtered = true;
+		}
+
+	}
+	else
+		cdsVaga->Filtered = false;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::PretragaKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+
+{
+			if (Key == VK_ESCAPE){
+
+				cdsVaga->Filtered = false;
+
+				if(Pretraga->Text.IsEmpty())
+					cxGrid2->SetFocus();
+
+				Pretraga->Text = "";
+			}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::btnTipVageClick(TObject *Sender)
+{
+	Screen->Cursor = crHourGlass;
+	TForm2 *frmUnos_tip_vage = new TForm2(cdsTip_Vage);
+	frmUnos_tip_vage->FormStyle = fsMDIChild;
+	Screen->Cursor = crDefault;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::cxAktivanPropertiesChange(TObject *Sender)
+{
+        	if (cxAktivan->Checked==true && cdsVaga->State == dsEdit && cdsVaga->State == dsInsert) {
+				cdsVaga->FieldByName("AKTIVAN")->AsInteger = 1;}
+			else if (cxAktivan->Checked==false && cdsVaga->State == dsEdit && cdsVaga->State == dsInsert){
+				cdsVaga->FieldByName("AKTIVAN")->AsInteger = 0;
+			}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+         Action = caFree;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::dsVagaDataChange(TObject *Sender, TField *Field)
+{
+         	if (Field == NULL) {
+
+			if (sdsArtikli->ParamByName("id")->AsInteger != cdsVaga->FieldByName("id")->AsInteger) {
+
+				if(cxSveVage->Checked == true) {
+					sdsArtikli->ParamByName("id")->AsInteger = -1;
+				}
+				else {
+					sdsArtikli->ParamByName("id")->AsInteger = cdsVaga->FieldByName("id")->AsInteger;
+				}
+				cdsArtikli->Active = false;
+		//		sdsArtikli->ParamByName("godina")->AsInteger = GODINA;
+				sdsArtikli->ParamByName("datum")->AsDateTime =  Date();
+				sdsArtikli->ParamByName("sm")->AsInteger = cdsVaga->FieldByName("SIFRA_MAGACINA")->AsInteger;
+				cdsArtikli->Active = true;
+			}
+		}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::cdsVagaNewRecord(TDataSet *DataSet)
+{
+	sp_idvage->Prepared = true;
+	sp_idvage->ExecProc();
+	cdsVaga->FieldByName( "id" )->AsInteger = sp_idvage->ParamByName("ID")->Value;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::cxGrid1DBTableView1KeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+
+{
+      if (Key == VK_ESCAPE)
+		Pretraga->SetFocus();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::dspVagaGetTableName(TObject *Sender, TDataSet *DataSet, UnicodeString &TableName)
+
+{
+	TableName = "VAGA";
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::cxSveVagePropertiesChange(TObject *Sender)
+{
+     dsVagaDataChange(this, NULL);
+}
+//---------------------------------------------------------------------------
+

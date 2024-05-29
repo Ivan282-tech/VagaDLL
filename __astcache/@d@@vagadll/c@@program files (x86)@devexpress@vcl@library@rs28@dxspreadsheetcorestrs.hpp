@@ -1,0 +1,233 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2022 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'dxSpreadSheetCoreStrs.pas' rev: 35.00 (Windows)
+
+#ifndef DxspreadsheetcorestrsHPP
+#define DxspreadsheetcorestrsHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+#include <dxCore.hpp>
+#include <cxClasses.hpp>
+#include <dxSpreadSheetTypes.hpp>
+#include <dxSpreadSheetGraphics.hpp>
+#include <Vcl.Graphics.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Dxspreadsheetcorestrs
+{
+//-- forward type declarations -----------------------------------------------
+//-- type declarations -------------------------------------------------------
+typedef System::StaticArray<System::UnicodeString, 2> Dxspreadsheetcorestrs__1;
+
+//-- var, const, procedure ---------------------------------------------------
+extern DELPHI_PACKAGE System::ResourceString _sdxTrue;
+#define Dxspreadsheetcorestrs_sdxTrue System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxTrue)
+extern DELPHI_PACKAGE System::ResourceString _sdxFalse;
+#define Dxspreadsheetcorestrs_sdxFalse System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxFalse)
+extern DELPHI_PACKAGE System::ResourceString _serNameError;
+#define Dxspreadsheetcorestrs_serNameError System::LoadResourceString(&Dxspreadsheetcorestrs::_serNameError)
+extern DELPHI_PACKAGE System::ResourceString _serNAError;
+#define Dxspreadsheetcorestrs_serNAError System::LoadResourceString(&Dxspreadsheetcorestrs::_serNAError)
+extern DELPHI_PACKAGE System::ResourceString _serNullError;
+#define Dxspreadsheetcorestrs_serNullError System::LoadResourceString(&Dxspreadsheetcorestrs::_serNullError)
+extern DELPHI_PACKAGE System::ResourceString _serDivZeroError;
+#define Dxspreadsheetcorestrs_serDivZeroError System::LoadResourceString(&Dxspreadsheetcorestrs::_serDivZeroError)
+extern DELPHI_PACKAGE System::ResourceString _serValueError;
+#define Dxspreadsheetcorestrs_serValueError System::LoadResourceString(&Dxspreadsheetcorestrs::_serValueError)
+extern DELPHI_PACKAGE System::ResourceString _serNumError;
+#define Dxspreadsheetcorestrs_serNumError System::LoadResourceString(&Dxspreadsheetcorestrs::_serNumError)
+extern DELPHI_PACKAGE System::ResourceString _serRefError;
+#define Dxspreadsheetcorestrs_serRefError System::LoadResourceString(&Dxspreadsheetcorestrs::_serRefError)
+extern DELPHI_PACKAGE System::ResourceString _sdxDefaultSheetCaption;
+#define Dxspreadsheetcorestrs_sdxDefaultSheetCaption System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxDefaultSheetCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCannotChangePartOfArray;
+#define Dxspreadsheetcorestrs_sdxErrorCannotChangePartOfArray System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCannotChangePartOfArray)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCannotRenameSheet;
+#define Dxspreadsheetcorestrs_sdxErrorCannotRenameSheet System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCannotRenameSheet)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCannotSaveDocumentWithoutSheets;
+#define Dxspreadsheetcorestrs_sdxErrorCannotSaveDocumentWithoutSheets System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCannotSaveDocumentWithoutSheets)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCellProtected;
+#define Dxspreadsheetcorestrs_sdxErrorCellProtected System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCellProtected)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorColorValueIsNotSpecified;
+#define Dxspreadsheetcorestrs_sdxErrorColorValueIsNotSpecified System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorColorValueIsNotSpecified)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCommentAlreadyExists;
+#define Dxspreadsheetcorestrs_sdxErrorCommentAlreadyExists System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCommentAlreadyExists)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorDefinedNameAlreadyExists;
+#define Dxspreadsheetcorestrs_sdxErrorDefinedNameAlreadyExists System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorDefinedNameAlreadyExists)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorDocumentIsCorrupted;
+#define Dxspreadsheetcorestrs_sdxErrorDocumentIsCorrupted System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorDocumentIsCorrupted)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorExternalLinkAlreadyExists;
+#define Dxspreadsheetcorestrs_sdxErrorExternalLinkAlreadyExists System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorExternalLinkAlreadyExists)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorFieldNotFound;
+#define Dxspreadsheetcorestrs_sdxErrorFieldNotFound System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorFieldNotFound)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorFileCannotBeFoundInPackage;
+#define Dxspreadsheetcorestrs_sdxErrorFileCannotBeFoundInPackage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorFileCannotBeFoundInPackage)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorFileIsCorrupted;
+#define Dxspreadsheetcorestrs_sdxErrorFileIsCorrupted System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorFileIsCorrupted)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInternal;
+#define Dxspreadsheetcorestrs_sdxErrorInternal System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInternal)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidAnchorCell;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidAnchorCell System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidAnchorCell)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidAnchorDefinition;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidAnchorDefinition System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidAnchorDefinition)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidCellReference;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidCellReference System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidCellReference)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidCellsReference;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidCellsReference System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidCellsReference)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidColor;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidColor System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidColor)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidColorIndex;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidColorIndex System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidColorIndex)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidColumnIndex;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidColumnIndex System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidColumnIndex)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidDocumentType;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidDocumentType System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidDocumentType)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidDefinedNameSyntax;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidDefinedNameSyntax System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidDefinedNameSyntax)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidFormatCodeID;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidFormatCodeID System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidFormatCodeID)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidFormula;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidFormula System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidFormula)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidReference;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidReference System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidReference)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidRelationshipId;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidRelationshipId System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidRelationshipId)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidSelection;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidSelection System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidSelection)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidPasteArea;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidPasteArea System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidPasteArea)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidSharedStringIndex;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidSharedStringIndex System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidSharedStringIndex)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidSheetId;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidSheetId System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidSheetId)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorInvalidStyleIndex;
+#define Dxspreadsheetcorestrs_sdxErrorInvalidStyleIndex System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorInvalidStyleIndex)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorMaxOutlineLevel;
+#define Dxspreadsheetcorestrs_sdxErrorMaxOutlineLevel System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorMaxOutlineLevel)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorPictureCannotBeFound;
+#define Dxspreadsheetcorestrs_sdxErrorPictureCannotBeFound System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorPictureCannotBeFound)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCannotExecuteActionOnProtectedSheet;
+#define Dxspreadsheetcorestrs_sdxErrorCannotExecuteActionOnProtectedSheet System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCannotExecuteActionOnProtectedSheet)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorUnsupportedDocumentFormat;
+#define Dxspreadsheetcorestrs_sdxErrorUnsupportedDocumentFormat System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorUnsupportedDocumentFormat)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorUnsupportedSheetType;
+#define Dxspreadsheetcorestrs_sdxErrorUnsupportedSheetType System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorUnsupportedSheetType)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCellAlreadyExists;
+#define Dxspreadsheetcorestrs_sdxErrorCellAlreadyExists System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCellAlreadyExists)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorPossibleDataLoss;
+#define Dxspreadsheetcorestrs_sdxErrorPossibleDataLoss System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorPossibleDataLoss)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCannotMoveBecauseOfMergedCells;
+#define Dxspreadsheetcorestrs_sdxErrorCannotMoveBecauseOfMergedCells System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCannotMoveBecauseOfMergedCells)
+extern DELPHI_PACKAGE System::ResourceString _sdxReplaceCellsDataConfirmation;
+#define Dxspreadsheetcorestrs_sdxReplaceCellsDataConfirmation System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxReplaceCellsDataConfirmation)
+extern DELPHI_PACKAGE System::ResourceString _sdxUnmergeCellsConfirmation;
+#define Dxspreadsheetcorestrs_sdxUnmergeCellsConfirmation System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxUnmergeCellsConfirmation)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCircularMessage;
+#define Dxspreadsheetcorestrs_sdxErrorCircularMessage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCircularMessage)
+extern DELPHI_PACKAGE System::ResourceString _sdxErrorCircularPathPrefix;
+#define Dxspreadsheetcorestrs_sdxErrorCircularPathPrefix System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxErrorCircularPathPrefix)
+extern DELPHI_PACKAGE System::ResourceString _sdxPreviewText;
+#define Dxspreadsheetcorestrs_sdxPreviewText System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxPreviewText)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsBetween;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsBetween System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsBetween)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsGreaterThan;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsGreaterThan System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsGreaterThan)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsGreaterThanOrEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsGreaterThanOrEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsGreaterThanOrEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsLessThan;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsLessThan System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsLessThan)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsLessThanOrEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsLessThanOrEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsLessThanOrEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsNotBetween;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsNotBetween System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsNotBetween)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleDetailsNotEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleDetailsNotEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleDetailsNotEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingDuplicateValuesRuleDetails;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingDuplicateValuesRuleDetails System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingDuplicateValuesRuleDetails)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingExpressionRuleDetails;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingExpressionRuleDetails System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingExpressionRuleDetails)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingUniqueValuesRuleDetails;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingUniqueValuesRuleDetails System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingUniqueValuesRuleDetails)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorBetween;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorBetween System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorBetween)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThan;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThan System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThan)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThanOrEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThanOrEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorGreaterThanOrEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorLessThan;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorLessThan System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorLessThan)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorLessThanOrEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorLessThanOrEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorLessThanOrEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorNotBetween;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorNotBetween System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorNotBetween)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingCellIsRuleComparisonOperatorNotEqual;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingCellIsRuleComparisonOperatorNotEqual System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingCellIsRuleComparisonOperatorNotEqual)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingAboveAverage;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingAboveAverage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingAboveAverage)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingAboveAverageOnStandardDeviation;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingAboveAverageOnStandardDeviation System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingAboveAverageOnStandardDeviation)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingAboveOrEqualAverage;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingAboveOrEqualAverage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingAboveOrEqualAverage)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingBelowAverage;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingBelowAverage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingBelowAverage)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingBelowAverageOnStandardDeviation;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingBelowAverageOnStandardDeviation System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingBelowAverageOnStandardDeviation)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingBelowOrEqualAverage;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingBelowOrEqualAverage System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingBelowOrEqualAverage)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingBottomValues;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingBottomValues System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingBottomValues)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingTopValues;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingTopValues System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingTopValues)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingColorScale;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingColorScale System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingColorScale)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingIconSet;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingIconSet System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingIconSet)
+extern DELPHI_PACKAGE System::ResourceString _sdxConditionalFormattingDataBar;
+#define Dxspreadsheetcorestrs_sdxConditionalFormattingDataBar System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxConditionalFormattingDataBar)
+extern DELPHI_PACKAGE System::ResourceString _sdxQuarter;
+#define Dxspreadsheetcorestrs_sdxQuarter System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxQuarter)
+extern DELPHI_PACKAGE System::ResourceString _sdxQuarterAbbreviation1;
+#define Dxspreadsheetcorestrs_sdxQuarterAbbreviation1 System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxQuarterAbbreviation1)
+extern DELPHI_PACKAGE System::ResourceString _sdxQuarterAbbreviation2;
+#define Dxspreadsheetcorestrs_sdxQuarterAbbreviation2 System::LoadResourceString(&Dxspreadsheetcorestrs::_sdxQuarterAbbreviation2)
+#define dxSpreadSheetGeneralNumberFormat L"GENERAL"
+extern DELPHI_PACKAGE System::WideChar dxAbsoluteReferenceChar;
+extern DELPHI_PACKAGE System::WideChar dxReferenceLeftParenthesis;
+extern DELPHI_PACKAGE System::WideChar dxReferenceRightParenthesis;
+extern DELPHI_PACKAGE System::WideChar dxRCRowReferenceChar;
+extern DELPHI_PACKAGE System::WideChar dxRCColumnReferenceChar;
+extern DELPHI_PACKAGE System::WideChar dxAreaSeparator;
+extern DELPHI_PACKAGE System::WideChar dxRefSeparator;
+extern DELPHI_PACKAGE System::WideChar dxStringMarkChar;
+extern DELPHI_PACKAGE System::WideChar dxStringMarkChar2;
+extern DELPHI_PACKAGE System::WideChar dxErrorPrefix;
+extern DELPHI_PACKAGE System::WideChar dxExponentChar;
+extern DELPHI_PACKAGE System::WideChar dxLeftParenthesis;
+extern DELPHI_PACKAGE System::WideChar dxRightParenthesis;
+extern DELPHI_PACKAGE System::WideChar dxLeftArrayParenthesis;
+extern DELPHI_PACKAGE System::WideChar dxRightArrayParenthesis;
+extern DELPHI_PACKAGE Dxspreadsheettypes::TdxSpreadSheetOperationStrings dxDefaultOperations;
+extern DELPHI_PACKAGE Dxspreadsheetcorestrs__1 dxBoolToString;
+}	/* namespace Dxspreadsheetcorestrs */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_DXSPREADSHEETCORESTRS)
+using namespace Dxspreadsheetcorestrs;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// DxspreadsheetcorestrsHPP

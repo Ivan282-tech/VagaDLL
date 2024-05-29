@@ -1,0 +1,90 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "c_bxvaga.h"
+//#include "Connections.h"
+
+
+extern int GODINA;
+extern AnsiString LOG_FAJL;
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+TBXVaga::TBXVaga () : TVaga ()
+{
+//
+}
+TBXVaga::TBXVaga (int idVage, int sifraMagacina) : TVaga (idVage, sifraMagacina)
+{
+//
+}
+Currency TBXVaga::procitajTezinu(callbackTezinaIzmerena OnTezinaIzmerena, Currency *tezina)
+{
+	//
+	return 0;
+}
+void TBXVaga::ubaciSveArtikle(int sve)
+{
+
+	try {
+   		 dmV->cdsPodaci->Open();
+		String putanja = dmV->cdsVaga->FieldByName("adresa")->AsString;
+
+//		dmV->SC1->Params->Strings[dmV->SC1->Params->IndexOfName("Database")] = putanja;
+
+		dmV->cdsPodaci->Close();
+		dmV->sdsPodaci->ParamByName("godina")->AsInteger = GODINA;
+		dmV->sdsPodaci->ParamByName("datum")->AsDateTime = Date();
+		dmV->sdsPodaci->ParamByName("id")->AsInteger = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+		dmV->cdsPodaci->Open();
+		dmV->cdsPodaci->First();
+
+//		dmV->cdsBXVaga->Open();
+//		dmV->cdsBXVaga->First();
+//		while (!dmV->cdsBXVaga->Eof) {
+//			dmV->cdsBXVaga->Delete();
+//		}
+//		dmV->cdsBXVaga->ApplyUpdates(0);
+		String naredba = "";
+        int i = 0;
+		while (!dmV->cdsPodaci->Eof) {
+			naredba += dmV->cdsPodaci->FieldByName("PLU")->AsString;
+			naredba += dmV->cdsPodaci->FieldByName("COM")->AsString;
+			naredba += "27";
+			naredba += "00001";
+			naredba +=  dmV->cdsPodaci->FieldByName("UP")->AsCurrency;
+			naredba += "KG";
+			naredba += "000";
+			naredba += "01";
+			naredba += '\n';
+			i++;
+			Upis(putanja, naredba);
+			dmV->cdsPodaci->Next();
+		}
+		naredba += StrToInt(i);
+		Upis(putanja, naredba);
+//		dmV->cdsBXVaga->Close();
+//		dmV->SC1->Connected = false;
+	} catch (Exception &e) {
+//		UpisiULogFile(LOG_FAJL, "Greska void TBXVaga::ubaciSveArtikle()" + e.Message,2);
+		TLogger* _log = new TLogger(nullptr);
+		_log->Log("Greska void TBXVaga::ubaciSveArtikle() " + e.Message,llInfo);
+        delete _log;
+	}
+}
+void Upis(String putanja, String naredba){
+		 TStringList* fajl = new TStringList();
+
+
+		if (FileExists(putanja)) {
+			fajl->LoadFromFile(putanja);
+		}
+
+		fajl->Add(naredba);
+
+		fajl->SaveToFile(putanja, TEncoding::Default);
+
+		delete fajl;
+}
+
+#pragma package(smart_init)

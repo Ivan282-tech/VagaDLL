@@ -1,0 +1,90 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+#include <memory>
+#include <Data.DB.hpp>
+#include "c_bizerba.h"
+
+
+extern int GODINA;
+//---------------------------------------------------------------------------
+TBizerba::TBizerba () : TVaga ()
+{
+//
+}
+TBizerba::TBizerba (int idVage, int sifraMagacina) : TVaga (idVage, sifraMagacina)
+{
+//
+}
+Currency TBizerba::procitajTezinu(callbackTezinaIzmerena OnTezinaIzmerena, Currency *tezina)
+{
+	//
+	return 0;
+}
+void TBizerba::ubaciSveArtikle(int sve)
+{
+	dmV->cdsPodaci->Close();
+	dmV->sdsPodaci->ParamByName("godina")->AsInteger = GODINA;
+	dmV->sdsPodaci->ParamByName("datum")->AsDateTime = Date();
+	dmV->sdsPodaci->ParamByName("id")->AsInteger = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+	dmV->cdsPodaci->Open();
+	dmV->cdsPodaci->First();
+
+	int iddd = dmV->cdsVaga->FieldByName("ID")->AsInteger;
+
+
+	String putanja = dmV->cdsVaga->FieldByName("adresa")->AsString;
+	String naredba = "";
+
+
+	try {
+
+		if (!DirectoryExists(ExtractFilePath(putanja)))
+			CreateDir(ExtractFilePath(putanja));
+
+	} catch (...) {
+	}
+
+	if (FileExists(putanja))
+		DeleteFile(putanja);
+
+
+	while (!dmV->cdsPodaci->Eof) {
+		naredba = "1;";
+		naredba = naredba + dmV->cdsPodaci->FieldByName("plu")->AsString + ";";
+		naredba = naredba + dmV->cdsPodaci->FieldByName("s1u")->AsString + ";";
+		naredba = naredba + dmV->cdsPodaci->FieldByName("bcf")->AsString + ";";
+		naredba = naredba + IntToStr((int)(dmV->cdsPodaci->FieldByName("up")->AsCurrency * 100)) + ";";
+		naredba = naredba +  "0;";
+		if (dmV->cdsPodaci->FieldByName("flag")->IsNull ) {
+			naredba = naredba +  "2700001;";
+		}
+		else {
+            naredba = naredba +  dmV->cdsPodaci->FieldByName("flag")->AsString + ";";
+        }
+
+		naredba = naredba + dmV->cdsPodaci->FieldByName("com")->AsString ;
+		if (dmV->cdsPodaci->FieldByName("up")->AsCurrency > 0) {
+			Upis(putanja, naredba);
+		}
+
+		dmV->cdsPodaci->Next();
+	}
+}
+void Upis(String putanja, String naredba){
+		 TStringList* fajl = new TStringList();
+
+
+		if (FileExists(putanja)) {
+			fajl->LoadFromFile(putanja);
+		}
+
+		fajl->Add(naredba);
+
+		fajl->SaveToFile(putanja, TEncoding::Default);
+
+		delete fajl;
+}
+#pragma package(smart_init)
+
+

@@ -1,0 +1,575 @@
+﻿// CodeGear C++Builder
+// Copyright (c) 1995, 2022 by Embarcadero Technologies, Inc.
+// All rights reserved
+
+// (DO NOT EDIT: machine generated header) 'cxEditConsts.pas' rev: 35.00 (Windows)
+
+#ifndef CxeditconstsHPP
+#define CxeditconstsHPP
+
+#pragma delphiheader begin
+#pragma option push
+#pragma option -w-      // All warnings off
+#pragma option -Vx      // Zero-length empty class member 
+#pragma pack(push,8)
+#include <System.hpp>
+#include <SysInit.hpp>
+#include <cxLibraryConsts.hpp>
+
+//-- user supplied -----------------------------------------------------------
+
+namespace Cxeditconsts
+{
+//-- forward type declarations -----------------------------------------------
+//-- type declarations -------------------------------------------------------
+//-- var, const, procedure ---------------------------------------------------
+extern DELPHI_PACKAGE System::ResourceString _cxSEditButtonCancel;
+#define Cxeditconsts_cxSEditButtonCancel System::LoadResourceString(&Cxeditconsts::_cxSEditButtonCancel)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditButtonOK;
+#define Cxeditconsts_cxSEditButtonOK System::LoadResourceString(&Cxeditconsts::_cxSEditButtonOK)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditDateConvertError;
+#define Cxeditconsts_cxSEditDateConvertError System::LoadResourceString(&Cxeditconsts::_cxSEditDateConvertError)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditInvalidRepositoryItem;
+#define Cxeditconsts_cxSEditInvalidRepositoryItem System::LoadResourceString(&Cxeditconsts::_cxSEditInvalidRepositoryItem)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditNumericValueConvertError;
+#define Cxeditconsts_cxSEditNumericValueConvertError System::LoadResourceString(&Cxeditconsts::_cxSEditNumericValueConvertError)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditPopupCircularReferencingError;
+#define Cxeditconsts_cxSEditPopupCircularReferencingError System::LoadResourceString(&Cxeditconsts::_cxSEditPopupCircularReferencingError)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditPostError;
+#define Cxeditconsts_cxSEditPostError System::LoadResourceString(&Cxeditconsts::_cxSEditPostError)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditTimeConvertError;
+#define Cxeditconsts_cxSEditTimeConvertError System::LoadResourceString(&Cxeditconsts::_cxSEditTimeConvertError)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditValidateErrorText;
+#define Cxeditconsts_cxSEditValidateErrorText System::LoadResourceString(&Cxeditconsts::_cxSEditValidateErrorText)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditValueOutOfBounds;
+#define Cxeditconsts_cxSEditValueOutOfBounds System::LoadResourceString(&Cxeditconsts::_cxSEditValueOutOfBounds)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditCheckBoxChecked;
+#define Cxeditconsts_cxSEditCheckBoxChecked System::LoadResourceString(&Cxeditconsts::_cxSEditCheckBoxChecked)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditCheckBoxGrayed;
+#define Cxeditconsts_cxSEditCheckBoxGrayed System::LoadResourceString(&Cxeditconsts::_cxSEditCheckBoxGrayed)
+extern DELPHI_PACKAGE System::ResourceString _cxSEditCheckBoxUnchecked;
+#define Cxeditconsts_cxSEditCheckBoxUnchecked System::LoadResourceString(&Cxeditconsts::_cxSEditCheckBoxUnchecked)
+extern DELPHI_PACKAGE System::ResourceString _cxSRadioGroupDefaultCaption;
+#define Cxeditconsts_cxSRadioGroupDefaultCaption System::LoadResourceString(&Cxeditconsts::_cxSRadioGroupDefaultCaption)
+extern DELPHI_PACKAGE System::ResourceString _cxSTextTrue;
+#define Cxeditconsts_cxSTextTrue System::LoadResourceString(&Cxeditconsts::_cxSTextTrue)
+extern DELPHI_PACKAGE System::ResourceString _cxSTextFalse;
+#define Cxeditconsts_cxSTextFalse System::LoadResourceString(&Cxeditconsts::_cxSTextFalse)
+extern DELPHI_PACKAGE System::ResourceString _cxSNoMatchesFound;
+#define Cxeditconsts_cxSNoMatchesFound System::LoadResourceString(&Cxeditconsts::_cxSNoMatchesFound)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobButtonOK;
+#define Cxeditconsts_cxSBlobButtonOK System::LoadResourceString(&Cxeditconsts::_cxSBlobButtonOK)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobButtonCancel;
+#define Cxeditconsts_cxSBlobButtonCancel System::LoadResourceString(&Cxeditconsts::_cxSBlobButtonCancel)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobButtonClose;
+#define Cxeditconsts_cxSBlobButtonClose System::LoadResourceString(&Cxeditconsts::_cxSBlobButtonClose)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobMemo;
+#define Cxeditconsts_cxSBlobMemo System::LoadResourceString(&Cxeditconsts::_cxSBlobMemo)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobMemoEmpty;
+#define Cxeditconsts_cxSBlobMemoEmpty System::LoadResourceString(&Cxeditconsts::_cxSBlobMemoEmpty)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobPicture;
+#define Cxeditconsts_cxSBlobPicture System::LoadResourceString(&Cxeditconsts::_cxSBlobPicture)
+extern DELPHI_PACKAGE System::ResourceString _cxSBlobPictureEmpty;
+#define Cxeditconsts_cxSBlobPictureEmpty System::LoadResourceString(&Cxeditconsts::_cxSBlobPictureEmpty)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionCut;
+#define Cxeditconsts_cxSMenuItemCaptionCut System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionCut)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionCopy;
+#define Cxeditconsts_cxSMenuItemCaptionCopy System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionCopy)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionPaste;
+#define Cxeditconsts_cxSMenuItemCaptionPaste System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionPaste)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionDelete;
+#define Cxeditconsts_cxSMenuItemCaptionDelete System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionDelete)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionLoad;
+#define Cxeditconsts_cxSMenuItemCaptionLoad System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionLoad)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionSave;
+#define Cxeditconsts_cxSMenuItemCaptionSave System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionSave)
+extern DELPHI_PACKAGE System::ResourceString _cxSMenuItemCaptionAssignFromWebCam;
+#define Cxeditconsts_cxSMenuItemCaptionAssignFromWebCam System::LoadResourceString(&Cxeditconsts::_cxSMenuItemCaptionAssignFromWebCam)
+extern DELPHI_PACKAGE System::ResourceString _cxSDatePopupClear;
+#define Cxeditconsts_cxSDatePopupClear System::LoadResourceString(&Cxeditconsts::_cxSDatePopupClear)
+extern DELPHI_PACKAGE System::ResourceString _cxSDatePopupNow;
+#define Cxeditconsts_cxSDatePopupNow System::LoadResourceString(&Cxeditconsts::_cxSDatePopupNow)
+extern DELPHI_PACKAGE System::ResourceString _cxSDatePopupOK;
+#define Cxeditconsts_cxSDatePopupOK System::LoadResourceString(&Cxeditconsts::_cxSDatePopupOK)
+extern DELPHI_PACKAGE System::ResourceString _cxSDatePopupToday;
+#define Cxeditconsts_cxSDatePopupToday System::LoadResourceString(&Cxeditconsts::_cxSDatePopupToday)
+extern DELPHI_PACKAGE System::ResourceString _cxSDatePopupCancel;
+#define Cxeditconsts_cxSDatePopupCancel System::LoadResourceString(&Cxeditconsts::_cxSDatePopupCancel)
+extern DELPHI_PACKAGE System::ResourceString _cxSDateError;
+#define Cxeditconsts_cxSDateError System::LoadResourceString(&Cxeditconsts::_cxSDateError)
+extern DELPHI_PACKAGE System::ResourceString _scxSCalcError;
+#define Cxeditconsts_scxSCalcError System::LoadResourceString(&Cxeditconsts::_scxSCalcError)
+extern DELPHI_PACKAGE System::ResourceString _scxSHyperLinkPrefix;
+#define Cxeditconsts_scxSHyperLinkPrefix System::LoadResourceString(&Cxeditconsts::_scxSHyperLinkPrefix)
+extern DELPHI_PACKAGE System::ResourceString _scxSHyperLinkDoubleSlash;
+#define Cxeditconsts_scxSHyperLinkDoubleSlash System::LoadResourceString(&Cxeditconsts::_scxSHyperLinkDoubleSlash)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_First;
+#define Cxeditconsts_cxNavigatorHint_First System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_First)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Prior;
+#define Cxeditconsts_cxNavigatorHint_Prior System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Prior)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_PriorPage;
+#define Cxeditconsts_cxNavigatorHint_PriorPage System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_PriorPage)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Next;
+#define Cxeditconsts_cxNavigatorHint_Next System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Next)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_NextPage;
+#define Cxeditconsts_cxNavigatorHint_NextPage System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_NextPage)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Last;
+#define Cxeditconsts_cxNavigatorHint_Last System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Last)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Insert;
+#define Cxeditconsts_cxNavigatorHint_Insert System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Insert)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Append;
+#define Cxeditconsts_cxNavigatorHint_Append System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Append)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Delete;
+#define Cxeditconsts_cxNavigatorHint_Delete System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Delete)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Edit;
+#define Cxeditconsts_cxNavigatorHint_Edit System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Edit)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Post;
+#define Cxeditconsts_cxNavigatorHint_Post System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Post)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Cancel;
+#define Cxeditconsts_cxNavigatorHint_Cancel System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Cancel)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Refresh;
+#define Cxeditconsts_cxNavigatorHint_Refresh System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Refresh)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_SaveBookmark;
+#define Cxeditconsts_cxNavigatorHint_SaveBookmark System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_SaveBookmark)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_GotoBookmark;
+#define Cxeditconsts_cxNavigatorHint_GotoBookmark System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_GotoBookmark)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorHint_Filter;
+#define Cxeditconsts_cxNavigatorHint_Filter System::LoadResourceString(&Cxeditconsts::_cxNavigatorHint_Filter)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigator_DeleteRecordQuestion;
+#define Cxeditconsts_cxNavigator_DeleteRecordQuestion System::LoadResourceString(&Cxeditconsts::_cxNavigator_DeleteRecordQuestion)
+extern DELPHI_PACKAGE System::ResourceString _cxNavigatorInfoPanelDefaultDisplayMask;
+#define Cxeditconsts_cxNavigatorInfoPanelDefaultDisplayMask System::LoadResourceString(&Cxeditconsts::_cxNavigatorInfoPanelDefaultDisplayMask)
+extern DELPHI_PACKAGE System::ResourceString _sdxBreadcrumbEditInvalidPath;
+#define Cxeditconsts_sdxBreadcrumbEditInvalidPath System::LoadResourceString(&Cxeditconsts::_sdxBreadcrumbEditInvalidPath)
+extern DELPHI_PACKAGE System::ResourceString _sdxBreadcrumbEditInvalidStreamVersion;
+#define Cxeditconsts_sdxBreadcrumbEditInvalidStreamVersion System::LoadResourceString(&Cxeditconsts::_sdxBreadcrumbEditInvalidStreamVersion)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryBlobItem;
+#define Cxeditconsts_scxSEditRepositoryBlobItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryBlobItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryButtonItem;
+#define Cxeditconsts_scxSEditRepositoryButtonItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryButtonItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryCalcItem;
+#define Cxeditconsts_scxSEditRepositoryCalcItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryCalcItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryCheckBoxItem;
+#define Cxeditconsts_scxSEditRepositoryCheckBoxItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryCheckBoxItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryComboBoxItem;
+#define Cxeditconsts_scxSEditRepositoryComboBoxItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryComboBoxItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryCurrencyItem;
+#define Cxeditconsts_scxSEditRepositoryCurrencyItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryCurrencyItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryDateItem;
+#define Cxeditconsts_scxSEditRepositoryDateItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryDateItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryHyperLinkItem;
+#define Cxeditconsts_scxSEditRepositoryHyperLinkItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryHyperLinkItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryImageComboBoxItem;
+#define Cxeditconsts_scxSEditRepositoryImageComboBoxItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryImageComboBoxItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryImageItem;
+#define Cxeditconsts_scxSEditRepositoryImageItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryImageItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryLookupComboBoxItem;
+#define Cxeditconsts_scxSEditRepositoryLookupComboBoxItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryLookupComboBoxItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryMaskItem;
+#define Cxeditconsts_scxSEditRepositoryMaskItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryMaskItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryMemoItem;
+#define Cxeditconsts_scxSEditRepositoryMemoItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryMemoItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryMRUItem;
+#define Cxeditconsts_scxSEditRepositoryMRUItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryMRUItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryPopupItem;
+#define Cxeditconsts_scxSEditRepositoryPopupItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryPopupItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositorySpinItem;
+#define Cxeditconsts_scxSEditRepositorySpinItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositorySpinItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryRadioGroupItem;
+#define Cxeditconsts_scxSEditRepositoryRadioGroupItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryRadioGroupItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryTextItem;
+#define Cxeditconsts_scxSEditRepositoryTextItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryTextItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryTimeItem;
+#define Cxeditconsts_scxSEditRepositoryTimeItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryTimeItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryToggleSwitchItem;
+#define Cxeditconsts_scxSEditRepositoryToggleSwitchItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryToggleSwitchItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryDateTimeWheelPickerItem;
+#define Cxeditconsts_scxSEditRepositoryDateTimeWheelPickerItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryDateTimeWheelPickerItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositorySparklineItem;
+#define Cxeditconsts_scxSEditRepositorySparklineItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositorySparklineItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryLookupSparklineItem;
+#define Cxeditconsts_scxSEditRepositoryLookupSparklineItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryLookupSparklineItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryNumericWheelPickerItem;
+#define Cxeditconsts_scxSEditRepositoryNumericWheelPickerItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryNumericWheelPickerItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryBarCodeItem;
+#define Cxeditconsts_scxSEditRepositoryBarCodeItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryBarCodeItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryTokenItem;
+#define Cxeditconsts_scxSEditRepositoryTokenItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryTokenItem)
+extern DELPHI_PACKAGE System::ResourceString _scxSEditRepositoryFormattedLabelItem;
+#define Cxeditconsts_scxSEditRepositoryFormattedLabelItem System::LoadResourceString(&Cxeditconsts::_scxSEditRepositoryFormattedLabelItem)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprLine;
+#define Cxeditconsts_scxRegExprLine System::LoadResourceString(&Cxeditconsts::_scxRegExprLine)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprChar;
+#define Cxeditconsts_scxRegExprChar System::LoadResourceString(&Cxeditconsts::_scxRegExprChar)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprNotAssignedSourceStream;
+#define Cxeditconsts_scxRegExprNotAssignedSourceStream System::LoadResourceString(&Cxeditconsts::_scxRegExprNotAssignedSourceStream)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprEmptySourceStream;
+#define Cxeditconsts_scxRegExprEmptySourceStream System::LoadResourceString(&Cxeditconsts::_scxRegExprEmptySourceStream)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantUsePlusQuantifier;
+#define Cxeditconsts_scxRegExprCantUsePlusQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprCantUsePlusQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantUseStarQuantifier;
+#define Cxeditconsts_scxRegExprCantUseStarQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprCantUseStarQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantCreateEmptyAlt;
+#define Cxeditconsts_scxRegExprCantCreateEmptyAlt System::LoadResourceString(&Cxeditconsts::_scxRegExprCantCreateEmptyAlt)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantCreateEmptyBlock;
+#define Cxeditconsts_scxRegExprCantCreateEmptyBlock System::LoadResourceString(&Cxeditconsts::_scxRegExprCantCreateEmptyBlock)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprIllegalSymbol;
+#define Cxeditconsts_scxRegExprIllegalSymbol System::LoadResourceString(&Cxeditconsts::_scxRegExprIllegalSymbol)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprIllegalQuantifier;
+#define Cxeditconsts_scxRegExprIllegalQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprIllegalQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprNotSupportQuantifier;
+#define Cxeditconsts_scxRegExprNotSupportQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprNotSupportQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprIllegalIntegerValue;
+#define Cxeditconsts_scxRegExprIllegalIntegerValue System::LoadResourceString(&Cxeditconsts::_scxRegExprIllegalIntegerValue)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprTooBigReferenceNumber;
+#define Cxeditconsts_scxRegExprTooBigReferenceNumber System::LoadResourceString(&Cxeditconsts::_scxRegExprTooBigReferenceNumber)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantCreateEmptyEnum;
+#define Cxeditconsts_scxRegExprCantCreateEmptyEnum System::LoadResourceString(&Cxeditconsts::_scxRegExprCantCreateEmptyEnum)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprSubrangeOrder;
+#define Cxeditconsts_scxRegExprSubrangeOrder System::LoadResourceString(&Cxeditconsts::_scxRegExprSubrangeOrder)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprHexNumberExpected0;
+#define Cxeditconsts_scxRegExprHexNumberExpected0 System::LoadResourceString(&Cxeditconsts::_scxRegExprHexNumberExpected0)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprHexNumberExpected;
+#define Cxeditconsts_scxRegExprHexNumberExpected System::LoadResourceString(&Cxeditconsts::_scxRegExprHexNumberExpected)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprMissing;
+#define Cxeditconsts_scxRegExprMissing System::LoadResourceString(&Cxeditconsts::_scxRegExprMissing)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprUnnecessary;
+#define Cxeditconsts_scxRegExprUnnecessary System::LoadResourceString(&Cxeditconsts::_scxRegExprUnnecessary)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprIncorrectSpace;
+#define Cxeditconsts_scxRegExprIncorrectSpace System::LoadResourceString(&Cxeditconsts::_scxRegExprIncorrectSpace)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprNotCompiled;
+#define Cxeditconsts_scxRegExprNotCompiled System::LoadResourceString(&Cxeditconsts::_scxRegExprNotCompiled)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprIncorrectParameterQuantifier;
+#define Cxeditconsts_scxRegExprIncorrectParameterQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprIncorrectParameterQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxRegExprCantUseParameterQuantifier;
+#define Cxeditconsts_scxRegExprCantUseParameterQuantifier System::LoadResourceString(&Cxeditconsts::_scxRegExprCantUseParameterQuantifier)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditRegExprError;
+#define Cxeditconsts_scxMaskEditRegExprError System::LoadResourceString(&Cxeditconsts::_scxMaskEditRegExprError)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditInvalidEditValue;
+#define Cxeditconsts_scxMaskEditInvalidEditValue System::LoadResourceString(&Cxeditconsts::_scxMaskEditInvalidEditValue)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditNoMask;
+#define Cxeditconsts_scxMaskEditNoMask System::LoadResourceString(&Cxeditconsts::_scxMaskEditNoMask)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditIllegalFileFormat;
+#define Cxeditconsts_scxMaskEditIllegalFileFormat System::LoadResourceString(&Cxeditconsts::_scxMaskEditIllegalFileFormat)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditEmptyMaskCollectionFile;
+#define Cxeditconsts_scxMaskEditEmptyMaskCollectionFile System::LoadResourceString(&Cxeditconsts::_scxMaskEditEmptyMaskCollectionFile)
+extern DELPHI_PACKAGE System::ResourceString _scxMaskEditMaskCollectionFiles;
+#define Cxeditconsts_scxMaskEditMaskCollectionFiles System::LoadResourceString(&Cxeditconsts::_scxMaskEditMaskCollectionFiles)
+extern DELPHI_PACKAGE System::ResourceString _cxSSpinEditInvalidNumericValue;
+#define Cxeditconsts_cxSSpinEditInvalidNumericValue System::LoadResourceString(&Cxeditconsts::_cxSSpinEditInvalidNumericValue)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowNavigationPanelDefaultDisplayMask;
+#define Cxeditconsts_sdxAlertWindowNavigationPanelDefaultDisplayMask System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowNavigationPanelDefaultDisplayMask)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowPreviousMessage;
+#define Cxeditconsts_sdxAlertWindowPreviousMessage System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowPreviousMessage)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowNextMessage;
+#define Cxeditconsts_sdxAlertWindowNextMessage System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowNextMessage)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowPin;
+#define Cxeditconsts_sdxAlertWindowPin System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowPin)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowClose;
+#define Cxeditconsts_sdxAlertWindowClose System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowClose)
+extern DELPHI_PACKAGE System::ResourceString _sdxAlertWindowDropdown;
+#define Cxeditconsts_sdxAlertWindowDropdown System::LoadResourceString(&Cxeditconsts::_sdxAlertWindowDropdown)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorGalleryThemeColors;
+#define Cxeditconsts_sdxColorGalleryThemeColors System::LoadResourceString(&Cxeditconsts::_sdxColorGalleryThemeColors)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorGalleryStandardColors;
+#define Cxeditconsts_sdxColorGalleryStandardColors System::LoadResourceString(&Cxeditconsts::_sdxColorGalleryStandardColors)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogAddToCustomColors;
+#define Cxeditconsts_sdxColorDialogAddToCustomColors System::LoadResourceString(&Cxeditconsts::_sdxColorDialogAddToCustomColors)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogApply;
+#define Cxeditconsts_sdxColorDialogApply System::LoadResourceString(&Cxeditconsts::_sdxColorDialogApply)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogCancel;
+#define Cxeditconsts_sdxColorDialogCancel System::LoadResourceString(&Cxeditconsts::_sdxColorDialogCancel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogDefineCustomColor;
+#define Cxeditconsts_sdxColorDialogDefineCustomColor System::LoadResourceString(&Cxeditconsts::_sdxColorDialogDefineCustomColor)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogBasicColors;
+#define Cxeditconsts_sdxColorDialogBasicColors System::LoadResourceString(&Cxeditconsts::_sdxColorDialogBasicColors)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogCaption;
+#define Cxeditconsts_sdxColorDialogCaption System::LoadResourceString(&Cxeditconsts::_sdxColorDialogCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorDialogCustomColors;
+#define Cxeditconsts_sdxColorDialogCustomColors System::LoadResourceString(&Cxeditconsts::_sdxColorDialogCustomColors)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerAlphaLabel;
+#define Cxeditconsts_sdxColorPickerAlphaLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerAlphaLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerBlueLabel;
+#define Cxeditconsts_sdxColorPickerBlueLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerBlueLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerGreenLabel;
+#define Cxeditconsts_sdxColorPickerGreenLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerGreenLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerHexCodeLabel;
+#define Cxeditconsts_sdxColorPickerHexCodeLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerHexCodeLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerHueLabel;
+#define Cxeditconsts_sdxColorPickerHueLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerHueLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerLightnessLabel;
+#define Cxeditconsts_sdxColorPickerLightnessLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerLightnessLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerRedLabel;
+#define Cxeditconsts_sdxColorPickerRedLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerRedLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxColorPickerSaturationLabel;
+#define Cxeditconsts_sdxColorPickerSaturationLabel System::LoadResourceString(&Cxeditconsts::_sdxColorPickerSaturationLabel)
+extern DELPHI_PACKAGE System::ResourceString _scxShellBrowserDlgCaption;
+#define Cxeditconsts_scxShellBrowserDlgCaption System::LoadResourceString(&Cxeditconsts::_scxShellBrowserDlgCaption)
+extern DELPHI_PACKAGE System::ResourceString _scxShellBrowserDlgCurrentFolderCaption;
+#define Cxeditconsts_scxShellBrowserDlgCurrentFolderCaption System::LoadResourceString(&Cxeditconsts::_scxShellBrowserDlgCurrentFolderCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraDialogAssign;
+#define Cxeditconsts_sdxCameraDialogAssign System::LoadResourceString(&Cxeditconsts::_sdxCameraDialogAssign)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraDialogCancel;
+#define Cxeditconsts_sdxCameraDialogCancel System::LoadResourceString(&Cxeditconsts::_sdxCameraDialogCancel)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraDialogPause;
+#define Cxeditconsts_sdxCameraDialogPause System::LoadResourceString(&Cxeditconsts::_sdxCameraDialogPause)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraDialogPlay;
+#define Cxeditconsts_sdxCameraDialogPlay System::LoadResourceString(&Cxeditconsts::_sdxCameraDialogPlay)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraDialogCaption;
+#define Cxeditconsts_sdxCameraDialogCaption System::LoadResourceString(&Cxeditconsts::_sdxCameraDialogCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraInactive;
+#define Cxeditconsts_sdxCameraInactive System::LoadResourceString(&Cxeditconsts::_sdxCameraInactive)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraRunning;
+#define Cxeditconsts_sdxCameraRunning System::LoadResourceString(&Cxeditconsts::_sdxCameraRunning)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraPaused;
+#define Cxeditconsts_sdxCameraPaused System::LoadResourceString(&Cxeditconsts::_sdxCameraPaused)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraNotDetected;
+#define Cxeditconsts_sdxCameraNotDetected System::LoadResourceString(&Cxeditconsts::_sdxCameraNotDetected)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraInitializing;
+#define Cxeditconsts_sdxCameraInitializing System::LoadResourceString(&Cxeditconsts::_sdxCameraInitializing)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraIsBusy;
+#define Cxeditconsts_sdxCameraIsBusy System::LoadResourceString(&Cxeditconsts::_sdxCameraIsBusy)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraControlSettingsFormSettings;
+#define Cxeditconsts_sdxCameraControlSettingsFormSettings System::LoadResourceString(&Cxeditconsts::_sdxCameraControlSettingsFormSettings)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraControlSettingsFormDevice;
+#define Cxeditconsts_sdxCameraControlSettingsFormDevice System::LoadResourceString(&Cxeditconsts::_sdxCameraControlSettingsFormDevice)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraControlSettingsFormDevices;
+#define Cxeditconsts_sdxCameraControlSettingsFormDevices System::LoadResourceString(&Cxeditconsts::_sdxCameraControlSettingsFormDevices)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraControlSettingsFormResolution;
+#define Cxeditconsts_sdxCameraControlSettingsFormResolution System::LoadResourceString(&Cxeditconsts::_sdxCameraControlSettingsFormResolution)
+extern DELPHI_PACKAGE System::ResourceString _sdxCameraControlSettingsFormResolutions;
+#define Cxeditconsts_sdxCameraControlSettingsFormResolutions System::LoadResourceString(&Cxeditconsts::_sdxCameraControlSettingsFormResolutions)
+extern DELPHI_PACKAGE System::ResourceString _sdxDefaultToggleSwitchOffText;
+#define Cxeditconsts_sdxDefaultToggleSwitchOffText System::LoadResourceString(&Cxeditconsts::_sdxDefaultToggleSwitchOffText)
+extern DELPHI_PACKAGE System::ResourceString _sdxDefaultToggleSwitchOnText;
+#define Cxeditconsts_sdxDefaultToggleSwitchOnText System::LoadResourceString(&Cxeditconsts::_sdxDefaultToggleSwitchOnText)
+extern DELPHI_PACKAGE System::ResourceString _sdxDateTimeWheelPickerHours;
+#define Cxeditconsts_sdxDateTimeWheelPickerHours System::LoadResourceString(&Cxeditconsts::_sdxDateTimeWheelPickerHours)
+extern DELPHI_PACKAGE System::ResourceString _sdxDateTimeWheelPickerMinutes;
+#define Cxeditconsts_sdxDateTimeWheelPickerMinutes System::LoadResourceString(&Cxeditconsts::_sdxDateTimeWheelPickerMinutes)
+extern DELPHI_PACKAGE System::ResourceString _sdxDateTimeWheelPickerSeconds;
+#define Cxeditconsts_sdxDateTimeWheelPickerSeconds System::LoadResourceString(&Cxeditconsts::_sdxDateTimeWheelPickerSeconds)
+extern DELPHI_PACKAGE System::ResourceString _sdxSparklineNoData;
+#define Cxeditconsts_sdxSparklineNoData System::LoadResourceString(&Cxeditconsts::_sdxSparklineNoData)
+extern DELPHI_PACKAGE System::ResourceString _sdxBarCodeInvalidCharactersError;
+#define Cxeditconsts_sdxBarCodeInvalidCharactersError System::LoadResourceString(&Cxeditconsts::_sdxBarCodeInvalidCharactersError)
+extern DELPHI_PACKAGE System::ResourceString _sdxBarCodeInvalidTextFormatError;
+#define Cxeditconsts_sdxBarCodeInvalidTextFormatError System::LoadResourceString(&Cxeditconsts::_sdxBarCodeInvalidTextFormatError)
+extern DELPHI_PACKAGE System::ResourceString _sdxBarCodeControlTooNarrowError;
+#define Cxeditconsts_sdxBarCodeControlTooNarrowError System::LoadResourceString(&Cxeditconsts::_sdxBarCodeControlTooNarrowError)
+extern DELPHI_PACKAGE System::ResourceString _sdxTokenEditMoreTokensCaption;
+#define Cxeditconsts_sdxTokenEditMoreTokensCaption System::LoadResourceString(&Cxeditconsts::_sdxTokenEditMoreTokensCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxTokenEditMoreTokensHint;
+#define Cxeditconsts_sdxTokenEditMoreTokensHint System::LoadResourceString(&Cxeditconsts::_sdxTokenEditMoreTokensHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxRangeControlRangeIsEmpty;
+#define Cxeditconsts_sdxRangeControlRangeIsEmpty System::LoadResourceString(&Cxeditconsts::_sdxRangeControlRangeIsEmpty)
+extern DELPHI_PACKAGE System::ResourceString _sdxUIAdornerManagerBadOwner;
+#define Cxeditconsts_sdxUIAdornerManagerBadOwner System::LoadResourceString(&Cxeditconsts::_sdxUIAdornerManagerBadOwner)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterFromValueText;
+#define Cxeditconsts_sdxExcelFilterFromValueText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterFromValueText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterToValueText;
+#define Cxeditconsts_sdxExcelFilterToValueText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterToValueText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTopNBottomNValueLabel;
+#define Cxeditconsts_sdxExcelFilterTopNBottomNValueLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTopNBottomNValueLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTopNBottomNTypeLabel;
+#define Cxeditconsts_sdxExcelFilterTopNBottomNTypeLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTopNBottomNTypeLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterCustomFilterAndOperatorLabel;
+#define Cxeditconsts_sdxExcelFilterCustomFilterAndOperatorLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterCustomFilterAndOperatorLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterCustomFilterOrOperatorLabel;
+#define Cxeditconsts_sdxExcelFilterCustomFilterOrOperatorLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterCustomFilterOrOperatorLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterCustomFilterFirstConditionLabel;
+#define Cxeditconsts_sdxExcelFilterCustomFilterFirstConditionLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterCustomFilterFirstConditionLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterCustomFilterSecondConditionLabel;
+#define Cxeditconsts_sdxExcelFilterCustomFilterSecondConditionLabel System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterCustomFilterSecondConditionLabel)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterValuesTabCaption;
+#define Cxeditconsts_sdxExcelFilterValuesTabCaption System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterValuesTabCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterDateFiltersTabCaption;
+#define Cxeditconsts_sdxExcelFilterDateFiltersTabCaption System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterDateFiltersTabCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTextFiltersTabCaption;
+#define Cxeditconsts_sdxExcelFilterTextFiltersTabCaption System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTextFiltersTabCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTimeFiltersTabCaption;
+#define Cxeditconsts_sdxExcelFilterTimeFiltersTabCaption System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTimeFiltersTabCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterNumericFiltersTabCaption;
+#define Cxeditconsts_sdxExcelFilterNumericFiltersTabCaption System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterNumericFiltersTabCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterSelectValueHintText;
+#define Cxeditconsts_sdxExcelFilterSelectValueHintText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterSelectValueHintText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterSelectDateHintText;
+#define Cxeditconsts_sdxExcelFilterSelectDateHintText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterSelectDateHintText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterEnterValueHintText;
+#define Cxeditconsts_sdxExcelFilterEnterValueHintText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterEnterValueHintText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterSpecificDatePeriodsConditionText;
+#define Cxeditconsts_sdxExcelFilterSpecificDatePeriodsConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterSpecificDatePeriodsConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterEqualsConditionText;
+#define Cxeditconsts_sdxExcelFilterEqualsConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterEqualsConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterDoesNotEqualConditionText;
+#define Cxeditconsts_sdxExcelFilterDoesNotEqualConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterDoesNotEqualConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterBeginsWithConditionText;
+#define Cxeditconsts_sdxExcelFilterBeginsWithConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterBeginsWithConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterEndsWithConditionText;
+#define Cxeditconsts_sdxExcelFilterEndsWithConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterEndsWithConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterContainsConditionText;
+#define Cxeditconsts_sdxExcelFilterContainsConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterContainsConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterDoesNotContainConditionText;
+#define Cxeditconsts_sdxExcelFilterDoesNotContainConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterDoesNotContainConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterIsBlankConditionText;
+#define Cxeditconsts_sdxExcelFilterIsBlankConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterIsBlankConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterIsNotBlankConditionText;
+#define Cxeditconsts_sdxExcelFilterIsNotBlankConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterIsNotBlankConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterBetweenConditionText;
+#define Cxeditconsts_sdxExcelFilterBetweenConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterBetweenConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterGreaterThanConditionText;
+#define Cxeditconsts_sdxExcelFilterGreaterThanConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterGreaterThanConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterGreaterThanOrEqualToConditionText;
+#define Cxeditconsts_sdxExcelFilterGreaterThanOrEqualToConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterGreaterThanOrEqualToConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterLessThanConditionText;
+#define Cxeditconsts_sdxExcelFilterLessThanConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterLessThanConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterLessEqualThanOrEqualToConditionText;
+#define Cxeditconsts_sdxExcelFilterLessEqualThanOrEqualToConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterLessEqualThanOrEqualToConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTopNConditionText;
+#define Cxeditconsts_sdxExcelFilterTopNConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTopNConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterBottomNConditionText;
+#define Cxeditconsts_sdxExcelFilterBottomNConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterBottomNConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterAboveAverageConditionText;
+#define Cxeditconsts_sdxExcelFilterAboveAverageConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterAboveAverageConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterBelowAverageConditionText;
+#define Cxeditconsts_sdxExcelFilterBelowAverageConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterBelowAverageConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterBeforeConditionText;
+#define Cxeditconsts_sdxExcelFilterBeforeConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterBeforeConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterAfterConditionText;
+#define Cxeditconsts_sdxExcelFilterAfterConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterAfterConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterYesterdayConditionText;
+#define Cxeditconsts_sdxExcelFilterYesterdayConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterYesterdayConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTodayConditionTypeText;
+#define Cxeditconsts_sdxExcelFilterTodayConditionTypeText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTodayConditionTypeText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTomorrowConditionText;
+#define Cxeditconsts_sdxExcelFilterTomorrowConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTomorrowConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterLastWeekConditionText;
+#define Cxeditconsts_sdxExcelFilterLastWeekConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterLastWeekConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterThisWeekConditionText;
+#define Cxeditconsts_sdxExcelFilterThisWeekConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterThisWeekConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterNextWeekConditionText;
+#define Cxeditconsts_sdxExcelFilterNextWeekConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterNextWeekConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterLastMonthConditionText;
+#define Cxeditconsts_sdxExcelFilterLastMonthConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterLastMonthConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterThisMonthConditionText;
+#define Cxeditconsts_sdxExcelFilterThisMonthConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterThisMonthConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterNextMonthConditionText;
+#define Cxeditconsts_sdxExcelFilterNextMonthConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterNextMonthConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterLastYearConditionText;
+#define Cxeditconsts_sdxExcelFilterLastYearConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterLastYearConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterThisYearConditionText;
+#define Cxeditconsts_sdxExcelFilterThisYearConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterThisYearConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterNextYearConditionText;
+#define Cxeditconsts_sdxExcelFilterNextYearConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterNextYearConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterCustomFilterConditionText;
+#define Cxeditconsts_sdxExcelFilterCustomFilterConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterCustomFilterConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterPredefinedFiltersConditionText;
+#define Cxeditconsts_sdxExcelFilterPredefinedFiltersConditionText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterPredefinedFiltersConditionText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTopNBottomNItemsText;
+#define Cxeditconsts_sdxExcelFilterTopNBottomNItemsText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTopNBottomNItemsText)
+extern DELPHI_PACKAGE System::ResourceString _sdxExcelFilterTopNBottomNPercentText;
+#define Cxeditconsts_sdxExcelFilterTopNBottomNPercentText System::LoadResourceString(&Cxeditconsts::_sdxExcelFilterTopNBottomNPercentText)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilterPopupWindowClearButtonCaption;
+#define Cxeditconsts_sdxFilterPopupWindowClearButtonCaption System::LoadResourceString(&Cxeditconsts::_sdxFilterPopupWindowClearButtonCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilterPopupWindowCloseButtonCaption;
+#define Cxeditconsts_sdxFilterPopupWindowCloseButtonCaption System::LoadResourceString(&Cxeditconsts::_sdxFilterPopupWindowCloseButtonCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilterPopupWindowCancelButtonCaption;
+#define Cxeditconsts_sdxFilterPopupWindowCancelButtonCaption System::LoadResourceString(&Cxeditconsts::_sdxFilterPopupWindowCancelButtonCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilterPopupWindowOKButtonCaption;
+#define Cxeditconsts_sdxFilterPopupWindowOKButtonCaption System::LoadResourceString(&Cxeditconsts::_sdxFilterPopupWindowOKButtonCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogFileNotExistWarning;
+#define Cxeditconsts_sdxFileDialogFileNotExistWarning System::LoadResourceString(&Cxeditconsts::_sdxFileDialogFileNotExistWarning)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogBackDisabledHint;
+#define Cxeditconsts_sdxFileDialogBackDisabledHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogBackDisabledHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogBackEnabledHint;
+#define Cxeditconsts_sdxFileDialogBackEnabledHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogBackEnabledHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogFileNameCaption;
+#define Cxeditconsts_sdxFileDialogFileNameCaption System::LoadResourceString(&Cxeditconsts::_sdxFileDialogFileNameCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogFilePreviewHidePaneHint;
+#define Cxeditconsts_sdxFileDialogFilePreviewHidePaneHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogFilePreviewHidePaneHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogFilePreviewShowPaneHint;
+#define Cxeditconsts_sdxFileDialogFilePreviewShowPaneHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogFilePreviewShowPaneHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogForwardDisabledHint;
+#define Cxeditconsts_sdxFileDialogForwardDisabledHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogForwardDisabledHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogForwardEnabledHint;
+#define Cxeditconsts_sdxFileDialogForwardEnabledHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogForwardEnabledHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogHistoryHint;
+#define Cxeditconsts_sdxFileDialogHistoryHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogHistoryHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogNewFolderCaption;
+#define Cxeditconsts_sdxFileDialogNewFolderCaption System::LoadResourceString(&Cxeditconsts::_sdxFileDialogNewFolderCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogNewFolderHint;
+#define Cxeditconsts_sdxFileDialogNewFolderHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogNewFolderHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogSearchNullstring;
+#define Cxeditconsts_sdxFileDialogSearchNullstring System::LoadResourceString(&Cxeditconsts::_sdxFileDialogSearchNullstring)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogUpHint;
+#define Cxeditconsts_sdxFileDialogUpHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogUpHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxFileDialogViewsHint;
+#define Cxeditconsts_sdxFileDialogViewsHint System::LoadResourceString(&Cxeditconsts::_sdxFileDialogViewsHint)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellViewsCaption;
+#define Cxeditconsts_sdxShellViewsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellViewsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellExtraLargeIconsCaption;
+#define Cxeditconsts_sdxShellExtraLargeIconsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellExtraLargeIconsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellLargeIconsCaption;
+#define Cxeditconsts_sdxShellLargeIconsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellLargeIconsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellMediumIconsCaption;
+#define Cxeditconsts_sdxShellMediumIconsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellMediumIconsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellSmallIconsCaption;
+#define Cxeditconsts_sdxShellSmallIconsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellSmallIconsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellIconsCaption;
+#define Cxeditconsts_sdxShellIconsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellIconsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListCaption;
+#define Cxeditconsts_sdxShellListCaption System::LoadResourceString(&Cxeditconsts::_sdxShellListCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellDetailsCaption;
+#define Cxeditconsts_sdxShellDetailsCaption System::LoadResourceString(&Cxeditconsts::_sdxShellDetailsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxOpenFileDialogOkCaption;
+#define Cxeditconsts_sdxOpenFileDialogOkCaption System::LoadResourceString(&Cxeditconsts::_sdxOpenFileDialogOkCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxOpenFileDialogDefaultTitle;
+#define Cxeditconsts_sdxOpenFileDialogDefaultTitle System::LoadResourceString(&Cxeditconsts::_sdxOpenFileDialogDefaultTitle)
+extern DELPHI_PACKAGE System::ResourceString _sdxSaveFileDialogOkCaption;
+#define Cxeditconsts_sdxSaveFileDialogOkCaption System::LoadResourceString(&Cxeditconsts::_sdxSaveFileDialogOkCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxSaveFileDialogDefaultTitle;
+#define Cxeditconsts_sdxSaveFileDialogDefaultTitle System::LoadResourceString(&Cxeditconsts::_sdxSaveFileDialogDefaultTitle)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewMenuItemPaste;
+#define Cxeditconsts_sdxShellListViewMenuItemPaste System::LoadResourceString(&Cxeditconsts::_sdxShellListViewMenuItemPaste)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewMenuItemRefresh;
+#define Cxeditconsts_sdxShellListViewMenuItemRefresh System::LoadResourceString(&Cxeditconsts::_sdxShellListViewMenuItemRefresh)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewMenuItemSort;
+#define Cxeditconsts_sdxShellListViewMenuItemSort System::LoadResourceString(&Cxeditconsts::_sdxShellListViewMenuItemSort)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewMenuItemSortAscending;
+#define Cxeditconsts_sdxShellListViewMenuItemSortAscending System::LoadResourceString(&Cxeditconsts::_sdxShellListViewMenuItemSortAscending)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewMenuItemSortDescending;
+#define Cxeditconsts_sdxShellListViewMenuItemSortDescending System::LoadResourceString(&Cxeditconsts::_sdxShellListViewMenuItemSortDescending)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewWorkingOnIt;
+#define Cxeditconsts_sdxShellListViewWorkingOnIt System::LoadResourceString(&Cxeditconsts::_sdxShellListViewWorkingOnIt)
+extern DELPHI_PACKAGE System::ResourceString _sdxShellListViewNoItemsMatch;
+#define Cxeditconsts_sdxShellListViewNoItemsMatch System::LoadResourceString(&Cxeditconsts::_sdxShellListViewNoItemsMatch)
+extern DELPHI_PACKAGE System::ResourceString _sdxDetails;
+#define Cxeditconsts_sdxDetails System::LoadResourceString(&Cxeditconsts::_sdxDetails)
+extern DELPHI_PACKAGE System::ResourceString _sdxColumnWidthCaption;
+#define Cxeditconsts_sdxColumnWidthCaption System::LoadResourceString(&Cxeditconsts::_sdxColumnWidthCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxSelectDetailsCaption;
+#define Cxeditconsts_sdxSelectDetailsCaption System::LoadResourceString(&Cxeditconsts::_sdxSelectDetailsCaption)
+extern DELPHI_PACKAGE System::ResourceString _sdxChooseDetails;
+#define Cxeditconsts_sdxChooseDetails System::LoadResourceString(&Cxeditconsts::_sdxChooseDetails)
+extern DELPHI_PACKAGE System::ResourceString _sdxMoveUp;
+#define Cxeditconsts_sdxMoveUp System::LoadResourceString(&Cxeditconsts::_sdxMoveUp)
+extern DELPHI_PACKAGE System::ResourceString _sdxMoveDown;
+#define Cxeditconsts_sdxMoveDown System::LoadResourceString(&Cxeditconsts::_sdxMoveDown)
+extern DELPHI_PACKAGE System::ResourceString _sdxHide;
+#define Cxeditconsts_sdxHide System::LoadResourceString(&Cxeditconsts::_sdxHide)
+extern DELPHI_PACKAGE System::ResourceString _sdxShow;
+#define Cxeditconsts_sdxShow System::LoadResourceString(&Cxeditconsts::_sdxShow)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilePreviewPanePreviewMessageEmpty;
+#define Cxeditconsts_sdxFilePreviewPanePreviewMessageEmpty System::LoadResourceString(&Cxeditconsts::_sdxFilePreviewPanePreviewMessageEmpty)
+extern DELPHI_PACKAGE System::ResourceString _sdxFilePreviewPanePreviewMessageNoFile;
+#define Cxeditconsts_sdxFilePreviewPanePreviewMessageNoFile System::LoadResourceString(&Cxeditconsts::_sdxFilePreviewPanePreviewMessageNoFile)
+}	/* namespace Cxeditconsts */
+#if !defined(DELPHIHEADER_NO_IMPLICIT_NAMESPACE_USE) && !defined(NO_USING_NAMESPACE_CXEDITCONSTS)
+using namespace Cxeditconsts;
+#endif
+#pragma pack(pop)
+#pragma option pop
+
+#pragma delphiheader end.
+//-- end unit ----------------------------------------------------------------
+#endif	// CxeditconstsHPP

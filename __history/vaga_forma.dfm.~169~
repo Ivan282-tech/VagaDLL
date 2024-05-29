@@ -1,0 +1,3562 @@
+object VagaForm: TVagaForm
+  Left = 0
+  Top = 0
+  Caption = 'Vaga'
+  ClientHeight = 685
+  ClientWidth = 1256
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
+  DesignSize = (
+    1256
+    685)
+  TextHeight = 15
+  object cxGrid2: TcxGrid
+    AlignWithMargins = True
+    Left = 733
+    Top = 8
+    Width = 515
+    Height = 669
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 511
+    ExplicitHeight = 668
+    object cxGrid2DBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      ScrollbarAnnotations.CustomAnnotations = <>
+      DataController.DataSource = dsArtikli
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object cxGrid2DBTableView1PLU: TcxGridDBColumn
+        AlternateCaption = 'Plu vage'
+        Caption = 'Plu vage'
+        DataBinding.FieldName = 'PLU'
+      end
+      object cxGrid2DBTableView1KOD: TcxGridDBColumn
+        AlternateCaption = 'Kod'
+        Caption = 'Kod'
+        DataBinding.FieldName = 'KOD'
+      end
+      object cxGrid2DBTableView1ARTIKAL: TcxGridDBColumn
+        Caption = 'Artikal'
+        DataBinding.FieldName = 'ARTIKAL'
+        Width = 210
+      end
+      object cxGrid2DBTableView1CENA: TcxGridDBColumn
+        Caption = 'Cena'
+        DataBinding.FieldName = 'CENA'
+      end
+      object cxGrid2DBTableView1KOD_1: TcxGridDBColumn
+        DataBinding.FieldName = 'KOD_1'
+        Visible = False
+      end
+      object cxGrid2DBTableView1ID_VAGE: TcxGridDBColumn
+        DataBinding.FieldName = 'ID_VAGE'
+        Visible = False
+      end
+    end
+    object cxGrid2Level1: TcxGridLevel
+      GridView = cxGrid2DBTableView1
+    end
+  end
+  object cxGrid1: TcxGrid
+    Left = 8
+    Top = 8
+    Width = 705
+    Height = 260
+    Margins.Right = 99
+    Anchors = [akLeft, akTop, akBottom]
+    TabOrder = 1
+    ExplicitHeight = 259
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      OnKeyDown = cxGrid1DBTableView1KeyDown
+      Navigator.Buttons.CustomButtons = <>
+      ScrollbarAnnotations.CustomAnnotations = <>
+      DataController.DataSource = dsVaga
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object cxGrid1DBTableView1ID: TcxGridDBColumn
+        DataBinding.FieldName = 'ID'
+      end
+      object cxGrid1DBTableView1NAZIV_VAGE: TcxGridDBColumn
+        Caption = 'Vaga'
+        DataBinding.FieldName = 'NAZIV_VAGE'
+        Width = 125
+      end
+      object cxGrid1DBTableView1ADRESA: TcxGridDBColumn
+        Caption = 'Adresa vage'
+        DataBinding.FieldName = 'ADRESA'
+        Width = 123
+      end
+      object cxGrid1DBTableView1AKTIVAN: TcxGridDBColumn
+        Caption = 'Aktivna'
+        DataBinding.FieldName = 'AKTIVAN'
+        Width = 141
+      end
+      object cxGrid1DBTableView1TIP_VAGE: TcxGridDBColumn
+        Caption = 'Tip vage'
+        DataBinding.FieldName = 'TIP_VAGE'
+        Width = 177
+      end
+      object cxGrid1DBTableView1MAGACIN: TcxGridDBColumn
+        Caption = 'Magacin'
+        DataBinding.FieldName = 'MAGACIN'
+        Width = 372
+      end
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
+  end
+  object FormaBox: TcxGroupBox
+    Left = 8
+    Top = 289
+    Anchors = [akLeft, akBottom]
+    TabOrder = 2
+    ExplicitTop = 288
+    Height = 388
+    Width = 705
+    object Pretraga: TEdit
+      Left = 3
+      Top = 10
+      Width = 529
+      Height = 23
+      ImeName = 'US'
+      TabOrder = 0
+      OnChange = PretragaChange
+      OnKeyDown = PretragaKeyDown
+    end
+    object btnTipVage: TcxButton
+      Left = 248
+      Top = 105
+      Width = 25
+      Height = 25
+      Caption = '...'
+      TabOrder = 1
+      OnClick = btnTipVageClick
+    end
+    object cbMagacin: TcxDBLookupComboBox
+      Left = 97
+      Top = 62
+      DataBinding.DataField = 'SIFRA_MAGACINA'
+      DataBinding.DataSource = dsVaga
+      ParentFont = False
+      Properties.GridMode = True
+      Properties.ImmediatePost = True
+      Properties.KeyFieldNames = 'SIFRA_MAGACINA'
+      Properties.ListColumns = <
+        item
+          FieldName = 'SIFRA_MAGACINA'
+        end
+        item
+          FieldName = 'MAGACIN'
+        end>
+      Properties.ListFieldIndex = 1
+      Properties.ListSource = dsMGSetup
+      Properties.MaxLength = 0
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -12
+      Style.Font.Name = 'Segoe UI'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 2
+      Width = 145
+    end
+    object cxDBCheckBox1: TcxDBCheckBox
+      Left = 343
+      Top = 261
+      Caption = 'Aktivan'
+      DataBinding.DataField = 'AKTIVAN'
+      DataBinding.DataSource = dsVaga
+      Enabled = False
+      ParentFont = False
+      Properties.Alignment = taRightJustify
+      Properties.ValueChecked = 1
+      Properties.OnChange = cxDBCheckBox1PropertiesChange
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -12
+      Style.Font.Name = 'Segoe UI'
+      Style.Font.Style = []
+      Style.TransparentBorder = False
+      Style.IsFontAssigned = True
+      TabOrder = 3
+      Transparent = True
+    end
+    object cxKomanda: TcxDBTextEdit
+      Left = 97
+      Top = 216
+      DataBinding.DataField = 'KOMANDA'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 4
+      Width = 145
+    end
+    object cxLabel1: TcxLabel
+      Left = 340
+      Top = 62
+      Caption = 'BAUD:'
+    end
+    object cxLabel2: TcxLabel
+      Left = 340
+      Top = 95
+      Caption = 'Parity:'
+    end
+    object cxLabel3: TcxLabel
+      Left = 13
+      Top = 183
+      Caption = 'Adresa:'
+    end
+    object cxLabel4: TcxLabel
+      Left = 13
+      Top = 223
+      Caption = 'Komanda:'
+    end
+    object cxLabel5: TcxLabel
+      Left = 13
+      Top = 271
+      Caption = 'Tip nalepnice:'
+    end
+    object cxLabel6: TcxLabel
+      Left = 459
+      Top = 98
+      Caption = 'StopBits:'
+    end
+    object cxLabel7: TcxLabel
+      Left = 326
+      Top = 135
+      Caption = 'Comport:'
+    end
+    object cxLabel8: TcxLabel
+      Left = 331
+      Top = 176
+      Caption = 'Databits:'
+    end
+    object cxPrekoFajla: TcxCheckBox
+      Left = 343
+      Top = 223
+      BiDiMode = bdRightToLeft
+      Caption = 'Pode'#353'avanje vaga preko fajla'
+      Enabled = False
+      ParentBiDiMode = False
+      Style.TransparentBorder = False
+      TabOrder = 13
+    end
+    object cxSveVage: TcxCheckBox
+      Left = 549
+      Top = 14
+      BiDiMode = bdRightToLeft
+      Caption = 'Svi artikli za sve vage'
+      ParentBiDiMode = False
+      Properties.OnChange = cxSveVagePropertiesChange
+      Style.TransparentBorder = False
+      TabOrder = 14
+    end
+    object dbTip_vage: TcxDBLookupComboBox
+      Left = 97
+      Top = 102
+      DataBinding.DataField = 'TIP_VAGE'
+      DataBinding.DataSource = dsVaga
+      ParentFont = False
+      Properties.GridMode = True
+      Properties.ImmediatePost = True
+      Properties.KeyFieldNames = 'TIP'
+      Properties.ListColumns = <
+        item
+          FieldName = 'ID'
+        end
+        item
+          FieldName = 'NAZIV'
+        end>
+      Properties.ListFieldIndex = 1
+      Properties.ListSource = dsTip_Vage
+      Properties.MaxLength = 50
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -12
+      Style.Font.Name = 'Segoe UI'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 15
+      Width = 145
+    end
+    object Dodaj: TcxButton
+      Left = 97
+      Top = 336
+      Width = 75
+      Height = 25
+      Caption = 'Dodaj'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        6100000023744558745469746C65004164643B46696C653B41646446696C653B
+        426172733B526962626F6E3B15DCAA0A000002E049444154785E65927F689555
+        18C73FE7BDEFBDCDFD52BBCAC6AC3FC67E68615830DB168DB491DBAC086566B8
+        612B35D655D141121B42E48FFE501B28669BD860FB4316CE864284DA2854C28A
+        A9685413993437595DC7D6DDDAEEDEF73DE7E9EECD3B821D78CEF71C9E733E7C
+        9F874701EAD0A99F7A14AC061004115080117F4766540C82C218F7FBBD91B272
+        11310036A0C4C8EA0FB63D0F0002B387B9570E9EF86115A00066019E18109876
+        34028800BE26210A0152420AED19E600B4A301D02290FC0C042C0502CA02E3E7
+        66201680DADF550180E5033C0D08227E801226E27F71E9D6715A7BDEE6F0F9B5
+        B47E5BC737D78FF1F4B22040A0697D37C6083EC0D506010C0AA5147F446FD0F6
+        5D84901DA0BAE4431AD79D65434283B6CDCDE801229F9656D98134CB73CDFF1D
+        8018884DFE49F7B583BCF94223E52B6A387FB593C6935B3877A583179757B0B1
+        AC81F9E194F6773E2ECA3B50DBA32CC0725C8D08584AB8FA6B27CFE5AE21279C
+        C368FC37EEDEEF636BE58984DE233A758B507A8CA2C2F28CB405A13D40C0F64B
+        987560B8DD7F859AAA77F9BCFB10030F1E20C092AC4C3C2D34B79D263B2B8392
+        E26C8C31AF033BFF2B41FB0E40C1586C84096ED27F7F906DAFB5B06FEB693C23
+        EC4FE8F186AF181A1C6378FA471C47870165270188F85DB55506A3B128E90B27
+        3976760B087C12F992A6CF3622C0FCC57146C727884FE991E41C589E0101DF66
+        414E31BFDFF985C295634C7B717ABF7E824599F3F05CCDCA37061081A1BE2013
+        31E722602C00ED6904782C6853595C4B6FEF20EEDFA96871487B7C92CD1F5591
+        16FE07573B8C465DFAAE3B93C3F7C69B010D90FAD6FB1D976B779F914DBBCEC8
+        919397E5687B8754EF79561ABE7846F65DCC97E69FF3129A27DB5B0A645DC372
+        5DB2FEC95A20F4EA8EC2D9694C0516000B813090BDB464D14B2FD7E57655D6E7
+        3FAC8C14C89AFAFC91559B73BB9E2A5B5C0ACC0354457D3E4A4448AEC44310B8
+        D072573D0207937D0204701F8579E5BD3C01F817E1E75F4F0B44B2A300000000
+        49454E44AE426082}
+      TabOrder = 16
+      OnClick = DodajClick
+    end
+    object dtbaud: TcxDBTextEdit
+      Left = 396
+      Top = 61
+      DataBinding.DataField = 'BAUD'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 17
+      Width = 181
+    end
+    object dteAdresa: TcxDBTextEdit
+      Left = 97
+      Top = 179
+      DataBinding.DataField = 'ADRESA'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 18
+      Width = 145
+    end
+    object dteComport: TcxDBTextEdit
+      Left = 396
+      Top = 139
+      DataBinding.DataField = 'COMPORT'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 19
+      Width = 181
+    end
+    object dteDatabits: TcxDBTextEdit
+      Left = 396
+      Top = 178
+      DataBinding.DataField = 'DATABITS'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 20
+      Width = 181
+    end
+    object dteNaziv_vage: TcxDBTextEdit
+      Left = 97
+      Top = 139
+      DataBinding.DataField = 'NAZIV_VAGE'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 21
+      Width = 145
+    end
+    object dteParity: TcxDBTextEdit
+      Left = 396
+      Top = 96
+      DataBinding.DataField = 'PARITY'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 22
+      Width = 48
+    end
+    object dteStopbits: TcxDBTextEdit
+      Left = 515
+      Top = 98
+      DataBinding.DataField = 'STOPBITS'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 23
+      Width = 62
+    end
+    object edPodrazumevanaVaga: TcxLabel
+      Left = 2
+      Top = 367
+      Align = alBottom
+      ParentFont = False
+    end
+    object Izlaz: TcxButton
+      Left = 13
+      Top = 336
+      Width = 75
+      Height = 25
+      Caption = 'Izlaz'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        6100000023744558745469746C650043616E63656C3B53746F703B457869743B
+        426172733B526962626F6E3B4C9696B20000038849444154785E1D906B4C5367
+        18C7FF3DBD40CB1A2E32B55C9D598B4CA675D8D13836652E9B0359B67D589665
+        3259E644A52571644474CB4CB6ECC23770C4449DD38D2885005E4683AB69C616
+        8DA12384264EC8AAAC0C9149A1175ACEE9E939CFDE9EE7E477F2CBFFB924E720
+        E6E943CC3B8895D12B00A0FEE3D08167A75A5BBAEEB71D9D081E6B4DA549FBDD
+        A3CEEFDD1F3658016818AA98A71FD1915E202DE980A19D741E3EF6E0F8A7FC7F
+        673B6979E002C5BC43B4C2581EB8480BE7BA68E6441BEF3B72F03300990C8E1D
+        5016554E7B55D6C1ED9543C6C2B5BB739FDF025988838424E4240F10A0D2EAA0
+        D26540AD37203CFE17C2C187A3EDBFDE7CF3DAD4748403A06EA8A8E830AC5FB3
+        3B7BAB1901B717AE23DFE1CEC5EBEC90A0E0EB71A3CFD981C0B017C6F252180B
+        D6BD74BCFA856E003A0CBDFD966DF250532AD4FF038DB734D18557DF21CFB08F
+        2E37B5D370ED5E72D7D52BEEF9654CE9F91C1FD392EB0C4D3A0E4BE7F6ECD909
+        CFDEFAD381AF4ED0A3D35FD399E272BA3F3D478F971234FD2044BDCE930AF798
+        CF2FAED0DF5373CACCFCA92F2970B29DDCAFD7F56B48945E918201C41738945A
+        2D581C7461ADA3192AB50AD64F9A010272730CC8D4AA313BE44289D58CF85D3F
+        2411504BB28D93845489145E041F9CC1863C09A11BD7E1EFEA86240339463DB2
+        B3F59025C0DFD98DD0C83594E6886C360831F408523265D208BC0021B20A35A7
+        82B8BC0429C2239A10D812417988007088B14C8A8421EA75A094044A8A48F200
+        17E78587629220B370E69F2884EA3750F07E23245946868E43A64EA3B8695F23
+        F8EA7A046763EC780AC9640AF155FEB1269AE0BD91AC8CFDF910108E26F15A5B
+        33788D1E860CF6CDE7CF225D45FB3F02A0C7CE36076E5CBD84825C3562A20E4B
+        097E0CAD051B5FFCA97C9BE4ABAEA05B2FDBE9E6BE0F880F8568FCDB0E1AA9AA
+        646C579C654AEF564D15FDB96333FDBCC94A8E751B6A0140DF5168B9E42A7B86
+        266AB6D2ED1A1BF559CAC853B58DFCB576F2D7D9D3AE64B777D96862D716EA2F
+        2BA76F4CE62B008C1A00C2F9C57F9D8DA2C99212C5E72C85323699F320A77FD2
+        72040021DF9885F56BF2204457706F9EC74C4CF2F744169A012430DBF21E00A8
+        2B754F98BEC82EEEED7AF2291A306FA451EBD3346633938FF13BF341969D62BD
+        CF738AAF6ED6EA4B006882CE77A14ABFD255D2799903606830E4EF28E274070C
+        1C67D74255041044C25C9CE43B4149F8B16735F41B8038DB9300E07F6924ECFB
+        01D589CC0000000049454E44AE426082}
+      TabOrder = 25
+      OnClick = IzlazClick
+    end
+    object Izmeni: TcxButton
+      Left = 178
+      Top = 337
+      Width = 75
+      Height = 25
+      Caption = 'Izmeni'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        6100000020744558745469746C6500456469743B426172733B526962626F6E3B
+        5374616E646172643B3013C3DB0000028449444154785E5D515D48145114FEEE
+        CE9AA662FE942B1499246108D94B106588D24B461914843DD443500FF590D81F
+        F550D443692F86A1A084AB581AD90F124260A4596AB14A96B556AC6192FDA045
+        AEB3BBCE9DB9B77BE732BBEA99F9CEB9C39CEF3BDF9C219C731042B496CEB167
+        9AA6157170C89045BE53C758A286D177F4C0A69D826700801B2A5C42A4E85069
+        2E9CE08B12711EE07DFC6907004DD16202C4B254834119B823C2559297BA092C
+        66D9FD4B05603135832D602BBEE348C134B923B0D40175BE3B4A8AED80280191
+        2D93D9FDAF6E6C4744A70B05542B63311224513A23CA8D26EAE6BC3400482C3C
+        DB6F00A02E47C0A41694650E0680896AC933E1F699886ACCCF636EB419DD97B6
+        FC6A3ABEB10A4092E300865A22989CCA17FF46108648288C89170DC84D1B41CE
+        E17BF0B7579CBAFE3DE88E3A60A6691319531305D462B920EB3AC69FD7211583
+        C8D9530DFAB5067F3E04A045CC93D11D50CA94804CB610E0727184F520023DF5
+        58A5F9B07E5F0DC21FABF1A6B907C8F4E0CBCFC9A69880A5044489EE7D6EF61F
+        C67BEA904986B0E1602D667D573174A70FD64A0FDA6E0FB77AC782179C25C2B2
+        991CC9091A92E25D6086B47D0B19F435F2CA6B31DD7BD19E1C4E4E87D7FBB65D
+        90CF0198761C987A48EFBD7CB3BF880358E34900D7032808FA905F598FA9AE4A
+        8C3E194638291D775BDFDFEF98089F01F0BBDCB3CC74362D9D2C1748115821B0
+        2E6FEB91879D0DD7B83E39C8BB8E65F3F613F9BC6C75FC0300D902EE40DB2EEC
+        CF888314588497D5DB00606D4149C58F77034F794BD5797EA538979766C53F02
+        902310E76F2C81BFB1187B5335B8B12422212A0BF9F67924ABB0AC6F8646FE0E
+        249A531D33A1F96E697B778A464F57F6AA8100FE037C7D7091F11B3976000000
+        0049454E44AE426082}
+      TabOrder = 26
+      OnClick = IzmeniClick
+    end
+    object Magacin: TcxLabel
+      Left = 11
+      Top = 62
+      Caption = 'Magacin:'
+    end
+    object naziv_vage: TcxLabel
+      Left = 13
+      Top = 136
+      Caption = 'Naziv vage:'
+    end
+    object obrisi: TcxButton
+      Left = 421
+      Top = 336
+      Width = 75
+      Height = 25
+      Caption = 'Obri'#353'i'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        424D360400000000000036000000280000001000000010000000010020000000
+        000000000000C40E0000C40E00000000000000000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBB4C02FFBB4C02FFBB4C
+        02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF8FFFEF9F4FFFEF5
+        EBFFFEF1E3FFFEECD8FFFEE7CEFFFDE3C4FFFDE1C1FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEF7
+        F0FFFEF3E7FFFEEEDBFFFEE8D0FFFEE5C8FFFDE1C1FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEF8
+        F2FFFEF4E9FFFEEFDEFFFEEAD4FFFEE6CBFFFDE2C3FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF831F00FF831F00FF831F
+        00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F
+        00FFBB4C02FFFFFFFFFF024702FFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEF8
+        F2FFFEF5EBFFFEF1E3FFFEEEDBFFFEEAD4FFFEE7CCFFFEE4C6FFFDE1C1FFFBDC
+        BBFFBB4C02FFFFFFFFFF024702FF024702FFFFFFFFFFFEFBF8FFFEFBF8FFFEF9
+        F4FFFEF7F0FFFEF3E7FFFEEFDEFFFEECD8FFFEE8D0FFFEE5C8FFFDE1C1FFFBDC
+        BBFFBB4C02FFFFFFFFFF024702FF828282FF024702FFFEFBF8FFFEFBF8FFFEFA
+        F6FFFEF7F0FFFEF3E7FFFEF0E0FFFEECD8FFFEE8D0FFFEE5C8FFFDE2C3FFFDE1
+        C1FFBB4C02FFFFFFFFFF024702FF024702FFFFFFFFFF831F00FF831F00FF831F
+        00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F00FF831F
+        00FFBB4C02FFFFFFFFFF024702FFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEF8
+        F2FFFEF3E7FFFEEEDBFFFEEAD4FFFEE5C8FFFDE1C1FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEFA
+        F6FFFEF5EBFFFEF0E0FFFEEAD4FFFEE6CBFFFDE1C1FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBF8FFFEFBF8FFFEFB
+        F8FFFEF7F0FFFEF3E7FFFEEEDBFFFEE8D0FFFEE4C6FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBB4C02FFBB4C02FFBB4C
+        02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFBB4C02FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      TabOrder = 29
+      OnClick = obrisiClick
+    end
+    object odustani: TcxButton
+      Left = 340
+      Top = 336
+      Width = 75
+      Height = 25
+      Caption = 'Odustani'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        6100000011744558745469746C650052657365743B556E646F3B138116FF0000
+        00CB49444154785EA5D3310AC2301480E12C820E76A883B8084A2FE02A387800
+        EFE05284827807AF21DE41C1C145410441477170AB8283ABD8518CBF60E00DB5
+        A4EDF00DE1F5FD904294D63A17D51B2FA52266D078630495441ECA5889E500CA
+        36E0622F967D28DB400D27E80411AE58208023036BE894EEE898401DE70C9108
+        9EB94B154768BCD0878254400B5B1199CA0F5C1CC48F1C40C56888C0C50C0C07
+        1B1119C645E435C4C09A2702619A40055DEC44606213D07F3CD1CC1AB8A10D65
+        1B7820C41C3E4A669EFB397F009A8D113DBE0329980000000049454E44AE4260
+        82}
+      TabOrder = 30
+      OnClick = odustaniClick
+    end
+    object posalji: TcxButton
+      Left = 583
+      Top = 336
+      Width = 93
+      Height = 25
+      Caption = 'Po'#353'alji'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        424D360900000000000036000000280000001800000018000000010020000000
+        000000000000C40E0000C40E00000000000000000000FFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFEFFE5E5E5FFECECECFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2F6F2FF469D46FF879D87FFF1F1
+        F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4F4F4FF5EB45FFF39AB3AFF90A3
+        90FFF1F1F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2D9D2FF90A1
+        8FFF8C9D8CFF8D9E8DFF8D9F8DFF8FA08FFF839683FF55A956FF30B731FF239D
+        23FF92A692FFF1F1F1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF82D182FF70CB
+        72FF48BC4DFF45BA49FF41B844FF3DB63FFF36B238FF3DB13FFF1AA51CFF16A8
+        17FF279D27FF99AA99FFF4F4F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF89B38AFF93E2
+        96FF52C258FF41BB47FF3BB840FF34B439FF2DB031FF23AB26FF1AA61DFF11A2
+        13FF19A919FF2A9C2AFF9FAE9FFFF5F5F5FFFFFFFFFFC9C7C5FFB5B2AFFFB5B2
+        B0FFB5B2B0FFB6B2AFFFB5B2B0FFB5B2B0FFB6B2AFFFC1BDBCFF6C9367FF8DE1
+        93FF60C767FF4EBF54FF3DB842FF34B33AFF2EB032FF28AD2BFF21AA24FF1AA6
+        1DFF11A113FF19AA1AFF2B992BFFA0AFA0FFF7F7F7FFE1BEA5FFDBBBA2FFE6BA
+        8EFFE0BA9AFFD7B9A6FFE4BA92FFE4BA92FFD6B8A6FFEBBAA3FF86B058FF84D7
+        8FFF68CA6FFF62C768FF54C15AFF43BA49FF37B53CFF2DB032FF27AC2AFF20A9
+        23FF18A51BFF11A313FF28B228FF5CA35CFFFAFAFAFFF2D4BBFFFAE2CDFFFEE2
+        C4FFFCE2CAFFF8E2CFFFFDE2C6FFFDE2C6FFF7E2CFFFFFE6D5FF91C574FF85D5
+        8EFF6BCC73FF64C96BFF5DC564FF54C15AFF49BC4EFF3DB642FF37B33BFF2DAF
+        31FF26AD2AFF2FB332FF4DA24DFFE4E7E4FFFFFFFFFFF3D8BDFFFDF0E3FFFDEE
+        DFFFFEF1E3FFFEF2E5FFFDF1E5FFFDF1E5FFFEF1E4FFFFF6F1FF8ECC82FF99DE
+        A1FF91DB99FF8AD791FF83D489FF7CD182FF76CF7BFF6CC970FF49BB4EFF42B9
+        46FF42B845FF429C40FFDFE2DFFFFFFFFFFFFFFFFFFFF1D5B7FFF2DFCCFFF9EB
+        DDFFFFF5EBFFFFF5EBFFFFF6EEFFFFF6EEFFFFF6EEFFFFFDFDFF8FCF86FF68C1
+        69FF79CC7AFF74C975FF73C873FF71C872FF6FC46EFF8CD38DFF63C768FF46BA
+        4DFF67B759FF979685FFFFFFFFFFFFFFFFFFFFFFFFFFF7DDC4FFFCEDDCFFF0D8
+        BDFFF4E3D2FFFEF7F0FFFFF7EEFFFFF5ECFFFFF8EFFFFFF7EFFFE7DCC2FFCCCA
+        A1FFD6DFBDFFDCEBCEFFDBE8CAFFDCEACEFFC3E0B5FF6AC56BFF6CCA75FF56AF
+        52FFE5EBCDFFAB9D97FFFFFFFFFFFFFFFFFFFFFFFFFFF6DBC2FFFFF3E6FFFDE9
+        D4FFF3D8BBFFEFD8C0FFFAF3EBFFFFFCF8FFFDF1E6FFF0DBC6FFF8EADFFFFFF6
+        F3FFF7E0D0FFFEE8DBFFFFFCF9FFFFFFFFFFDFDFC4FF5ABD5CFF68B866FFD7DD
+        BAFFFFFEF2FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFF6DBC2FFFFF2E4FFFDE9
+        D5FFFCE4CCFFF6D7B7FFEED0B0FFF1E1D0FFF0DDCAFFF7EDE3FFFFF8F0FFFFF6
+        ECFFFEF8F1FFF1E1D0FFF1E1D0FFF1D8C1FFE4CBA3FF70B95AFFD3D9B0FFFFF0
+        E2FFFFF9E8FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFF6DBC2FFFFF2E4FFFDE9
+        D4FFFBE3CBFFFADEC1FFEFCBA5FFEAD0B5FFFBF3E9FFFFF5E9FFFFF2E5FFFFF3
+        E8FFFFF5EBFFFFFAF4FFF3E3D3FFE8C5A0FFF8D5B3FFFFE3CDFFFFE8D2FFFEEC
+        D9FFFFF9E8FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFF6DBC2FFFFF2E4FFFDEA
+        D5FFFBE3C9FFEFD0B0FFF1DCC8FFFEF4EBFFFFF2E3FFFFF2E4FFFFF4E9FFFFF5
+        EAFFFFF5EBFFFFF5EBFFFFFAF2FFF8EDE1FFECCFB1FFF5D8BAFFFDE8D0FFFEEC
+        D9FFFFF9E8FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFF6DBC2FFFFF4E7FFFBE6
+        D0FFEED3B6FFF4E3D2FFFFF3E6FFFFEFDEFFFFF1E3FFFFF3E7FFFFF4EAFFFFF5
+        EBFFFFF5ECFFFFF6ECFFFFF6ECFFFFF8F0FFFBF1E7FFEED5BCFFF4D9BDFFFFEE
+        DCFFFFFAE9FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFF7DDC4FFFBEBDAFFEED5
+        BBFFF7E8D8FFFFF0E0FFFFEEDBFFFFF1E2FFFFF2E6FFFFF4E9FFFFF5EAFFFFF5
+        ECFFFFF6ECFFFFF6EDFFFFF6EDFFFFF6ECFFFFF7EEFFFDF4EBFFF0DAC3FFF2D8
+        BDFFFFF9E8FFA59B93FFFFFFFFFFFFFFFFFFFFFFFFFFF1D4B7FFF1DDC8FFFBEC
+        DDFFFFECD9FFFFECD8FFFFF0E1FFFFF2E5FFFFF4E7FFFFF4EAFFFFF5ECFFFFF6
+        ECFFFFF6ECFFFFF6EEFFFFF6EDFFFFF6EDFFFFF6EDFFFFF6EDFFFFF7EEFFF3E0
+        CCFFFBE3C9FFA49B92FFFFFFFFFFFFFFFFFFFFFFFFFFEED4BEFFFCF3ECFFFFEB
+        D4FFFFEDDBFFFBEFE8FFFFF2E4FFFFF4E7FFFAF4F2FFFEF6F0FFFFF6EAFFFDF7
+        F4FFFBF6F5FFFFF7ECFFFFF9F1FFF9F5F7FFFFF8F0FFFFF7EDFFFBF6F5FFFEF9
+        F7FFFFF4E2FFA1978EFFFFFFFFFFFFFFFFFFFFFFFFFFEED0B5FFF2D6BEFFF5D5
+        B3FFF3D7BDFFEFD6C2FFF5D7BBFFF5D8BCFFEFD7C5FFF3D8C1FFF5D8BAFFF1D9
+        C4FFEFD8C4FFF5D8BCFFF5DAC0FFEDD6C6FFF5DABFFFF5D9BDFFEFD8C5FFF2D9
+        C4FFFCE2C2FFB7ADA3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      TabOrder = 31
+      OnClick = posaljiClick
+    end
+    object snimi: TcxButton
+      Left = 259
+      Top = 337
+      Width = 75
+      Height = 25
+      Caption = 'Snimi'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        610000000B744558745469746C6500536176653BF9E8F9090000020349444154
+        785E7D52316B145110FEDEE6EE9A03EF2E57284A6C6DAC42C0262185829D0A36
+        16820AFE010BADC47F60AB2022585A588875B01041822158D858081204956872
+        DC5DD6DD3733CF99D93DD713CCC0F7BEF776E7FB66E6ED0654912982633EFCFC
+        9F67A2603B2CAC9DBFB2810CEB4B274EE1E4D271B0303832A24450A94C113112
+        2846ECED8F301A7DB59CD76F379E9F6D9901425A5F3DB38C4F9FC7B87BE70690
+        60E1E49C80BC886049B87EF33656964F6373EBFD1A8096190466017352B0ABA6
+        BF22C4D5C9C5972E5CD632010F1F3F0553C4CECE17088B8F9ED99292B898884C
+        EFE2548B270711D942867E7F114717BB9E0308582A83962D2C6EE0EE2925EFA6
+        245671899205ED561B9D4EA77EC7CA6D887063904CCCE29735C923BEEF4F91C4
+        A771DC7FF008C7865DEF88896B23FA6310BC03226FEFEAB55B9A203E63823143
+        5490445C3883D05F23F8FCC228F26F180C06B3CB730059BD57866F20229EDF18
+        D42358BC78F60487C5EAB98B5A6408E63903B1F6BD358B9FE302F06D729610BC
+        B2AE20B63CF9D780602072579FB9F98B6082E6DF8D044932FF156CA648EC89F7
+        5E7E844802299851B3C26667F30BCAF31D043B3091DFC3917E0F5C895C1C4D3C
+        03E095C79303A4CA20984111CBFCDDE6D6F6CA70D0C39B571F2A7164AF129589
+        14C65E59B0FB631765596C03C8030033E929BA8A0C4D8443F6A2982AF67E037E
+        F6AC9379188DF20000000049454E44AE426082}
+      TabOrder = 32
+      OnClick = snimiClick
+    end
+    object stampa: TcxButton
+      Left = 502
+      Top = 336
+      Width = 75
+      Height = 25
+      Caption = #352'tampa'
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+        610000000C744558745469746C65005072696E743BC83632EA00000267494441
+        54785E7D93CB6B135114C6BF99C434A60F05698B1B5716752582E84AAD2822B6
+        88B8101F50B45441210BEBC285150591A250A326462AA218F20FB810178A482C
+        AD165AD0958216051F68D1966426F3B82FCFDCCC0C71512F7C73EE3DDCEF77EE
+        DC87A19442D40C6AB74A332F4CD3EC05745E7FA33982F1CAF0E0D65D34E69127
+        897F9B49EA3D7374A376AA901041F2E5D9ED0012A4A5019C0B28092C5A5E58D9
+        808244476B0B38135111C4005AB55E7D587D191712928C147579052308908272
+        5C03D2E4610064A0C0648E8E5776DF2EBF7D33385CB0BF7C7E0F2915494288C0
+        28C0833E69EEE33B1C3E35FA67ECE1CCF4C5DCD33D0012C9E0B33CD3513EB477
+        6DD744E54930D4D5852008240CD55807A3B1EB3AB0EC1A8EF4ADDF547A2C4B00
+        D66880E0AAAB7B550675CB42329186904A5754A119000125015C38561DAB3B33
+        604C75462B303D5F5042229D4AE0E78FEF3878EC4274046150210C686F4BE8B9
+        9EC7D00460700832347000378B252C2C542145E0931AA1A4D23BBC72453B4E0F
+        1D87C3380138026F03E032D409D2B3A107C5FC95C6A1C8F0084D8A8D0C744602
+        B6CB41459B003E47CDE1A8D7194E666FE07FED5EFE2C7C9102F385E60600C3F7
+        04AA1643D576B0BFBF0FD981CD284CCDEBCD6402641038BFA31BC5F22C7E2FDA
+        A03F81CF1A0013009BFFF5753277E719EE8E3F070FCFDD63244E002E29070DE3
+        D4B976BD8C91CB0FF0E9C3E46B10C708EF762BA985D43632F6722E7B628BDE79
+        4087F846161E4DE3EAB99DEB0054490EC94E2AA54490085FA3655BD6ABDCFDA9
+        6DF1B6A9F8ADC2756B1300BE91C75EEA31F9B94BFDFB00A44866EC44FCB23D92
+        DB6CF80BF54A6944F3A08E160000000049454E44AE426082}
+      TabOrder = 33
+      OnClick = stampaClick
+    end
+    object tip_nalepnice: TcxDBTextEdit
+      Left = 96
+      Top = 266
+      DataBinding.DataField = 'TIP_NALEPNICE'
+      DataBinding.DataSource = dsVaga
+      TabOrder = 34
+      Width = 145
+    end
+    object tip_vage: TcxLabel
+      Left = 13
+      Top = 103
+      Caption = 'Tip vage:'
+    end
+  end
+  object sdsVaga: TSQLDataSet
+    CommandText = 
+      'select V.ID,'#13#10'       V.TIP_VAGE,'#13#10'       V.NAZIV_VAGE,'#13#10'       V' +
+      '.ADRESA,'#13#10'       V.SIFRA_MAGACINA,'#13#10'       V.RADNIK_CHANGE,'#13#10'   ' +
+      '    V.DATE_CHANGE,'#13#10'       V.AKTIVAN,'#13#10'       V.BROJ_KARAKTERA,'#13 +
+      #10'       V.COMPORT,'#13#10'       V.PARITY,'#13#10'       V.STOPBITS,'#13#10'      ' +
+      ' V.DATABITS,'#13#10'       V.BAUD,'#13#10'       V.AUTOMATSKA_VAGA,'#13#10'       ' +
+      'V.TIP_NALEPNICE,'#13#10'       V.KOMANDA,'#13#10'       T.NAZIV,'#13#10'       M.M' +
+      'AGACIN'#13#10'from VAGA V'#13#10'join VAGA_TIP T on V.TIP_VAGE = T.ID'#13#10'left ' +
+      'join TBLMAGACIN M on V.SIFRA_MAGACINA = M.SIFRA_MAGACINA'#13#10'order ' +
+      'by V.NAZIV_VAGE'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = Konekcija_lokal
+    Left = 32
+    Top = 96
+    object sdsVagaNAZIV_VAGE: TStringField
+      FieldName = 'NAZIV_VAGE'
+      Size = 255
+    end
+    object sdsVagaADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 255
+    end
+    object sdsVagaAKTIVAN: TSmallintField
+      FieldName = 'AKTIVAN'
+    end
+    object sdsVagaTIP_VAGE: TIntegerField
+      FieldName = 'TIP_VAGE'
+    end
+    object sdsVagaMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      ProviderFlags = []
+      Size = 50
+    end
+    object sdsVagaID: TIntegerField
+      FieldName = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object sdsVagaSIFRA_MAGACINA: TIntegerField
+      FieldName = 'SIFRA_MAGACINA'
+    end
+    object sdsVagaRADNIK_CHANGE: TIntegerField
+      FieldName = 'RADNIK_CHANGE'
+    end
+    object sdsVagaDATE_CHANGE: TSQLTimeStampField
+      FieldName = 'DATE_CHANGE'
+    end
+    object sdsVagaBROJ_KARAKTERA: TSmallintField
+      FieldName = 'BROJ_KARAKTERA'
+    end
+    object sdsVagaCOMPORT: TSmallintField
+      FieldName = 'COMPORT'
+    end
+    object sdsVagaPARITY: TSmallintField
+      FieldName = 'PARITY'
+    end
+    object sdsVagaSTOPBITS: TSmallintField
+      FieldName = 'STOPBITS'
+    end
+    object sdsVagaDATABITS: TSmallintField
+      FieldName = 'DATABITS'
+    end
+    object sdsVagaBAUD: TIntegerField
+      FieldName = 'BAUD'
+    end
+    object sdsVagaAUTOMATSKA_VAGA: TSmallintField
+      FieldName = 'AUTOMATSKA_VAGA'
+    end
+    object sdsVagaTIP_NALEPNICE: TStringField
+      FieldName = 'TIP_NALEPNICE'
+      Size = 5
+    end
+    object sdsVagaKOMANDA: TStringField
+      FieldName = 'KOMANDA'
+      Size = 512
+    end
+    object sdsVagaNAZIV: TStringField
+      FieldName = 'NAZIV'
+      ProviderFlags = []
+      Size = 255
+    end
+  end
+  object dspVaga: TDataSetProvider
+    DataSet = sdsVaga
+    UpdateMode = upWhereKeyOnly
+    OnGetTableName = dspVagaGetTableName
+    Left = 88
+    Top = 96
+  end
+  object cdsVaga: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspVaga'
+    OnNewRecord = cdsVagaNewRecord
+    OnReconcileError = cdsVagaReconcileError
+    Left = 264
+    Top = 96
+    object cdsVagaNAZIV_VAGE: TStringField
+      FieldName = 'NAZIV_VAGE'
+      Size = 255
+    end
+    object cdsVagaADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 255
+    end
+    object cdsVagaAKTIVAN: TSmallintField
+      FieldName = 'AKTIVAN'
+    end
+    object cdsVagaTIP_VAGE: TIntegerField
+      FieldName = 'TIP_VAGE'
+    end
+    object cdsVagaMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      Size = 50
+    end
+    object cdsVagaID: TIntegerField
+      FieldName = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object cdsVagaSIFRA_MAGACINA: TIntegerField
+      FieldName = 'SIFRA_MAGACINA'
+    end
+    object cdsVagaRADNIK_CHANGE: TIntegerField
+      FieldName = 'RADNIK_CHANGE'
+    end
+    object cdsVagaDATE_CHANGE: TSQLTimeStampField
+      FieldName = 'DATE_CHANGE'
+    end
+    object cdsVagaBROJ_KARAKTERA: TSmallintField
+      FieldName = 'BROJ_KARAKTERA'
+    end
+    object cdsVagaCOMPORT: TSmallintField
+      FieldName = 'COMPORT'
+    end
+    object cdsVagaPARITY: TSmallintField
+      FieldName = 'PARITY'
+    end
+    object cdsVagaSTOPBITS: TSmallintField
+      FieldName = 'STOPBITS'
+    end
+    object cdsVagaDATABITS: TSmallintField
+      FieldName = 'DATABITS'
+    end
+    object cdsVagaBAUD: TIntegerField
+      FieldName = 'BAUD'
+    end
+    object cdsVagaAUTOMATSKA_VAGA: TSmallintField
+      FieldName = 'AUTOMATSKA_VAGA'
+    end
+    object cdsVagaTIP_NALEPNICE: TStringField
+      FieldName = 'TIP_NALEPNICE'
+      Size = 5
+    end
+    object cdsVagaKOMANDA: TStringField
+      FieldName = 'KOMANDA'
+      Size = 512
+    end
+    object cdsVagaNAZIV: TStringField
+      FieldName = 'NAZIV'
+      ProviderFlags = []
+      Size = 255
+    end
+  end
+  object dsVaga: TDataSource
+    DataSet = cdsVaga
+    OnDataChange = dsVagaDataChange
+    Left = 320
+    Top = 96
+  end
+  object Konekcija: TSQLConnection
+    ConnectionName = 'bat_2006'
+    DriverName = 'FIREBIRD'
+    LoadParamsOnConnect = True
+    LoginPrompt = False
+    Params.Strings = (
+      'drivername=FIREBIRD'
+      'blobsize=-1'
+      'commitretain=False'
+      'Database=26.213.22.75:C:\bus\tmp\VIVABELA_SERVER.fdb')
+    Left = 520
+    Top = 88
+  end
+  object sdsTip_Vage: TSQLDataSet
+    CommandText = 'select *'#13#10'from vaga_tip t'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = Konekcija_lokal
+    Left = 32
+    Top = 168
+    object sdsTip_VageID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object sdsTip_VageTIP: TIntegerField
+      FieldName = 'TIP'
+    end
+    object sdsTip_VageNAZIV: TStringField
+      FieldName = 'NAZIV'
+      Size = 255
+    end
+  end
+  object dspTip_Vage: TDataSetProvider
+    DataSet = sdsTip_Vage
+    UpdateMode = upWhereKeyOnly
+    Left = 96
+    Top = 168
+  end
+  object cdsTip_Vage: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspTip_Vage'
+    Left = 176
+    Top = 168
+    object cdsTip_VageID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object cdsTip_VageTIP: TIntegerField
+      FieldName = 'TIP'
+    end
+    object cdsTip_VageNAZIV: TStringField
+      FieldName = 'NAZIV'
+      Size = 255
+    end
+  end
+  object dsTip_Vage: TDataSource
+    DataSet = cdsTip_Vage
+    Left = 248
+    Top = 168
+  end
+  object cdsArtikli: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspArtikli'
+    Left = 896
+    Top = 136
+    object cdsArtikliKOD: TStringField
+      FieldName = 'KOD'
+      Required = True
+    end
+    object cdsArtikliARTIKAL: TStringField
+      FieldName = 'ARTIKAL'
+      Size = 255
+    end
+    object cdsArtikliID_VAGE: TIntegerField
+      FieldName = 'ID_VAGE'
+    end
+    object cdsArtikliKOD_1: TStringField
+      FieldName = 'KOD_1'
+    end
+    object cdsArtikliPLU: TStringField
+      FieldName = 'PLU'
+      Size = 22
+    end
+    object cdsArtikliCENA: TFMTBCDField
+      FieldName = 'CENA'
+      Precision = 18
+      Size = 4
+    end
+  end
+  object dspArtikli: TDataSetProvider
+    DataSet = sdsArtikli
+    Left = 824
+    Top = 136
+  end
+  object sdsArtikli: TSQLDataSet
+    CommandText = 
+      'select A.KOD,'#13#10'       A.ARTIKAL,'#13#10'       V.ID_VAGE,'#13#10'       V.KO' +
+      'D,'#13#10'       case'#13#10'         when V.PLU is not null then V.PLU'#13#10'   ' +
+      '      else A.KOD_INFO'#13#10'       end as PLU,'#13#10'       (select C.CENA' +
+      #13#10'        from cena_artikla_iz_cenovnika(A.SIFRA_ROBE, (select m' +
+      '.id_cenovnik from tblmagacin m where m.sifra_magacina = :sm), :D' +
+      'ATUM) C)'#13#10'from TBLARTIKLI A'#13#10'left join TBLARTIKLI_VAGA V on A.SI' +
+      'FRA_ROBE = V.SIFRA_ROBE and'#13#10'      (V.ID_VAGE = :ID or :ID = -1)' +
+      #13#10'where A.VAGA = 1'#13#10'and (select C.CENA'#13#10'        from cena_artikl' +
+      'a_iz_cenovnika(A.SIFRA_ROBE, (select m.id_cenovnik from tblmagac' +
+      'in m where m.sifra_magacina = :sm), :DATUM) C) > 0'
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'sm'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'DATUM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'sm'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftDate
+        Name = 'DATUM'
+        ParamType = ptInput
+      end>
+    SQLConnection = Konekcija_lokal
+    Left = 760
+    Top = 136
+    object sdsArtikliKOD: TStringField
+      FieldName = 'KOD'
+      Required = True
+    end
+    object sdsArtikliARTIKAL: TStringField
+      FieldName = 'ARTIKAL'
+      Size = 255
+    end
+    object sdsArtikliID_VAGE: TIntegerField
+      FieldName = 'ID_VAGE'
+    end
+    object sdsArtikliKOD_1: TStringField
+      FieldName = 'KOD_1'
+    end
+    object sdsArtikliPLU: TStringField
+      FieldName = 'PLU'
+      Size = 22
+    end
+    object sdsArtikliCENA: TFMTBCDField
+      FieldName = 'CENA'
+      Precision = 18
+      Size = 4
+    end
+  end
+  object dsArtikli: TDataSource
+    DataSet = cdsArtikli
+    Left = 968
+    Top = 136
+  end
+  object dsMGSetup: TDataSource
+    DataSet = cdsMGSetup
+    Left = 1024
+    Top = 368
+  end
+  object cdsMGSetup: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspMGSetup'
+    Left = 952
+    Top = 368
+    object cdsMGSetupSIFRA_MAGACINA: TIntegerField
+      FieldName = 'SIFRA_MAGACINA'
+      Required = True
+    end
+    object cdsMGSetupMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      Size = 50
+    end
+  end
+  object dspMGSetup: TDataSetProvider
+    DataSet = dsetMGSetup
+    Left = 864
+    Top = 368
+  end
+  object dsetMGSetup: TSQLDataSet
+    CommandText = 
+      'select M.*'#13#10'from TBLMAGACIN M'#13#10'where (M.SIFRA_MAGACINA = :SM or ' +
+      ':SM = -1)'
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'SM'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'SM'
+        ParamType = ptInput
+      end>
+    SQLConnection = Konekcija_lokal
+    Left = 776
+    Top = 368
+    object dsetMGSetupSIFRA_MAGACINA: TIntegerField
+      FieldName = 'SIFRA_MAGACINA'
+      Required = True
+    end
+    object dsetMGSetupMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      Size = 50
+    end
+  end
+  object qID_vage: TSQLQuery
+    DataSource = dsVaga
+    MaxBlobSize = -1
+    Params = <>
+    SQL.Strings = (
+      'select max(ID)+1 as ID'
+      'from vaga')
+    SQLConnection = Konekcija_lokal
+    Left = 416
+    Top = 96
+    object qID_vageID: TLargeintField
+      FieldName = 'ID'
+    end
+  end
+  object frxReport1: TfrxReport
+    Version = '2021.3'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43777.362509432870000000
+    ReportOptions.LastChange = 43777.409182256950000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 609
+    Top = 88
+    Datasets = <
+      item
+      end
+      item
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 71.811070000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object frxVagaNAZIV_VAGE: TfrxMemoView
+          AllowVectorExport = True
+          Width = 400.630180000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Vaga: [frxVaga."NAZIV_VAGE"]')
+          ParentFont = False
+        end
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 60.472480000000000000
+          Top = 41.574830000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Plu vage')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 154.960730000000000000
+          Top = 41.574830000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Kod artikla')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 257.008040000000000000
+          Top = 41.574830000000000000
+          Width = 222.992270000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Artikal')
+          ParentFont = False
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Top = 41.574830000000000000
+          Width = 41.574830000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Rbr')
+          ParentFont = False
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Top = 60.472480000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 638.740570000000000000
+          Top = 41.574830000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cena')
+          ParentFont = False
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 230.551330000000000000
+        Width = 718.110700000000000000
+        object SysMemo2: TfrxSysMemoView
+          AllowVectorExport = True
+          Top = 3.779530000000000000
+          Width = 90.708720000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DATE]')
+          ParentFont = False
+        end
+        object SysMemo3: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 94.488250000000000000
+          Top = 3.779530000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[TIME]')
+          ParentFont = False
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 18.897650000000000000
+        Top = 151.181200000000000000
+        Width = 718.110700000000000000
+        RowCount = 0
+        object frxArtVagaKOD: TfrxMemoView
+          AllowVectorExport = True
+          Left = 154.960730000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'KOD'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxArtVaga."KOD"]')
+          ParentFont = False
+        end
+        object frxArtVagaPLU: TfrxMemoView
+          AllowVectorExport = True
+          Left = 60.472480000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'PLU'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxArtVaga."PLU"]')
+          ParentFont = False
+        end
+        object frxArtVagaARTIKAL: TfrxMemoView
+          AllowVectorExport = True
+          Left = 257.008040000000000000
+          Width = 362.834880000000000000
+          Height = 18.897650000000000000
+          DataField = 'ARTIKAL'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxArtVaga."ARTIKAL"]')
+          ParentFont = False
+        end
+        object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = -3.779530000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[LINE#]')
+          ParentFont = False
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Top = 18.897650000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Style = fsDot
+          Frame.Typ = [ftTop]
+        end
+        object frxArtVagaCENA: TfrxMemoView
+          AllowVectorExport = True
+          Left = 638.740570000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          DataField = 'CENA'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Colaba'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[frxArtVaga."CENA"]')
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object sp_idvage: TSQLStoredProc
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftInteger
+        Precision = 4
+        Name = 'ID'
+        ParamType = ptOutput
+        Size = 4
+      end>
+    SQLConnection = Konekcija
+    StoredProcName = 'SP_GEN_VAGA_ID'
+    Left = 392
+    Top = 160
+  end
+  object frxVaga: TfrxDBDataset
+    UserName = 'frxVaga'
+    CloseDataSource = False
+    DataSet = cdsVaga
+    BCDToCurrency = False
+    DataSetOptions = []
+    Left = 649
+    Top = 144
+  end
+  object ds_fis: TDataSource
+    DataSet = cdsfis
+    Left = 1008
+    Top = 295
+  end
+  object cdsfis: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dsp_fis'
+    Left = 957
+    Top = 295
+    object cdsfisID: TIntegerField
+      FieldName = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object cdsfisFISKAL: TIntegerField
+      FieldName = 'FISKAL'
+    end
+    object cdsfisSIFRA_DEFAULT_KUPCA: TIntegerField
+      FieldName = 'SIFRA_DEFAULT_KUPCA'
+    end
+    object cdsfisSPECIJALNI_SLUCAJ: TIntegerField
+      FieldName = 'SPECIJALNI_SLUCAJ'
+    end
+    object cdsfisAUTO_DATUM: TStringField
+      FieldName = 'AUTO_DATUM'
+      FixedChar = True
+      Size = 1
+    end
+    object cdsfisROBNO: TStringField
+      FieldName = 'ROBNO'
+      FixedChar = True
+      Size = 1
+    end
+    object cdsfisSIRINA_DUGMETA: TIntegerField
+      FieldName = 'SIRINA_DUGMETA'
+    end
+    object cdsfisVISINA_DUGMETA: TIntegerField
+      FieldName = 'VISINA_DUGMETA'
+    end
+    object cdsfisDEF_MP_MG: TIntegerField
+      FieldName = 'DEF_MP_MG'
+    end
+    object cdsfisKOMITENT: TStringField
+      FieldName = 'KOMITENT'
+      ProviderFlags = []
+      Size = 255
+    end
+    object cdsfisMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      ProviderFlags = []
+      Size = 50
+    end
+    object cdsfisPERIOD_SLANJA_PODATAKA: TIntegerField
+      FieldName = 'PERIOD_SLANJA_PODATAKA'
+    end
+    object cdsfisSIFRA_ROBE_VIP: TIntegerField
+      FieldName = 'SIFRA_ROBE_VIP'
+    end
+    object cdsfisSIFRA_ROBE_TELENOR: TIntegerField
+      FieldName = 'SIFRA_ROBE_TELENOR'
+    end
+    object cdsfisSIFRA_ROBE_TELEKOM: TIntegerField
+      FieldName = 'SIFRA_ROBE_TELEKOM'
+    end
+    object cdsfisSMS_SERVIS_ADRESA: TStringField
+      FieldName = 'SMS_SERVIS_ADRESA'
+      Size = 15
+    end
+    object cdsfisSMS_SERVIS_PORT: TSmallintField
+      FieldName = 'SMS_SERVIS_PORT'
+    end
+    object cdsfisSMS_SERVIS_TERMINAL_FIRMWARE: TSmallintField
+      FieldName = 'SMS_SERVIS_TERMINAL_FIRMWARE'
+    end
+    object cdsfisSMS_OPERATER_VIP: TSmallintField
+      FieldName = 'SMS_OPERATER_VIP'
+    end
+    object cdsfisSMS_OPERATER_TELENOR: TSmallintField
+      FieldName = 'SMS_OPERATER_TELENOR'
+    end
+    object cdsfisSMS_OPERATER_TELEKOM: TSmallintField
+      FieldName = 'SMS_OPERATER_TELEKOM'
+    end
+    object cdsfisSMS_SERVIS_TERMINAL: TStringField
+      FieldName = 'SMS_SERVIS_TERMINAL'
+    end
+    object cdsfisSMS_SERVIS_TERMINAL_PASSWORD: TStringField
+      FieldName = 'SMS_SERVIS_TERMINAL_PASSWORD'
+    end
+    object cdsfisVREME_KRETANJA: TIntegerField
+      FieldName = 'VREME_KRETANJA'
+    end
+    object cdsfisSIRINA_FORME_PROD: TIntegerField
+      FieldName = 'SIRINA_FORME_PROD'
+    end
+    object cdsfisFONT_FORME_PROD: TIntegerField
+      FieldName = 'FONT_FORME_PROD'
+    end
+    object cdsfisFISKAL_AKTIVAN: TIntegerField
+      FieldName = 'FISKAL_AKTIVAN'
+    end
+    object cdsfisSTART_PREBACIVANJA_PODATAKA: TSQLTimeStampField
+      FieldName = 'START_PREBACIVANJA_PODATAKA'
+    end
+    object cdsfisMINIZNOS_VIP: TFMTBCDField
+      FieldName = 'MINIZNOS_VIP'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisMINIZNOS_TELENOR: TFMTBCDField
+      FieldName = 'MINIZNOS_TELENOR'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisMINIZNOS_TELEKOM: TFMTBCDField
+      FieldName = 'MINIZNOS_TELEKOM'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisSIRINA_DUGMETA_STO: TIntegerField
+      FieldName = 'SIRINA_DUGMETA_STO'
+    end
+    object cdsfisVISINA_DUGMETA_STO: TIntegerField
+      FieldName = 'VISINA_DUGMETA_STO'
+    end
+    object cdsfisBOJA_REZERVISANO: TIntegerField
+      FieldName = 'BOJA_REZERVISANO'
+    end
+    object cdsfisBOJA_BORAVKA: TIntegerField
+      FieldName = 'BOJA_BORAVKA'
+    end
+    object cdsfisBOJA_OTKAZA: TIntegerField
+      FieldName = 'BOJA_OTKAZA'
+    end
+    object cdsfisSIFRA_DOK_PRIJEM_PR: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_PR'
+    end
+    object cdsfisSIFRA_DOK_PRIJEM_MP: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_MP'
+    end
+    object cdsfisSIFRA_DOK_PRIJEM_SIR: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_SIR'
+    end
+    object cdsfisBROJ_PREBACIVANJA_PODATAKA: TIntegerField
+      FieldName = 'BROJ_PREBACIVANJA_PODATAKA'
+    end
+    object cdsfisAUTO_LOGOFF_OPERATER: TIntegerField
+      FieldName = 'AUTO_LOGOFF_OPERATER'
+    end
+    object cdsfisBORAVISNA_TAKSA: TIntegerField
+      FieldName = 'BORAVISNA_TAKSA'
+    end
+    object cdsfisBOJA_ZAUZETO: TIntegerField
+      FieldName = 'BOJA_ZAUZETO'
+    end
+    object cdsfisSIFRA_ROBE_USLUGA_HOTEL: TIntegerField
+      FieldName = 'SIFRA_ROBE_USLUGA_HOTEL'
+    end
+    object cdsfisVISINA_KATEGORIJA_PANEL: TIntegerField
+      FieldName = 'VISINA_KATEGORIJA_PANEL'
+    end
+    object cdsfisOSIGURANJE: TIntegerField
+      FieldName = 'OSIGURANJE'
+    end
+    object cdsfisSINHRO_PROMET_MAGACINA: TIntegerField
+      FieldName = 'SINHRO_PROMET_MAGACINA'
+    end
+    object cdsfisBOJA_DUGMETA_K: TIntegerField
+      FieldName = 'BOJA_DUGMETA_K'
+    end
+    object cdsfisBOJA_DUGMETA_A: TIntegerField
+      FieldName = 'BOJA_DUGMETA_A'
+    end
+    object cdsfisBOJA_A: TIntegerField
+      FieldName = 'BOJA_A'
+    end
+    object cdsfisBOJA_K: TIntegerField
+      FieldName = 'BOJA_K'
+    end
+    object cdsfisBOJA_TEXT_DUGME_A: TIntegerField
+      FieldName = 'BOJA_TEXT_DUGME_A'
+    end
+    object cdsfisBOJA_TEXT_DUGME_K: TIntegerField
+      FieldName = 'BOJA_TEXT_DUGME_K'
+    end
+    object cdsfisSIFRA_ROBE_GLOBAL: TIntegerField
+      FieldName = 'SIFRA_ROBE_GLOBAL'
+    end
+    object cdsfisSIFRA_ROBE_VECTON: TIntegerField
+      FieldName = 'SIFRA_ROBE_VECTON'
+    end
+    object cdsfisSMS_OPERATER_GLOBA: TIntegerField
+      FieldName = 'SMS_OPERATER_GLOBA'
+    end
+    object cdsfisSMS_OPERATER_VECTON: TIntegerField
+      FieldName = 'SMS_OPERATER_VECTON'
+    end
+    object cdsfisMINIZNOS_VECTON: TFMTBCDField
+      FieldName = 'MINIZNOS_VECTON'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisMINIZNOS_GLOBAL: TFMTBCDField
+      FieldName = 'MINIZNOS_GLOBAL'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisOBRISI_STAVKE: TSmallintField
+      FieldName = 'OBRISI_STAVKE'
+    end
+    object cdsfisSIFRA_ROBE_MTELA: TIntegerField
+      FieldName = 'SIFRA_ROBE_MTELA'
+    end
+    object cdsfisSMS_OPERATER_MTELA: TIntegerField
+      FieldName = 'SMS_OPERATER_MTELA'
+    end
+    object cdsfisMINIZNOS_MTELA: TFMTBCDField
+      FieldName = 'MINIZNOS_MTELA'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisPROVERAVAJ_CEK_KOMITENTA: TSmallintField
+      FieldName = 'PROVERAVAJ_CEK_KOMITENTA'
+    end
+    object cdsfisGRUPISI_ARTIKLE_NA_FISK: TSmallintField
+      FieldName = 'GRUPISI_ARTIKLE_NA_FISK'
+    end
+    object cdsfisMNOZI_ODNOS_PJM: TSmallintField
+      FieldName = 'MNOZI_ODNOS_PJM'
+    end
+    object cdsfisSIFRA_PROIZV_UF_PRODAJA: TIntegerField
+      FieldName = 'SIFRA_PROIZV_UF_PRODAJA'
+    end
+    object cdsfisTRAZI_BENEFIT_KOMITENTA: TSmallintField
+      FieldName = 'TRAZI_BENEFIT_KOMITENTA'
+    end
+    object cdsfisWEB_UPUTSTVO: TStringField
+      FieldName = 'WEB_UPUTSTVO'
+      Size = 255
+    end
+    object cdsfisSTAMPAJ_ULAZNICE: TSmallintField
+      FieldName = 'STAMPAJ_ULAZNICE'
+    end
+    object cdsfisMINIZNOS_MERIDIAN: TFMTBCDField
+      FieldName = 'MINIZNOS_MERIDIAN'
+      Precision = 18
+      Size = 2
+    end
+    object cdsfisSTAMPAJ_POS_VISE_PUTA: TIntegerField
+      FieldName = 'STAMPAJ_POS_VISE_PUTA'
+    end
+    object cdsfisAC_CREDIT_DALJINSKI: TIntegerField
+      FieldName = 'AC_CREDIT_DALJINSKI'
+    end
+    object cdsfisHP_SLANJE_DEL_GRESKA: TSmallintField
+      FieldName = 'HP_SLANJE_DEL_GRESKA'
+    end
+  end
+  object dsp_fis: TDataSetProvider
+    DataSet = sql_fis
+    UpdateMode = upWhereKeyOnly
+    Left = 901
+    Top = 295
+  end
+  object sql_fis: TSQLDataSet
+    SchemaName = 'sysdba'
+    CommandText = 
+      'select F.ID,'#13#10'       F.FISKAL,'#13#10'       F.SIFRA_DEFAULT_KUPCA,'#13#10' ' +
+      '      F.SPECIJALNI_SLUCAJ,'#13#10'       F.SIRINA_DUGMETA,'#13#10'       F.V' +
+      'ISINA_DUGMETA,'#13#10'       F.SIRINA_DUGMETA_STO,'#13#10'       F.VISINA_DU' +
+      'GMETA_STO,'#13#10'       F.AUTO_DATUM,'#13#10'       F.ROBNO,'#13#10'       F.DEF_' +
+      'MP_MG,'#13#10'       F.PERIOD_SLANJA_PODATAKA,'#13#10'       F.SIFRA_ROBE_VI' +
+      'P,'#13#10'       F.SIFRA_ROBE_TELENOR,'#13#10'       F.SIFRA_ROBE_TELEKOM,'#13#10 +
+      '       F.SIFRA_ROBE_GLOBAL,'#13#10'       F.SIFRA_ROBE_VECTON,'#13#10'      ' +
+      ' F.SIFRA_ROBE_MTELA,'#13#10'       F.SMS_SERVIS_ADRESA,'#13#10'       F.SMS_' +
+      'SERVIS_PORT,'#13#10'       F.VREME_KRETANJA,'#13#10'       M.SMS_SERVIS_TERM' +
+      'INAL,'#13#10'       M.SMS_SERVIS_TERMINAL_PASSWORD,'#13#10'       F.SMS_SERV' +
+      'IS_TERMINAL_FIRMWARE,'#13#10'       F.SMS_OPERATER_VIP,'#13#10'       F.SMS_' +
+      'OPERATER_TELENOR,'#13#10'       F.SMS_OPERATER_TELEKOM,'#13#10'       F.SMS_' +
+      'OPERATER_GLOBA,'#13#10'       F.SMS_OPERATER_VECTON,'#13#10'       F.SMS_OPE' +
+      'RATER_MTELA,'#13#10'       K.KOMITENT,'#13#10'       M.MAGACIN,'#13#10'       F.SI' +
+      'RINA_FORME_PROD,'#13#10'       F.FONT_FORME_PROD,'#13#10'       F.FISKAL_AKT' +
+      'IVAN,'#13#10'       F.START_PREBACIVANJA_PODATAKA,'#13#10'       F.MINIZNOS_' +
+      'VIP,'#13#10'       F.MINIZNOS_TELENOR,'#13#10'       F.MINIZNOS_TELEKOM,'#13#10'  ' +
+      '     F.MINIZNOS_VECTON,'#13#10'       F.MINIZNOS_GLOBAL,'#13#10'       F.MIN' +
+      'IZNOS_MTELA,'#13#10'       F.BOJA_REZERVISANO,'#13#10'       F.BOJA_BORAVKA,' +
+      #13#10'       F.BOJA_OTKAZA,'#13#10'       F.BOJA_ZAUZETO,'#13#10'       F.SIFRA_' +
+      'DOK_PRIJEM_PR,'#13#10'       F.SIFRA_DOK_PRIJEM_MP,'#13#10'       F.SIFRA_DO' +
+      'K_PRIJEM_SIR,'#13#10'       F.BROJ_PREBACIVANJA_PODATAKA,'#13#10'       F.AU' +
+      'TO_LOGOFF_OPERATER,'#13#10'       F.BORAVISNA_TAKSA,'#13#10'       F.SIFRA_R' +
+      'OBE_USLUGA_HOTEL,'#13#10'       F.VISINA_KATEGORIJA_PANEL,'#13#10'       F.O' +
+      'SIGURANJE,'#13#10'       F.SINHRO_PROMET_MAGACINA,'#13#10'       F.BOJA_DUGM' +
+      'ETA_K,'#13#10'       F.BOJA_DUGMETA_A,'#13#10'       F.BOJA_A,'#13#10'       F.BOJ' +
+      'A_K,'#13#10'       F.BOJA_TEXT_DUGME_A,'#13#10'       F.BOJA_TEXT_DUGME_K,'#13#10 +
+      '       F.OBRISI_STAVKE,'#13#10'       F.PROVERAVAJ_CEK_KOMITENTA,'#13#10'   ' +
+      '    F.GRUPISI_ARTIKLE_NA_FISK,'#13#10'       F.MNOZI_ODNOS_PJM,'#13#10'     ' +
+      '  F.SIFRA_PROIZV_UF_PRODAJA,'#13#10'       F.TRAZI_BENEFIT_KOMITENTA,'#13 +
+      #10'       F.WEB_UPUTSTVO,'#13#10'       F.STAMPAJ_ULAZNICE,'#13#10'       F.MI' +
+      'NIZNOS_MERIDIAN,'#13#10'       F.STAMPAJ_POS_VISE_PUTA,'#13#10'       F.AC_C' +
+      'REDIT_DALJINSKI,'#13#10'       F.HP_SLANJE_DEL_GRESKA'#13#10'from HP_FISKAL ' +
+      'F'#13#10'left join TBLKOMITENTI K on F.SIFRA_DEFAULT_KUPCA = K.SIFRA_K' +
+      'OMITENTA'#13#10'left join TBLMAGACIN M on F.DEF_MP_MG = M.SIFRA_MAGACI' +
+      'NA'
+    MaxBlobSize = -1
+    ParamCheck = False
+    Params = <>
+    SQLConnection = Konekcija_lokal
+    Left = 832
+    Top = 295
+    object sql_fisID: TIntegerField
+      FieldName = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object sql_fisFISKAL: TIntegerField
+      FieldName = 'FISKAL'
+    end
+    object sql_fisSIFRA_DEFAULT_KUPCA: TIntegerField
+      FieldName = 'SIFRA_DEFAULT_KUPCA'
+    end
+    object sql_fisSPECIJALNI_SLUCAJ: TSmallintField
+      FieldName = 'SPECIJALNI_SLUCAJ'
+    end
+    object sql_fisSIRINA_DUGMETA: TIntegerField
+      FieldName = 'SIRINA_DUGMETA'
+    end
+    object sql_fisVISINA_DUGMETA: TIntegerField
+      FieldName = 'VISINA_DUGMETA'
+    end
+    object sql_fisAUTO_DATUM: TStringField
+      FieldName = 'AUTO_DATUM'
+      Size = 1
+    end
+    object sql_fisROBNO: TStringField
+      FieldName = 'ROBNO'
+      Size = 1
+    end
+    object sql_fisDEF_MP_MG: TIntegerField
+      FieldName = 'DEF_MP_MG'
+    end
+    object sql_fisKOMITENT: TStringField
+      FieldName = 'KOMITENT'
+      ProviderFlags = []
+      Size = 255
+    end
+    object sql_fisMAGACIN: TStringField
+      FieldName = 'MAGACIN'
+      ProviderFlags = []
+      Size = 50
+    end
+    object sql_fisPERIOD_SLANJA_PODATAKA: TIntegerField
+      FieldName = 'PERIOD_SLANJA_PODATAKA'
+    end
+    object sql_fisSIFRA_ROBE_VIP: TIntegerField
+      FieldName = 'SIFRA_ROBE_VIP'
+    end
+    object sql_fisSIFRA_ROBE_TELENOR: TIntegerField
+      FieldName = 'SIFRA_ROBE_TELENOR'
+    end
+    object sql_fisSIFRA_ROBE_TELEKOM: TIntegerField
+      FieldName = 'SIFRA_ROBE_TELEKOM'
+    end
+    object sql_fisSMS_SERVIS_ADRESA: TStringField
+      FieldName = 'SMS_SERVIS_ADRESA'
+      Size = 15
+    end
+    object sql_fisSMS_SERVIS_PORT: TSmallintField
+      FieldName = 'SMS_SERVIS_PORT'
+    end
+    object sql_fisSMS_SERVIS_TERMINAL_FIRMWARE: TSmallintField
+      FieldName = 'SMS_SERVIS_TERMINAL_FIRMWARE'
+    end
+    object sql_fisSMS_OPERATER_VIP: TSmallintField
+      FieldName = 'SMS_OPERATER_VIP'
+    end
+    object sql_fisSMS_OPERATER_TELENOR: TSmallintField
+      FieldName = 'SMS_OPERATER_TELENOR'
+    end
+    object sql_fisSMS_OPERATER_TELEKOM: TSmallintField
+      FieldName = 'SMS_OPERATER_TELEKOM'
+    end
+    object sql_fisSMS_SERVIS_TERMINAL: TStringField
+      FieldName = 'SMS_SERVIS_TERMINAL'
+    end
+    object sql_fisSMS_SERVIS_TERMINAL_PASSWORD: TStringField
+      FieldName = 'SMS_SERVIS_TERMINAL_PASSWORD'
+    end
+    object sql_fisVREME_KRETANJA: TIntegerField
+      FieldName = 'VREME_KRETANJA'
+    end
+    object sql_fisSIRINA_FORME_PROD: TIntegerField
+      FieldName = 'SIRINA_FORME_PROD'
+    end
+    object sql_fisFONT_FORME_PROD: TIntegerField
+      FieldName = 'FONT_FORME_PROD'
+    end
+    object sql_fisFISKAL_AKTIVAN: TIntegerField
+      FieldName = 'FISKAL_AKTIVAN'
+    end
+    object sql_fisSTART_PREBACIVANJA_PODATAKA: TSQLTimeStampField
+      FieldName = 'START_PREBACIVANJA_PODATAKA'
+    end
+    object sql_fisMINIZNOS_VIP: TFMTBCDField
+      FieldName = 'MINIZNOS_VIP'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisMINIZNOS_TELENOR: TFMTBCDField
+      FieldName = 'MINIZNOS_TELENOR'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisMINIZNOS_TELEKOM: TFMTBCDField
+      FieldName = 'MINIZNOS_TELEKOM'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisSIRINA_DUGMETA_STO: TIntegerField
+      FieldName = 'SIRINA_DUGMETA_STO'
+    end
+    object sql_fisVISINA_DUGMETA_STO: TIntegerField
+      FieldName = 'VISINA_DUGMETA_STO'
+    end
+    object sql_fisBOJA_REZERVISANO: TIntegerField
+      FieldName = 'BOJA_REZERVISANO'
+    end
+    object sql_fisBOJA_BORAVKA: TIntegerField
+      FieldName = 'BOJA_BORAVKA'
+    end
+    object sql_fisBOJA_OTKAZA: TIntegerField
+      FieldName = 'BOJA_OTKAZA'
+    end
+    object sql_fisSIFRA_DOK_PRIJEM_PR: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_PR'
+    end
+    object sql_fisSIFRA_DOK_PRIJEM_MP: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_MP'
+    end
+    object sql_fisSIFRA_DOK_PRIJEM_SIR: TIntegerField
+      FieldName = 'SIFRA_DOK_PRIJEM_SIR'
+    end
+    object sql_fisBROJ_PREBACIVANJA_PODATAKA: TIntegerField
+      FieldName = 'BROJ_PREBACIVANJA_PODATAKA'
+    end
+    object sql_fisAUTO_LOGOFF_OPERATER: TIntegerField
+      FieldName = 'AUTO_LOGOFF_OPERATER'
+    end
+    object sql_fisBORAVISNA_TAKSA: TIntegerField
+      FieldName = 'BORAVISNA_TAKSA'
+    end
+    object sql_fisBOJA_ZAUZETO: TIntegerField
+      FieldName = 'BOJA_ZAUZETO'
+    end
+    object sql_fisSIFRA_ROBE_USLUGA_HOTEL: TIntegerField
+      FieldName = 'SIFRA_ROBE_USLUGA_HOTEL'
+    end
+    object sql_fisVISINA_KATEGORIJA_PANEL: TIntegerField
+      FieldName = 'VISINA_KATEGORIJA_PANEL'
+    end
+    object sql_fisOSIGURANJE: TIntegerField
+      FieldName = 'OSIGURANJE'
+    end
+    object sql_fisSINHRO_PROMET_MAGACINA: TIntegerField
+      FieldName = 'SINHRO_PROMET_MAGACINA'
+    end
+    object sql_fisBOJA_DUGMETA_K: TIntegerField
+      FieldName = 'BOJA_DUGMETA_K'
+    end
+    object sql_fisBOJA_DUGMETA_A: TIntegerField
+      FieldName = 'BOJA_DUGMETA_A'
+    end
+    object sql_fisBOJA_A: TIntegerField
+      FieldName = 'BOJA_A'
+    end
+    object sql_fisBOJA_K: TIntegerField
+      FieldName = 'BOJA_K'
+    end
+    object sql_fisBOJA_TEXT_DUGME_A: TIntegerField
+      FieldName = 'BOJA_TEXT_DUGME_A'
+    end
+    object sql_fisBOJA_TEXT_DUGME_K: TIntegerField
+      FieldName = 'BOJA_TEXT_DUGME_K'
+    end
+    object sql_fisSIFRA_ROBE_GLOBAL: TIntegerField
+      FieldName = 'SIFRA_ROBE_GLOBAL'
+    end
+    object sql_fisSIFRA_ROBE_VECTON: TIntegerField
+      FieldName = 'SIFRA_ROBE_VECTON'
+    end
+    object sql_fisSMS_OPERATER_GLOBA: TIntegerField
+      FieldName = 'SMS_OPERATER_GLOBA'
+    end
+    object sql_fisSMS_OPERATER_VECTON: TIntegerField
+      FieldName = 'SMS_OPERATER_VECTON'
+    end
+    object sql_fisMINIZNOS_VECTON: TFMTBCDField
+      FieldName = 'MINIZNOS_VECTON'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisMINIZNOS_GLOBAL: TFMTBCDField
+      FieldName = 'MINIZNOS_GLOBAL'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisOBRISI_STAVKE: TSmallintField
+      FieldName = 'OBRISI_STAVKE'
+    end
+    object sql_fisSIFRA_ROBE_MTELA: TIntegerField
+      FieldName = 'SIFRA_ROBE_MTELA'
+    end
+    object sql_fisSMS_OPERATER_MTELA: TIntegerField
+      FieldName = 'SMS_OPERATER_MTELA'
+    end
+    object sql_fisMINIZNOS_MTELA: TFMTBCDField
+      FieldName = 'MINIZNOS_MTELA'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisPROVERAVAJ_CEK_KOMITENTA: TSmallintField
+      FieldName = 'PROVERAVAJ_CEK_KOMITENTA'
+    end
+    object sql_fisGRUPISI_ARTIKLE_NA_FISK: TSmallintField
+      FieldName = 'GRUPISI_ARTIKLE_NA_FISK'
+    end
+    object sql_fisMNOZI_ODNOS_PJM: TSmallintField
+      FieldName = 'MNOZI_ODNOS_PJM'
+    end
+    object sql_fisSIFRA_PROIZV_UF_PRODAJA: TIntegerField
+      FieldName = 'SIFRA_PROIZV_UF_PRODAJA'
+    end
+    object sql_fisTRAZI_BENEFIT_KOMITENTA: TSmallintField
+      FieldName = 'TRAZI_BENEFIT_KOMITENTA'
+    end
+    object sql_fisWEB_UPUTSTVO: TStringField
+      FieldName = 'WEB_UPUTSTVO'
+      Size = 255
+    end
+    object sql_fisSTAMPAJ_ULAZNICE: TSmallintField
+      FieldName = 'STAMPAJ_ULAZNICE'
+    end
+    object sql_fisMINIZNOS_MERIDIAN: TFMTBCDField
+      FieldName = 'MINIZNOS_MERIDIAN'
+      Precision = 18
+      Size = 2
+    end
+    object sql_fisSTAMPAJ_POS_VISE_PUTA: TIntegerField
+      FieldName = 'STAMPAJ_POS_VISE_PUTA'
+    end
+    object sql_fisAC_CREDIT_DALJINSKI: TIntegerField
+      FieldName = 'AC_CREDIT_DALJINSKI'
+    end
+    object sql_fisHP_SLANJE_DEL_GRESKA: TSmallintField
+      FieldName = 'HP_SLANJE_DEL_GRESKA'
+    end
+  end
+  object Konekcija_lokal: TSQLConnection
+    ConnectionName = 'baza2006'
+    DriverName = 'FIREBIRD'
+    LoadParamsOnConnect = True
+    LoginPrompt = False
+    Params.Strings = (
+      '#Embarcadero2010'
+      'drivername=FIREBIRD'
+      'blobsize=-1'
+      'commitretain=False'
+      'Database=127.0.0.1/3050:C:\bus\baza\VIVA_BELA.FDB'
+      'localecode=0000'
+      'Password=masterkey'
+      'rolename=RoleName'
+      'sqldialect=3'
+      'isolationlevel=ReadCommitted'
+      'user_name=sysdba'
+      'waitonlocks=True'
+      'trim char=False')
+    Left = 520
+    Top = 152
+  end
+  object dsHost: TDataSource
+    DataSet = cdsHost
+    Left = 976
+    Top = 436
+  end
+  object cdsHost: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspHost'
+    Left = 904
+    Top = 436
+    object cdsHostIDHOST: TIntegerField
+      FieldName = 'IDHOST'
+      Required = True
+    end
+    object cdsHostNAZIV_FIRME: TStringField
+      FieldName = 'NAZIV_FIRME'
+      Size = 255
+    end
+    object cdsHostDELATNOST: TStringField
+      FieldName = 'DELATNOST'
+      Size = 255
+    end
+    object cdsHostADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 50
+    end
+    object cdsHostMESTO: TStringField
+      FieldName = 'MESTO'
+      Size = 50
+    end
+    object cdsHostTEL1: TStringField
+      FieldName = 'TEL1'
+      Size = 50
+    end
+    object cdsHostTEL2: TStringField
+      FieldName = 'TEL2'
+      Size = 50
+    end
+    object cdsHostFAX: TStringField
+      FieldName = 'FAX'
+      Size = 50
+    end
+    object cdsHostPIB: TStringField
+      FieldName = 'PIB'
+    end
+    object cdsHostE_MAIL: TStringField
+      FieldName = 'E_MAIL'
+      Size = 100
+    end
+    object cdsHostWEB: TStringField
+      FieldName = 'WEB'
+      Size = 100
+    end
+    object cdsHostSIFRA_DELATNOSTI: TStringField
+      FieldName = 'SIFRA_DELATNOSTI'
+    end
+    object cdsHostREGISTARSKI_BROJ: TStringField
+      FieldName = 'REGISTARSKI_BROJ'
+    end
+    object cdsHostMATICNI_BROJ: TStringField
+      FieldName = 'MATICNI_BROJ'
+    end
+    object cdsHostCARINSKI_BROJ: TStringField
+      FieldName = 'CARINSKI_BROJ'
+    end
+    object cdsHostZIRO_RACUN: TStringField
+      FieldName = 'ZIRO_RACUN'
+      Size = 30
+    end
+    object cdsHostDIREKTOR: TStringField
+      FieldName = 'DIREKTOR'
+      Size = 50
+    end
+    object cdsHostPDV_BROJ: TStringField
+      FieldName = 'PDV_BROJ'
+      Size = 10
+    end
+    object cdsHostTIP_KASE: TIntegerField
+      FieldName = 'TIP_KASE'
+      Required = True
+    end
+    object cdsHostPUTANJA: TStringField
+      FieldName = 'PUTANJA'
+      Required = True
+      Size = 50
+    end
+    object cdsHostFOOTER: TStringField
+      FieldName = 'FOOTER'
+      Size = 255
+    end
+    object cdsHostTEKUCI: TStringField
+      FieldName = 'TEKUCI'
+      FixedChar = True
+      Size = 1
+    end
+    object cdsHostID_BANKE: TSmallintField
+      FieldName = 'ID_BANKE'
+    end
+    object cdsHostVERZIJA: TStringField
+      FieldName = 'VERZIJA'
+      Size = 50
+    end
+    object cdsHostRACUN_KOD: TStringField
+      FieldName = 'RACUN_KOD'
+      Size = 100
+    end
+    object cdsHostSWIFT: TStringField
+      FieldName = 'SWIFT'
+    end
+    object cdsHostTK_RACUN: TStringField
+      FieldName = 'TK_RACUN'
+    end
+    object cdsHostBAN_POSRED: TStringField
+      FieldName = 'BAN_POSRED'
+      Size = 100
+    end
+    object cdsHostGODINA_RADA: TSmallintField
+      FieldName = 'GODINA_RADA'
+    end
+    object cdsHostKASA_KOD: TSmallintField
+      FieldName = 'KASA_KOD'
+    end
+    object cdsHostGODISNJI: TStringField
+      FieldName = 'GODISNJI'
+      Size = 255
+    end
+    object cdsHostKASA_KOMANDA: TStringField
+      FieldName = 'KASA_KOMANDA'
+      Size = 250
+    end
+    object cdsHostZIRO_RACUN_BANKE: TStringField
+      FieldName = 'ZIRO_RACUN_BANKE'
+      ProviderFlags = []
+      Size = 30
+    end
+    object cdsHostNAZIV_BANKE: TStringField
+      FieldName = 'NAZIV_BANKE'
+      ProviderFlags = []
+      Size = 50
+    end
+    object cdsHostRS_KORISNIK: TSmallintField
+      FieldName = 'RS_KORISNIK'
+    end
+    object cdsHostMP_PROIZVODNJA_NORMATIV: TIntegerField
+      FieldName = 'MP_PROIZVODNJA_NORMATIV'
+    end
+    object cdsHostHP_TABELE: TIntegerField
+      FieldName = 'HP_TABELE'
+    end
+    object cdsHostDEF_MP_MAGACIN: TIntegerField
+      FieldName = 'DEF_MP_MAGACIN'
+    end
+    object cdsHostPROVERAVAJ_NOVU_VERZIJU: TIntegerField
+      FieldName = 'PROVERAVAJ_NOVU_VERZIJU'
+    end
+    object cdsHostVALUTA: TStringField
+      FieldName = 'VALUTA'
+      Size = 10
+    end
+    object cdsHostGODISNJI2: TStringField
+      FieldName = 'GODISNJI2'
+      Size = 255
+    end
+    object cdsHostID_NACIN_PLACANJA: TSmallintField
+      FieldName = 'ID_NACIN_PLACANJA'
+    end
+    object cdsHostSMTPHOST: TStringField
+      FieldName = 'SMTPHOST'
+      Size = 100
+    end
+    object cdsHostSMTPPORT: TSmallintField
+      FieldName = 'SMTPPORT'
+    end
+    object cdsHostUSTANOVA: TStringField
+      FieldName = 'USTANOVA'
+      Size = 255
+    end
+    object cdsHostNAZIV_NOVE_VERZIJE: TStringField
+      FieldName = 'NAZIV_NOVE_VERZIJE'
+    end
+    object cdsHostRZZOHOST: TStringField
+      FieldName = 'RZZOHOST'
+      Size = 16
+    end
+    object cdsHostRZZOPORT: TSmallintField
+      FieldName = 'RZZOPORT'
+    end
+    object cdsHostWEB_KLIJENT: TStringField
+      FieldName = 'WEB_KLIJENT'
+      Size = 254
+    end
+    object cdsHostWEB_SERVER: TStringField
+      FieldName = 'WEB_SERVER'
+      Size = 254
+    end
+    object cdsHostRZZOUSER: TStringField
+      FieldName = 'RZZOUSER'
+      Size = 50
+    end
+    object cdsHostRZZOPASS: TStringField
+      FieldName = 'RZZOPASS'
+      Size = 50
+    end
+    object cdsHostZABRANA_SNIMANJA_RECEPTA: TSmallintField
+      FieldName = 'ZABRANA_SNIMANJA_RECEPTA'
+    end
+    object cdsHostID_BANKE_VOJNI_OSIG: TIntegerField
+      FieldName = 'ID_BANKE_VOJNI_OSIG'
+    end
+    object cdsHostID_BANKE_CIVIL_OSIG: TIntegerField
+      FieldName = 'ID_BANKE_CIVIL_OSIG'
+    end
+    object cdsHostPRAVA_ZA_STORNO: TIntegerField
+      FieldName = 'PRAVA_ZA_STORNO'
+    end
+    object cdsHostPROIZVOD_NORMATIV_TIP_CENE: TSmallintField
+      FieldName = 'PROIZVOD_NORMATIV_TIP_CENE'
+    end
+    object cdsHostPRAVA_PUSTI_PONOVO_FISKALNI: TIntegerField
+      FieldName = 'PRAVA_PUSTI_PONOVO_FISKALNI'
+    end
+  end
+  object dspHost: TDataSetProvider
+    DataSet = dsetHost
+    Left = 824
+    Top = 438
+  end
+  object dsetHost: TSQLDataSet
+    CommandText = 
+      'select h.*, b.ziro_racun as ziro_racun_banke, b.naziv_banke'#13#10'fro' +
+      'm TBLHOST h left join tblbanke b on h.id_banke = b.idbanke'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = Konekcija_lokal
+    Left = 772
+    Top = 436
+    object dsetHostIDHOST: TIntegerField
+      FieldName = 'IDHOST'
+      Required = True
+    end
+    object dsetHostNAZIV_FIRME: TStringField
+      FieldName = 'NAZIV_FIRME'
+      Size = 255
+    end
+    object dsetHostDELATNOST: TStringField
+      FieldName = 'DELATNOST'
+      Size = 255
+    end
+    object dsetHostADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 50
+    end
+    object dsetHostMESTO: TStringField
+      FieldName = 'MESTO'
+      Size = 50
+    end
+    object dsetHostTEL1: TStringField
+      FieldName = 'TEL1'
+      Size = 50
+    end
+    object dsetHostTEL2: TStringField
+      FieldName = 'TEL2'
+      Size = 50
+    end
+    object dsetHostFAX: TStringField
+      FieldName = 'FAX'
+      Size = 50
+    end
+    object dsetHostPIB: TStringField
+      FieldName = 'PIB'
+    end
+    object dsetHostE_MAIL: TStringField
+      FieldName = 'E_MAIL'
+      Size = 100
+    end
+    object dsetHostWEB: TStringField
+      FieldName = 'WEB'
+      Size = 100
+    end
+    object dsetHostSIFRA_DELATNOSTI: TStringField
+      FieldName = 'SIFRA_DELATNOSTI'
+    end
+    object dsetHostREGISTARSKI_BROJ: TStringField
+      FieldName = 'REGISTARSKI_BROJ'
+    end
+    object dsetHostMATICNI_BROJ: TStringField
+      FieldName = 'MATICNI_BROJ'
+    end
+    object dsetHostCARINSKI_BROJ: TStringField
+      FieldName = 'CARINSKI_BROJ'
+    end
+    object dsetHostZIRO_RACUN: TStringField
+      FieldName = 'ZIRO_RACUN'
+      Size = 30
+    end
+    object dsetHostDIREKTOR: TStringField
+      FieldName = 'DIREKTOR'
+      Size = 50
+    end
+    object dsetHostPDV_BROJ: TStringField
+      FieldName = 'PDV_BROJ'
+      Size = 10
+    end
+    object dsetHostTIP_KASE: TIntegerField
+      FieldName = 'TIP_KASE'
+      Required = True
+    end
+    object dsetHostPUTANJA: TStringField
+      FieldName = 'PUTANJA'
+      Required = True
+      Size = 50
+    end
+    object dsetHostFOOTER: TStringField
+      FieldName = 'FOOTER'
+      Size = 255
+    end
+    object dsetHostTEKUCI: TStringField
+      FieldName = 'TEKUCI'
+      FixedChar = True
+      Size = 1
+    end
+    object dsetHostID_BANKE: TSmallintField
+      FieldName = 'ID_BANKE'
+    end
+    object dsetHostVERZIJA: TStringField
+      FieldName = 'VERZIJA'
+      Size = 50
+    end
+    object dsetHostRACUN_KOD: TStringField
+      FieldName = 'RACUN_KOD'
+      Size = 100
+    end
+    object dsetHostSWIFT: TStringField
+      FieldName = 'SWIFT'
+    end
+    object dsetHostTK_RACUN: TStringField
+      FieldName = 'TK_RACUN'
+    end
+    object dsetHostBAN_POSRED: TStringField
+      FieldName = 'BAN_POSRED'
+      Size = 100
+    end
+    object dsetHostGODINA_RADA: TSmallintField
+      FieldName = 'GODINA_RADA'
+    end
+    object dsetHostGODISNJI: TStringField
+      FieldName = 'GODISNJI'
+      Size = 255
+    end
+    object dsetHostKASA_KOD: TSmallintField
+      FieldName = 'KASA_KOD'
+    end
+    object dsetHostKASA_KOMANDA: TStringField
+      FieldName = 'KASA_KOMANDA'
+      Size = 10
+    end
+    object dsetHostVALUTA: TStringField
+      FieldName = 'VALUTA'
+      Size = 10
+    end
+    object dsetHostGODISNJI2: TStringField
+      FieldName = 'GODISNJI2'
+      Size = 255
+    end
+    object dsetHostID_NACIN_PLACANJA: TSmallintField
+      FieldName = 'ID_NACIN_PLACANJA'
+    end
+    object dsetHostZIRO_RACUN_BANKE: TStringField
+      FieldName = 'ZIRO_RACUN_BANKE'
+      ProviderFlags = []
+      Size = 30
+    end
+    object dsetHostNAZIV_BANKE: TStringField
+      FieldName = 'NAZIV_BANKE'
+      ProviderFlags = []
+      Size = 50
+    end
+    object dsetHostRS_KORISNIK: TSmallintField
+      FieldName = 'RS_KORISNIK'
+    end
+    object dsetHostMP_PROIZVODNJA_NORMATIV: TIntegerField
+      FieldName = 'MP_PROIZVODNJA_NORMATIV'
+    end
+    object dsetHostHP_TABELE: TIntegerField
+      FieldName = 'HP_TABELE'
+    end
+    object dsetHostDEF_MP_MAGACIN: TIntegerField
+      FieldName = 'DEF_MP_MAGACIN'
+    end
+    object dsetHostPROVERAVAJ_NOVU_VERZIJU: TIntegerField
+      FieldName = 'PROVERAVAJ_NOVU_VERZIJU'
+    end
+    object dsetHostSMTPHOST: TStringField
+      FieldName = 'SMTPHOST'
+      Size = 100
+    end
+    object dsetHostSMTPPORT: TSmallintField
+      FieldName = 'SMTPPORT'
+    end
+    object dsetHostUSTANOVA: TStringField
+      FieldName = 'USTANOVA'
+      Size = 30
+    end
+    object dsetHostNAZIV_NOVE_VERZIJE: TStringField
+      FieldName = 'NAZIV_NOVE_VERZIJE'
+    end
+    object dsetHostRZZOHOST: TStringField
+      FieldName = 'RZZOHOST'
+      Size = 16
+    end
+    object dsetHostRZZOPORT: TSmallintField
+      FieldName = 'RZZOPORT'
+    end
+    object dsetHostWEB_KLIJENT: TStringField
+      FieldName = 'WEB_KLIJENT'
+      Size = 254
+    end
+    object dsetHostWEB_SERVER: TStringField
+      FieldName = 'WEB_SERVER'
+      Size = 254
+    end
+    object dsetHostRZZOUSER: TStringField
+      FieldName = 'RZZOUSER'
+      Size = 50
+    end
+    object dsetHostRZZOPASS: TStringField
+      FieldName = 'RZZOPASS'
+      Size = 50
+    end
+    object dsetHostZABRANA_SNIMANJA_RECEPTA: TSmallintField
+      FieldName = 'ZABRANA_SNIMANJA_RECEPTA'
+    end
+    object dsetHostID_BANKE_VOJNI_OSIG: TIntegerField
+      FieldName = 'ID_BANKE_VOJNI_OSIG'
+    end
+    object dsetHostID_BANKE_CIVIL_OSIG: TIntegerField
+      FieldName = 'ID_BANKE_CIVIL_OSIG'
+    end
+    object dsetHostPRAVA_ZA_STORNO: TIntegerField
+      FieldName = 'PRAVA_ZA_STORNO'
+    end
+    object dsetHostPROIZVOD_NORMATIV_TIP_CENE: TSmallintField
+      FieldName = 'PROIZVOD_NORMATIV_TIP_CENE'
+    end
+    object dsetHostPRAVA_PUSTI_PONOVO_FISKALNI: TIntegerField
+      FieldName = 'PRAVA_PUSTI_PONOVO_FISKALNI'
+    end
+  end
+  object dsR: TDataSource
+    DataSet = cdsR
+    Left = 1008
+    Top = 227
+  end
+  object cdsR: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspR'
+    Left = 952
+    Top = 227
+    object cdsRSIFRA_RADNIKA: TIntegerField
+      FieldName = 'SIFRA_RADNIKA'
+      Required = True
+    end
+    object cdsRGRUPA: TSmallintField
+      FieldName = 'GRUPA'
+    end
+    object cdsRRADNIK: TStringField
+      FieldName = 'RADNIK'
+      Size = 50
+    end
+    object cdsRPRAVA: TIntegerField
+      FieldName = 'PRAVA'
+    end
+    object cdsRKORISNICKO_IME: TStringField
+      FieldName = 'KORISNICKO_IME'
+      Size = 50
+    end
+    object cdsRLOZINKA: TStringField
+      FieldName = 'LOZINKA'
+      Size = 50
+    end
+    object cdsRULOGOVAN: TSmallintField
+      FieldName = 'ULOGOVAN'
+    end
+    object cdsRADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 30
+    end
+    object cdsRTELEFON: TStringField
+      FieldName = 'TELEFON'
+      Size = 35
+    end
+    object cdsRMOBILNI: TStringField
+      FieldName = 'MOBILNI'
+      Size = 15
+    end
+    object cdsRMESTO: TStringField
+      FieldName = 'MESTO'
+    end
+    object cdsRBRLK: TStringField
+      FieldName = 'BRLK'
+      FixedChar = True
+      Size = 10
+    end
+    object cdsRIDOPSTINE: TIntegerField
+      FieldName = 'IDOPSTINE'
+    end
+    object cdsRPOSTBROJ: TStringField
+      FieldName = 'POSTBROJ'
+      Size = 10
+    end
+    object cdsRJMBG: TStringField
+      FieldName = 'JMBG'
+      Required = True
+      Size = 13
+    end
+    object cdsRID_DEF_KAT: TIntegerField
+      FieldName = 'ID_DEF_KAT'
+    end
+    object cdsRID_DEF_MG: TIntegerField
+      FieldName = 'ID_DEF_MG'
+    end
+    object cdsRAKTIVAN: TSmallintField
+      FieldName = 'AKTIVAN'
+    end
+    object cdsRUSERNAME: TStringField
+      FieldName = 'USERNAME'
+      Size = 50
+    end
+    object cdsRPASSWD: TStringField
+      FieldName = 'PASSWD'
+      Size = 250
+    end
+    object cdsRROLENAME: TStringField
+      FieldName = 'ROLENAME'
+      Size = 50
+    end
+    object cdsRID_DEF_MG_MP: TIntegerField
+      FieldName = 'ID_DEF_MG_MP'
+    end
+    object cdsRDEF_KUPAC_MP: TIntegerField
+      FieldName = 'DEF_KUPAC_MP'
+    end
+    object cdsRPRAVO_PLACANJA: TSmallintField
+      FieldName = 'PRAVO_PLACANJA'
+    end
+    object cdsRMAIL: TStringField
+      FieldName = 'MAIL'
+      Size = 100
+    end
+    object cdsRSMPTHOST: TStringField
+      FieldName = 'SMPTHOST'
+      Size = 100
+    end
+    object cdsRSMPTPORT: TIntegerField
+      FieldName = 'SMPTPORT'
+    end
+    object cdsRLBO: TStringField
+      FieldName = 'LBO'
+      Size = 15
+    end
+    object cdsRIME: TStringField
+      FieldName = 'IME'
+      Size = 50
+    end
+    object cdsRPREZIME: TStringField
+      FieldName = 'PREZIME'
+      Size = 50
+    end
+    object cdsRPRAVA_MG: TStringField
+      FieldName = 'PRAVA_MG'
+      Size = 5
+    end
+    object cdsRIDSEDISTE: TSmallintField
+      FieldName = 'IDSEDISTE'
+    end
+    object cdsRID_DEF_ULAZ_DOK: TSmallintField
+      FieldName = 'ID_DEF_ULAZ_DOK'
+    end
+    object cdsRCONTROL_PANEL: TSmallintField
+      FieldName = 'CONTROL_PANEL'
+    end
+    object cdsRBRZDRAVSTVENE_KNJIZICE: TStringField
+      FieldName = 'BRZDRAVSTVENE_KNJIZICE'
+    end
+    object cdsRPRAVA_OTKUP: TIntegerField
+      FieldName = 'PRAVA_OTKUP'
+    end
+    object cdsRDEF_FONT_MP: TSmallintField
+      FieldName = 'DEF_FONT_MP'
+    end
+    object cdsRSORTIRANJE_MP: TSmallintField
+      FieldName = 'SORTIRANJE_MP'
+    end
+    object cdsRRFID: TStringField
+      FieldName = 'RFID'
+    end
+    object cdsRID_PROFILA: TIntegerField
+      FieldName = 'ID_PROFILA'
+    end
+    object cdsRSIFRA: TLargeintField
+      FieldName = 'SIFRA'
+    end
+    object cdsRIDPROFIL: TIntegerField
+      FieldName = 'IDPROFIL'
+    end
+    object cdsRPRG_VP: TSmallintField
+      FieldName = 'PRG_VP'
+    end
+    object cdsRDEF_MG_SERVIS: TIntegerField
+      FieldName = 'DEF_MG_SERVIS'
+    end
+    object cdsRAP_ID_MG_P: TIntegerField
+      FieldName = 'AP_ID_MG_P'
+    end
+    object cdsRAP_ID_PODA: TIntegerField
+      FieldName = 'AP_ID_PODA'
+    end
+    object cdsRAP_KOD_ART_P: TStringField
+      FieldName = 'AP_KOD_ART_P'
+    end
+    object cdsRID_DEF_MG_USLUGE: TIntegerField
+      FieldName = 'ID_DEF_MG_USLUGE'
+    end
+    object cdsRPASSWORD_CHANGE_DATE: TSQLTimeStampField
+      FieldName = 'PASSWORD_CHANGE_DATE'
+    end
+    object cdsRZAKLJUCANO: TIntegerField
+      FieldName = 'ZAKLJUCANO'
+    end
+    object cdsRDEF_BROJ_STOLA: TIntegerField
+      FieldName = 'DEF_BROJ_STOLA'
+    end
+    object cdsRRADNIK_CHANGE: TIntegerField
+      FieldName = 'RADNIK_CHANGE'
+    end
+    object cdsRDATE_CHANGE: TSQLTimeStampField
+      FieldName = 'DATE_CHANGE'
+    end
+    object cdsRDEF_KUPAC: TIntegerField
+      FieldName = 'DEF_KUPAC'
+    end
+    object cdsRCENOVNIK_IZMENA: TSmallintField
+      FieldName = 'CENOVNIK_IZMENA'
+    end
+    object cdsRAP_SIFRA_ROBE_UCESCE: TIntegerField
+      FieldName = 'AP_SIFRA_ROBE_UCESCE'
+    end
+    object cdsRLBOFARMACEUTA: TStringField
+      FieldName = 'LBOFARMACEUTA'
+      Size = 15
+    end
+    object cdsRIDSTOLA: TIntegerField
+      FieldName = 'IDSTOLA'
+    end
+    object cdsRNAZIV: TStringField
+      FieldName = 'NAZIV'
+      Size = 255
+    end
+    object cdsRVP_MP: TIntegerField
+      FieldName = 'VP_MP'
+    end
+    object cdsROTPREMNICA_VP_MP: TIntegerField
+      FieldName = 'OTPREMNICA_VP_MP'
+    end
+    object cdsRPRIJEMNICA_VP_MP: TIntegerField
+      FieldName = 'PRIJEMNICA_VP_MP'
+    end
+    object cdsRID_DEF_MG_MP_1: TIntegerField
+      FieldName = 'ID_DEF_MG_MP_1'
+    end
+    object cdsRDEF_KUPAC_MP_1: TIntegerField
+      FieldName = 'DEF_KUPAC_MP_1'
+    end
+    object cdsRSIFRA_ROBE: TIntegerField
+      FieldName = 'SIFRA_ROBE'
+    end
+    object cdsRCENAMP: TFMTBCDField
+      FieldName = 'CENAMP'
+      Precision = 15
+      Size = 4
+    end
+    object cdsRID_DEF_POVRAT_DOB: TIntegerField
+      FieldName = 'ID_DEF_POVRAT_DOB'
+    end
+    object cdsRSKIN_MP: TStringField
+      FieldName = 'SKIN_MP'
+      Size = 100
+    end
+    object cdsRREZ_VP: TIntegerField
+      FieldName = 'REZ_VP'
+    end
+    object cdsRREZ_MP: TIntegerField
+      FieldName = 'REZ_MP'
+    end
+    object cdsRIZIS_USERNAME: TStringField
+      FieldName = 'IZIS_USERNAME'
+      Size = 50
+    end
+    object cdsRIZIS_PASSWORD: TStringField
+      FieldName = 'IZIS_PASSWORD'
+      Size = 50
+    end
+    object cdsRID_ROLE: TIntegerField
+      FieldName = 'ID_ROLE'
+    end
+    object cdsRID_ROLE_PRIMAR: TIntegerField
+      FieldName = 'ID_ROLE_PRIMAR'
+    end
+  end
+  object dspR: TDataSetProvider
+    DataSet = sdsR
+    Left = 904
+    Top = 227
+  end
+  object sdsR: TSQLDataSet
+    SchemaName = 'sysdba'
+    CommandText = 
+      'select R.SIFRA_RADNIKA,'#13#10'       R.GRUPA,'#13#10'       R.RADNIK,'#13#10'    ' +
+      '   R.PRAVA,'#13#10'       R.KORISNICKO_IME,'#13#10'       R.LOZINKA,'#13#10'      ' +
+      ' R.ULOGOVAN,'#13#10'       R.ADRESA,'#13#10'       R.TELEFON,'#13#10'       R.MOBI' +
+      'LNI,'#13#10'       R.MESTO,'#13#10'       R.BRLK,'#13#10'       R.IDOPSTINE,'#13#10'    ' +
+      '   R.POSTBROJ,'#13#10'       R.JMBG,'#13#10'       R.ID_DEF_KAT,'#13#10'       R.I' +
+      'D_DEF_MG,'#13#10'       R.AKTIVAN,'#13#10'       R.USERNAME,'#13#10'       R.PASSW' +
+      'D,'#13#10'       R.ROLENAME,'#13#10'       R.ID_DEF_MG_MP,'#13#10'       R.DEF_KUP' +
+      'AC_MP,'#13#10'       R.PRAVO_PLACANJA,'#13#10'       R.MAIL,'#13#10'       R.SMPTH' +
+      'OST,'#13#10'       R.SMPTPORT,'#13#10'       R.LBO,'#13#10'       R.IME,'#13#10'       R' +
+      '.PREZIME,'#13#10'       R.PRAVA_MG,'#13#10'       R.IDSEDISTE,'#13#10'       R.ID_' +
+      'DEF_ULAZ_DOK,'#13#10'       R.ID_DEF_POVRAT_DOB,'#13#10'       R.CONTROL_PAN' +
+      'EL,'#13#10'       R.BRZDRAVSTVENE_KNJIZICE,'#13#10'       R.PRAVA_OTKUP,'#13#10'  ' +
+      '     R.DEF_FONT_MP,'#13#10'       R.SORTIRANJE_MP,'#13#10'       R.RFID,'#13#10'  ' +
+      '     R.ID_PROFILA,'#13#10'       R.SIFRA,'#13#10'       R.IDPROFIL,'#13#10'       ' +
+      'R.PRG_VP,'#13#10'       R.DEF_MG_SERVIS,'#13#10'       R.AP_ID_MG_P,'#13#10'      ' +
+      ' R.AP_ID_PODA,'#13#10'       R.AP_KOD_ART_P,'#13#10'       R.ID_DEF_MG_USLUG' +
+      'E,'#13#10'       R.PASSWORD_CHANGE_DATE,'#13#10'       R.ZAKLJUCANO,'#13#10'      ' +
+      ' R.DEF_BROJ_STOLA,'#13#10'       R.RADNIK_CHANGE,'#13#10'       R.DATE_CHANG' +
+      'E,'#13#10'       R.DEF_KUPAC,'#13#10'       R.CENOVNIK_IZMENA,'#13#10'       R.AP_' +
+      'SIFRA_ROBE_UCESCE,'#13#10'       R.LBOFARMACEUTA,'#13#10'       R.IDSTOLA,'#13#10 +
+      '       R.SKIN_MP,'#13#10'       k.username as izis_username,'#13#10'       k' +
+      '.passw as izis_password,'#13#10'       P.NAZIV,'#13#10'       P.VP_MP,'#13#10'    ' +
+      '   P.OTPREMNICA_VP_MP,'#13#10'       P.PRIJEMNICA_VP_MP,'#13#10'       P.ID_' +
+      'DEF_MG_MP,'#13#10'       P.DEF_KUPAC_MP,'#13#10'       P.REZ_VP,'#13#10'       P.R' +
+      'EZ_MP,'#13#10'       A.SIFRA_ROBE,'#13#10'       A.CENAMP ,'#13#10'       l.id_rol' +
+      'e ,'#13#10'       l.id as id_role_primar'#13#10'from TBLRADNICI R'#13#10'left join' +
+      ' TBLRADNICI_PROFIL P on R.ID_PROFILA = P.ID'#13#10'left join TBLARTIKL' +
+      'I A on R.AP_KOD_ART_P = A.KOD'#13#10'left join izis_korisnici k on k.l' +
+      'bo=r.lbofarmaceuta'#13#10'left join TROLE_RADNIK l on r.sifra_radnika ' +
+      '= l.sifra_radnika and l.id_softvera = 2'#13#10'where R.SIFRA_RADNIKA =' +
+      ' :SR'
+    MaxBlobSize = 1
+    Params = <
+      item
+        DataType = ftInteger
+        Name = 'SR'
+        ParamType = ptInput
+      end>
+    SQLConnection = Konekcija_lokal
+    Left = 840
+    Top = 227
+    object sdsRSIFRA_RADNIKA: TIntegerField
+      FieldName = 'SIFRA_RADNIKA'
+      Required = True
+    end
+    object sdsRGRUPA: TSmallintField
+      FieldName = 'GRUPA'
+    end
+    object sdsRRADNIK: TStringField
+      FieldName = 'RADNIK'
+      Size = 50
+    end
+    object sdsRPRAVA: TIntegerField
+      FieldName = 'PRAVA'
+    end
+    object sdsRKORISNICKO_IME: TStringField
+      FieldName = 'KORISNICKO_IME'
+      Size = 50
+    end
+    object sdsRLOZINKA: TStringField
+      FieldName = 'LOZINKA'
+      Size = 50
+    end
+    object sdsRULOGOVAN: TSmallintField
+      FieldName = 'ULOGOVAN'
+    end
+    object sdsRADRESA: TStringField
+      FieldName = 'ADRESA'
+      Size = 30
+    end
+    object sdsRTELEFON: TStringField
+      FieldName = 'TELEFON'
+      Size = 35
+    end
+    object sdsRMOBILNI: TStringField
+      FieldName = 'MOBILNI'
+      Size = 15
+    end
+    object sdsRMESTO: TStringField
+      FieldName = 'MESTO'
+    end
+    object sdsRBRLK: TStringField
+      FieldName = 'BRLK'
+      FixedChar = True
+      Size = 10
+    end
+    object sdsRIDOPSTINE: TIntegerField
+      FieldName = 'IDOPSTINE'
+    end
+    object sdsRPOSTBROJ: TStringField
+      FieldName = 'POSTBROJ'
+      Size = 10
+    end
+    object sdsRJMBG: TStringField
+      FieldName = 'JMBG'
+      Required = True
+      Size = 13
+    end
+    object sdsRID_DEF_KAT: TIntegerField
+      FieldName = 'ID_DEF_KAT'
+    end
+    object sdsRID_DEF_MG: TIntegerField
+      FieldName = 'ID_DEF_MG'
+    end
+    object sdsRAKTIVAN: TSmallintField
+      FieldName = 'AKTIVAN'
+    end
+    object sdsRUSERNAME: TStringField
+      FieldName = 'USERNAME'
+      Size = 50
+    end
+    object sdsRPASSWD: TStringField
+      FieldName = 'PASSWD'
+      Size = 250
+    end
+    object sdsRROLENAME: TStringField
+      FieldName = 'ROLENAME'
+      Size = 50
+    end
+    object sdsRID_DEF_MG_MP: TIntegerField
+      FieldName = 'ID_DEF_MG_MP'
+    end
+    object sdsRDEF_KUPAC_MP: TIntegerField
+      FieldName = 'DEF_KUPAC_MP'
+    end
+    object sdsRPRAVO_PLACANJA: TSmallintField
+      FieldName = 'PRAVO_PLACANJA'
+    end
+    object sdsRMAIL: TStringField
+      FieldName = 'MAIL'
+      Size = 50
+    end
+    object sdsRSMPTHOST: TStringField
+      FieldName = 'SMPTHOST'
+    end
+    object sdsRSMPTPORT: TIntegerField
+      FieldName = 'SMPTPORT'
+    end
+    object sdsRLBO: TStringField
+      FieldName = 'LBO'
+      Size = 15
+    end
+    object sdsRIME: TStringField
+      FieldName = 'IME'
+      Size = 50
+    end
+    object sdsRPREZIME: TStringField
+      FieldName = 'PREZIME'
+      Size = 50
+    end
+    object sdsRPRAVA_MG: TStringField
+      FieldName = 'PRAVA_MG'
+      Size = 5
+    end
+    object sdsRIDSEDISTE: TSmallintField
+      FieldName = 'IDSEDISTE'
+    end
+    object sdsRID_DEF_ULAZ_DOK: TSmallintField
+      FieldName = 'ID_DEF_ULAZ_DOK'
+    end
+    object sdsRCONTROL_PANEL: TSmallintField
+      FieldName = 'CONTROL_PANEL'
+    end
+    object sdsRBRZDRAVSTVENE_KNJIZICE: TStringField
+      FieldName = 'BRZDRAVSTVENE_KNJIZICE'
+    end
+    object sdsRPRAVA_OTKUP: TIntegerField
+      FieldName = 'PRAVA_OTKUP'
+    end
+    object sdsRDEF_FONT_MP: TSmallintField
+      FieldName = 'DEF_FONT_MP'
+    end
+    object sdsRSORTIRANJE_MP: TSmallintField
+      FieldName = 'SORTIRANJE_MP'
+    end
+    object sdsRRFID: TStringField
+      FieldName = 'RFID'
+    end
+    object sdsRID_PROFILA: TIntegerField
+      FieldName = 'ID_PROFILA'
+    end
+    object sdsRSIFRA: TLargeintField
+      FieldName = 'SIFRA'
+    end
+    object sdsRIDPROFIL: TIntegerField
+      FieldName = 'IDPROFIL'
+    end
+    object sdsRPRG_VP: TSmallintField
+      FieldName = 'PRG_VP'
+    end
+    object sdsRDEF_MG_SERVIS: TIntegerField
+      FieldName = 'DEF_MG_SERVIS'
+    end
+    object sdsRAP_ID_MG_P: TIntegerField
+      FieldName = 'AP_ID_MG_P'
+    end
+    object sdsRAP_ID_PODA: TIntegerField
+      FieldName = 'AP_ID_PODA'
+    end
+    object sdsRAP_KOD_ART_P: TStringField
+      FieldName = 'AP_KOD_ART_P'
+    end
+    object sdsRID_DEF_MG_USLUGE: TIntegerField
+      FieldName = 'ID_DEF_MG_USLUGE'
+    end
+    object sdsRPASSWORD_CHANGE_DATE: TSQLTimeStampField
+      FieldName = 'PASSWORD_CHANGE_DATE'
+    end
+    object sdsRZAKLJUCANO: TIntegerField
+      FieldName = 'ZAKLJUCANO'
+    end
+    object sdsRDEF_BROJ_STOLA: TIntegerField
+      FieldName = 'DEF_BROJ_STOLA'
+    end
+    object sdsRRADNIK_CHANGE: TIntegerField
+      FieldName = 'RADNIK_CHANGE'
+    end
+    object sdsRDATE_CHANGE: TSQLTimeStampField
+      FieldName = 'DATE_CHANGE'
+    end
+    object sdsRDEF_KUPAC: TIntegerField
+      FieldName = 'DEF_KUPAC'
+    end
+    object sdsRCENOVNIK_IZMENA: TSmallintField
+      FieldName = 'CENOVNIK_IZMENA'
+    end
+    object sdsRAP_SIFRA_ROBE_UCESCE: TIntegerField
+      FieldName = 'AP_SIFRA_ROBE_UCESCE'
+    end
+    object sdsRLBOFARMACEUTA: TStringField
+      FieldName = 'LBOFARMACEUTA'
+      Size = 15
+    end
+    object sdsRIDSTOLA: TIntegerField
+      FieldName = 'IDSTOLA'
+    end
+    object sdsRNAZIV: TStringField
+      FieldName = 'NAZIV'
+      Size = 255
+    end
+    object sdsRVP_MP: TIntegerField
+      FieldName = 'VP_MP'
+    end
+    object sdsROTPREMNICA_VP_MP: TIntegerField
+      FieldName = 'OTPREMNICA_VP_MP'
+    end
+    object sdsRPRIJEMNICA_VP_MP: TIntegerField
+      FieldName = 'PRIJEMNICA_VP_MP'
+    end
+    object sdsRID_DEF_MG_MP_1: TIntegerField
+      FieldName = 'ID_DEF_MG_MP_1'
+    end
+    object sdsRDEF_KUPAC_MP_1: TIntegerField
+      FieldName = 'DEF_KUPAC_MP_1'
+    end
+    object sdsRSIFRA_ROBE: TIntegerField
+      FieldName = 'SIFRA_ROBE'
+    end
+    object sdsRCENAMP: TFMTBCDField
+      FieldName = 'CENAMP'
+      Precision = 15
+      Size = 4
+    end
+    object sdsRID_DEF_POVRAT_DOB: TIntegerField
+      FieldName = 'ID_DEF_POVRAT_DOB'
+    end
+    object sdsRSKIN_MP: TStringField
+      FieldName = 'SKIN_MP'
+      Size = 100
+    end
+    object sdsRREZ_VP: TIntegerField
+      FieldName = 'REZ_VP'
+    end
+    object sdsRREZ_MP: TIntegerField
+      FieldName = 'REZ_MP'
+    end
+    object sdsRIZIS_USERNAME: TStringField
+      FieldName = 'IZIS_USERNAME'
+      Size = 50
+    end
+    object sdsRIZIS_PASSWORD: TStringField
+      FieldName = 'IZIS_PASSWORD'
+      Size = 50
+    end
+    object sdsRID_ROLE: TIntegerField
+      FieldName = 'ID_ROLE'
+    end
+    object sdsRID_ROLE_PRIMAR: TIntegerField
+      FieldName = 'ID_ROLE_PRIMAR'
+    end
+  end
+  object dsSystemMP: TDataSource
+    DataSet = cdsSystemMP
+    Left = 1172
+    Top = 252
+  end
+  object cdsSystemMP: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspSystemMP'
+    Left = 1169
+    Top = 332
+    object cdsSystemMPID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object cdsSystemMPAUTO_OTVORI_NOVI_DAN: TSmallintField
+      FieldName = 'AUTO_OTVORI_NOVI_DAN'
+    end
+    object cdsSystemMPDATUM_ZA_SLANJE_PREDRACUNA: TSmallintField
+      FieldName = 'DATUM_ZA_SLANJE_PREDRACUNA'
+    end
+    object cdsSystemMPZABRANA_IZMENE_ULAZNE_CENE_OTP: TSmallintField
+      FieldName = 'ZABRANA_IZMENE_ULAZNE_CENE_OTP'
+    end
+    object cdsSystemMPDEF_DOK_REFAKCIJE: TIntegerField
+      FieldName = 'DEF_DOK_REFAKCIJE'
+    end
+    object cdsSystemMPRACUN_POVRAT_UDALJENI_SERVER: TSmallintField
+      FieldName = 'RACUN_POVRAT_UDALJENI_SERVER'
+    end
+    object cdsSystemMPRACUN_POVRAT_MPF1: TSmallintField
+      FieldName = 'RACUN_POVRAT_MPF1'
+    end
+    object cdsSystemMPPOVRAT_CELO_PAKOVANJE_DOB: TSmallintField
+      FieldName = 'POVRAT_CELO_PAKOVANJE_DOB'
+    end
+    object cdsSystemMPPREDRACUN_CENA_BEZ_PDV_A: TSmallintField
+      FieldName = 'PREDRACUN_CENA_BEZ_PDV_A'
+    end
+    object cdsSystemMPDOZVOLI_ROBU_IZ_USLUGA: TSmallintField
+      FieldName = 'DOZVOLI_ROBU_IZ_USLUGA'
+    end
+    object cdsSystemMPNEFISKLANI_SINDIKAT: TSmallintField
+      FieldName = 'NEFISKLANI_SINDIKAT'
+    end
+    object cdsSystemMPRABAT_PO_KATEGORIJI: TSmallintField
+      FieldName = 'RABAT_PO_KATEGORIJI'
+    end
+    object cdsSystemMPRABAT_PO_PROIZVODJACU: TSmallintField
+      FieldName = 'RABAT_PO_PROIZVODJACU'
+    end
+    object cdsSystemMPBR_RACUNA_U_PREGLEDU: TIntegerField
+      FieldName = 'BR_RACUNA_U_PREGLEDU'
+    end
+    object cdsSystemMPPRVI_PUT_POKRENUT_PROGRAM: TIntegerField
+      FieldName = 'PRVI_PUT_POKRENUT_PROGRAM'
+    end
+    object cdsSystemMPUSE_SAVED_DISCOUNT: TSmallintField
+      FieldName = 'USE_SAVED_DISCOUNT'
+    end
+    object cdsSystemMPSEARCH_ONLY_BARCODE: TSmallintField
+      FieldName = 'SEARCH_ONLY_BARCODE'
+    end
+    object cdsSystemMPSOPSTVENA_POTROSNJA: TSmallintField
+      FieldName = 'SOPSTVENA_POTROSNJA'
+    end
+    object cdsSystemMPAUTO_UBACI_ART_CENOVNI: TSmallintField
+      FieldName = 'AUTO_UBACI_ART_CENOVNI'
+    end
+    object cdsSystemMPUSE_SAVED_ACCOUNTING_DISCOUNT: TSmallintField
+      FieldName = 'USE_SAVED_ACCOUNTING_DISCOUNT'
+    end
+    object cdsSystemMPREQUESTING_SEARCH_CUSTOMER: TSmallintField
+      FieldName = 'REQUESTING_SEARCH_CUSTOMER'
+    end
+    object cdsSystemMPRETURN_RECIPIENT_NO_NEED_NUMBER: TSmallintField
+      FieldName = 'RETURN_RECIPIENT_NO_NEED_NUMBER'
+    end
+    object cdsSystemMPSPOSTVENA_DEF_DOC: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC'
+    end
+    object cdsSystemMPPRODAJA_CELO_PAKOVANJE: TSmallintField
+      FieldName = 'PRODAJA_CELO_PAKOVANJE'
+    end
+    object cdsSystemMPACCEPTS_BARCODE_PART: TSmallintField
+      FieldName = 'ACCEPTS_BARCODE_PART'
+    end
+    object cdsSystemMPZABRANA_PRODAJE_PO_KAT: TSmallintField
+      FieldName = 'ZABRANA_PRODAJE_PO_KAT'
+    end
+    object cdsSystemMPVISE_INTERNIH_U_TOKU_DANA: TSmallintField
+      FieldName = 'VISE_INTERNIH_U_TOKU_DANA'
+    end
+    object cdsSystemMPMANDATORY_ENTRY_PAYMENT: TSmallintField
+      FieldName = 'MANDATORY_ENTRY_PAYMENT'
+    end
+    object cdsSystemMPENABLE_PACKING_AUTO_INT: TSmallintField
+      FieldName = 'ENABLE_PACKING_AUTO_INT'
+    end
+    object cdsSystemMPSTAMPA_GRATIS_ARTIKALA: TStringField
+      FieldName = 'STAMPA_GRATIS_ARTIKALA'
+    end
+    object cdsSystemMPSTAMPAJ_ELEKTRONSKI_VAUCER: TStringField
+      FieldName = 'STAMPAJ_ELEKTRONSKI_VAUCER'
+    end
+    object cdsSystemMPAUTO_OTVORI_NOVI_DNEVNI: TSmallintField
+      FieldName = 'AUTO_OTVORI_NOVI_DNEVNI'
+    end
+    object cdsSystemMPBENEFIT_VOUCHER: TSmallintField
+      FieldName = 'BENEFIT_VOUCHER'
+    end
+    object cdsSystemMPENTER_QUANTITY_AUTOMATICALY: TSmallintField
+      FieldName = 'ENTER_QUANTITY_AUTOMATICALY'
+    end
+    object cdsSystemMPAUTOMATSKO_SNIMANJE_XML_MP: TSmallintField
+      FieldName = 'AUTOMATSKO_SNIMANJE_XML_MP'
+    end
+    object cdsSystemMPDELETE_RESERVATION_RULS: TSmallintField
+      FieldName = 'DELETE_RESERVATION_RULS'
+    end
+    object cdsSystemMPZABRANJENO_VISE_RACUNA: TSmallintField
+      FieldName = 'ZABRANJENO_VISE_RACUNA'
+    end
+    object cdsSystemMPMIN_BR_KARAKTERA_PRETRAGA: TSmallintField
+      FieldName = 'MIN_BR_KARAKTERA_PRETRAGA'
+    end
+    object cdsSystemMPDEF_DOK_AMBASADA: TIntegerField
+      FieldName = 'DEF_DOK_AMBASADA'
+    end
+    object cdsSystemMPHOTEL_BUTTON_VISIBLE: TSmallintField
+      FieldName = 'HOTEL_BUTTON_VISIBLE'
+    end
+    object cdsSystemMPKORISTI_CENU_U_PRODAJI_REZ: TSmallintField
+      FieldName = 'KORISTI_CENU_U_PRODAJI_REZ'
+    end
+    object cdsSystemMPKESIRICI_API: TSmallintField
+      FieldName = 'KESIRICI_API'
+    end
+    object cdsSystemMPATRIBUTI_ZA_PRODAJU: TSmallintField
+      FieldName = 'ATRIBUTI_ZA_PRODAJU'
+    end
+    object cdsSystemMPKESIRICI_API_KEY: TStringField
+      FieldName = 'KESIRICI_API_KEY'
+      Size = 50
+    end
+    object cdsSystemMPNACIN_RADA: TSmallintField
+      FieldName = 'NACIN_RADA'
+    end
+    object cdsSystemMPDEF_POREZ_AMBASADA: TIntegerField
+      FieldName = 'DEF_POREZ_AMBASADA'
+    end
+    object cdsSystemMPAUTO_PRINT_80MM: TSmallintField
+      FieldName = 'AUTO_PRINT_80MM'
+    end
+    object cdsSystemMPKUPAC_NA_KRAJU_FISK: TSmallintField
+      FieldName = 'KUPAC_NA_KRAJU_FISK'
+    end
+    object cdsSystemMPOTVORI_RAMPU: TSmallintField
+      FieldName = 'OTVORI_RAMPU'
+    end
+    object cdsSystemMPKORISTI_INTERNE_PRIJEMNICE: TSmallintField
+      FieldName = 'KORISTI_INTERNE_PRIJEMNICE'
+    end
+    object cdsSystemMPSIFRA_MATICNOG_KOMITENTA: TIntegerField
+      FieldName = 'SIFRA_MATICNOG_KOMITENTA'
+    end
+    object cdsSystemMPDEF_TREBOVANJE_MAGACIN_IZ: TIntegerField
+      FieldName = 'DEF_TREBOVANJE_MAGACIN_IZ'
+    end
+    object cdsSystemMPSIFRA_MAGACINA_AVANS: TIntegerField
+      FieldName = 'SIFRA_MAGACINA_AVANS'
+    end
+    object cdsSystemMPSIFRA_DOK_AVANS: TIntegerField
+      FieldName = 'SIFRA_DOK_AVANS'
+    end
+    object cdsSystemMPPRIKAZI_DUGME_POSEBNI: TSmallintField
+      FieldName = 'PRIKAZI_DUGME_POSEBNI'
+    end
+    object cdsSystemMPSIFRA_ROBE_VAUCER_OS: TIntegerField
+      FieldName = 'SIFRA_ROBE_VAUCER_OS'
+    end
+    object cdsSystemMPSIFRA_DOKUMENTA_VAUCER: TIntegerField
+      FieldName = 'SIFRA_DOKUMENTA_VAUCER'
+    end
+    object cdsSystemMPSIFRA_ROBE_VAUCER_VN: TIntegerField
+      FieldName = 'SIFRA_ROBE_VAUCER_VN'
+    end
+    object cdsSystemMPDUGME_HRANA_PICE: TSmallintField
+      FieldName = 'DUGME_HRANA_PICE'
+    end
+    object cdsSystemMPKORISTI_RABAT_U_REZERVACIJI: TSmallintField
+      FieldName = 'KORISTI_RABAT_U_REZERVACIJI'
+    end
+    object cdsSystemMPSPOSTVENA_DEF_DOC2: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC2'
+    end
+    object cdsSystemMPSPOSTVENA_DEF_DOC3: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC3'
+    end
+    object cdsSystemMPPRIKAZI_RABAT_MP: TSmallintField
+      FieldName = 'PRIKAZI_RABAT_MP'
+    end
+    object cdsSystemMPPRIKAZI_DUGME_SOPSTVENA: TSmallintField
+      FieldName = 'PRIKAZI_DUGME_SOPSTVENA'
+    end
+    object cdsSystemMPPROIZVODNJA_NA_SERVERU: TSmallintField
+      FieldName = 'PROIZVODNJA_NA_SERVERU'
+    end
+    object cdsSystemMPPREBACI_KONTROLNI_PAZAR: TSmallintField
+      FieldName = 'PREBACI_KONTROLNI_PAZAR'
+    end
+    object cdsSystemMPPROVERI_NEFISK_RACUNE: TIntegerField
+      FieldName = 'PROVERI_NEFISK_RACUNE'
+    end
+    object cdsSystemMPPRAVA_ZA_PODESAVANJE: TIntegerField
+      FieldName = 'PRAVA_ZA_PODESAVANJE'
+    end
+    object cdsSystemMPPLUS_MINUS_KOLICINE: TSmallintField
+      FieldName = 'PLUS_MINUS_KOLICINE'
+    end
+    object cdsSystemMPZABRANA_IZMENE_STOPE_OTP: TSmallintField
+      FieldName = 'ZABRANA_IZMENE_STOPE_OTP'
+    end
+    object cdsSystemMPBAZEN_CREDIT_MINUS: TSmallintField
+      FieldName = 'BAZEN_CREDIT_MINUS'
+    end
+    object cdsSystemMPVIDLJIV_JEDAN_MAGACIN: TSmallintField
+      FieldName = 'VIDLJIV_JEDAN_MAGACIN'
+    end
+    object cdsSystemMPMAX_POPUST_RACUNA_SA_KESIRICIMA: TFMTBCDField
+      FieldName = 'MAX_POPUST_RACUNA_SA_KESIRICIMA'
+      Precision = 18
+      Size = 2
+    end
+    object cdsSystemMPOBRACUN_KESIRICI: TSmallintField
+      FieldName = 'OBRACUN_KESIRICI'
+    end
+    object cdsSystemMPSTAMPAJ_NEFISKALNI_POSLE_POSA: TSmallintField
+      FieldName = 'STAMPAJ_NEFISKALNI_POSLE_POSA'
+    end
+    object cdsSystemMPDOK_RACUN_POKLON: TIntegerField
+      FieldName = 'DOK_RACUN_POKLON'
+    end
+    object cdsSystemMPZABRANA_LAGERA_NA_POPISU: TSmallintField
+      FieldName = 'ZABRANA_LAGERA_NA_POPISU'
+    end
+    object cdsSystemMPKOD_PA_KOLICINA: TSmallintField
+      FieldName = 'KOD_PA_KOLICINA'
+    end
+    object cdsSystemMPPOPIS_FUNKCIJE: TSmallintField
+      FieldName = 'POPIS_FUNKCIJE'
+    end
+  end
+  object dspSystemMP: TDataSetProvider
+    DataSet = sdsSystemMP
+    Left = 1155
+    Top = 404
+  end
+  object sdsSystemMP: TSQLDataSet
+    CommandText = 'select * from SYSTEM_MP'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = Konekcija_lokal
+    Left = 1118
+    Top = 468
+    object sdsSystemMPID: TIntegerField
+      FieldName = 'ID'
+      Required = True
+    end
+    object sdsSystemMPAUTO_OTVORI_NOVI_DAN: TSmallintField
+      FieldName = 'AUTO_OTVORI_NOVI_DAN'
+    end
+    object sdsSystemMPDATUM_ZA_SLANJE_PREDRACUNA: TSmallintField
+      FieldName = 'DATUM_ZA_SLANJE_PREDRACUNA'
+    end
+    object sdsSystemMPZABRANA_IZMENE_ULAZNE_CENE_OTP: TSmallintField
+      FieldName = 'ZABRANA_IZMENE_ULAZNE_CENE_OTP'
+    end
+    object sdsSystemMPDEF_DOK_REFAKCIJE: TIntegerField
+      FieldName = 'DEF_DOK_REFAKCIJE'
+    end
+    object sdsSystemMPRACUN_POVRAT_UDALJENI_SERVER: TSmallintField
+      FieldName = 'RACUN_POVRAT_UDALJENI_SERVER'
+    end
+    object sdsSystemMPRACUN_POVRAT_MPF1: TSmallintField
+      FieldName = 'RACUN_POVRAT_MPF1'
+    end
+    object sdsSystemMPPOVRAT_CELO_PAKOVANJE_DOB: TSmallintField
+      FieldName = 'POVRAT_CELO_PAKOVANJE_DOB'
+    end
+    object sdsSystemMPPREDRACUN_CENA_BEZ_PDV_A: TSmallintField
+      FieldName = 'PREDRACUN_CENA_BEZ_PDV_A'
+    end
+    object sdsSystemMPDOZVOLI_ROBU_IZ_USLUGA: TSmallintField
+      FieldName = 'DOZVOLI_ROBU_IZ_USLUGA'
+    end
+    object sdsSystemMPRABAT_PO_KATEGORIJI: TSmallintField
+      FieldName = 'RABAT_PO_KATEGORIJI'
+    end
+    object sdsSystemMPRABAT_PO_PROIZVODJACU: TSmallintField
+      FieldName = 'RABAT_PO_PROIZVODJACU'
+    end
+    object sdsSystemMPNEFISKLANI_SINDIKAT: TSmallintField
+      FieldName = 'NEFISKLANI_SINDIKAT'
+    end
+    object sdsSystemMPBR_RACUNA_U_PREGLEDU: TIntegerField
+      FieldName = 'BR_RACUNA_U_PREGLEDU'
+    end
+    object sdsSystemMPPRVI_PUT_POKRENUT_PROGRAM: TIntegerField
+      FieldName = 'PRVI_PUT_POKRENUT_PROGRAM'
+    end
+    object sdsSystemMPUSE_SAVED_DISCOUNT: TSmallintField
+      FieldName = 'USE_SAVED_DISCOUNT'
+    end
+    object sdsSystemMPSEARCH_ONLY_BARCODE: TSmallintField
+      FieldName = 'SEARCH_ONLY_BARCODE'
+    end
+    object sdsSystemMPSOPSTVENA_POTROSNJA: TSmallintField
+      FieldName = 'SOPSTVENA_POTROSNJA'
+    end
+    object sdsSystemMPAUTO_UBACI_ART_CENOVNI: TSmallintField
+      FieldName = 'AUTO_UBACI_ART_CENOVNI'
+    end
+    object sdsSystemMPUSE_SAVED_ACCOUNTING_DISCOUNT: TSmallintField
+      FieldName = 'USE_SAVED_ACCOUNTING_DISCOUNT'
+    end
+    object sdsSystemMPREQUESTING_SEARCH_CUSTOMER: TSmallintField
+      FieldName = 'REQUESTING_SEARCH_CUSTOMER'
+    end
+    object sdsSystemMPRETURN_RECIPIENT_NO_NEED_NUMBER: TSmallintField
+      FieldName = 'RETURN_RECIPIENT_NO_NEED_NUMBER'
+    end
+    object sdsSystemMPSPOSTVENA_DEF_DOC: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC'
+    end
+    object sdsSystemMPPRODAJA_CELO_PAKOVANJE: TSmallintField
+      FieldName = 'PRODAJA_CELO_PAKOVANJE'
+    end
+    object sdsSystemMPACCEPTS_BARCODE_PART: TSmallintField
+      FieldName = 'ACCEPTS_BARCODE_PART'
+    end
+    object sdsSystemMPZABRANA_PRODAJE_PO_KAT: TIntegerField
+      FieldName = 'ZABRANA_PRODAJE_PO_KAT'
+    end
+    object sdsSystemMPVISE_INTERNIH_U_TOKU_DANA: TSmallintField
+      FieldName = 'VISE_INTERNIH_U_TOKU_DANA'
+    end
+    object sdsSystemMPMANDATORY_ENTRY_PAYMENT: TSmallintField
+      FieldName = 'MANDATORY_ENTRY_PAYMENT'
+    end
+    object sdsSystemMPENABLE_PACKING_AUTO_INT: TSmallintField
+      FieldName = 'ENABLE_PACKING_AUTO_INT'
+    end
+    object sdsSystemMPSTAMPA_GRATIS_ARTIKALA: TStringField
+      FieldName = 'STAMPA_GRATIS_ARTIKALA'
+    end
+    object sdsSystemMPSTAMPAJ_ELEKTRONSKI_VAUCER: TStringField
+      FieldName = 'STAMPAJ_ELEKTRONSKI_VAUCER'
+    end
+    object sdsSystemMPAUTO_OTVORI_NOVI_DNEVNI: TSmallintField
+      FieldName = 'AUTO_OTVORI_NOVI_DNEVNI'
+    end
+    object sdsSystemMPBENEFIT_VOUCHER: TSmallintField
+      FieldName = 'BENEFIT_VOUCHER'
+    end
+    object sdsSystemMPENTER_QUANTITY_AUTOMATICALY: TSmallintField
+      FieldName = 'ENTER_QUANTITY_AUTOMATICALY'
+    end
+    object sdsSystemMPAUTOMATSKO_SNIMANJE_XML_MP: TSmallintField
+      FieldName = 'AUTOMATSKO_SNIMANJE_XML_MP'
+    end
+    object sdsSystemMPDELETE_RESERVATION_RULS: TSmallintField
+      FieldName = 'DELETE_RESERVATION_RULS'
+    end
+    object sdsSystemMPZABRANJENO_VISE_RACUNA: TSmallintField
+      FieldName = 'ZABRANJENO_VISE_RACUNA'
+    end
+    object sdsSystemMPMIN_BR_KARAKTERA_PRETRAGA: TSmallintField
+      FieldName = 'MIN_BR_KARAKTERA_PRETRAGA'
+    end
+    object sdsSystemMPDEF_DOK_AMBASADA: TIntegerField
+      FieldName = 'DEF_DOK_AMBASADA'
+    end
+    object sdsSystemMPHOTEL_BUTTON_VISIBLE: TSmallintField
+      FieldName = 'HOTEL_BUTTON_VISIBLE'
+    end
+    object sdsSystemMPKORISTI_CENU_U_PRODAJI_REZ: TSmallintField
+      FieldName = 'KORISTI_CENU_U_PRODAJI_REZ'
+    end
+    object sdsSystemMPKESIRICI_API: TSmallintField
+      FieldName = 'KESIRICI_API'
+    end
+    object sdsSystemMPATRIBUTI_ZA_PRODAJU: TSmallintField
+      FieldName = 'ATRIBUTI_ZA_PRODAJU'
+    end
+    object sdsSystemMPKESIRICI_API_KEY: TStringField
+      FieldName = 'KESIRICI_API_KEY'
+      Size = 50
+    end
+    object sdsSystemMPNACIN_RADA: TSmallintField
+      FieldName = 'NACIN_RADA'
+    end
+    object sdsSystemMPDEF_POREZ_AMBASADA: TIntegerField
+      FieldName = 'DEF_POREZ_AMBASADA'
+    end
+    object sdsSystemMPAUTO_PRINT_80MM: TSmallintField
+      FieldName = 'AUTO_PRINT_80MM'
+    end
+    object sdsSystemMPKUPAC_NA_KRAJU_FISK: TSmallintField
+      FieldName = 'KUPAC_NA_KRAJU_FISK'
+    end
+    object sdsSystemMPOTVORI_RAMPU: TSmallintField
+      FieldName = 'OTVORI_RAMPU'
+    end
+    object sdsSystemMPKORISTI_INTERNE_PRIJEMNICE: TSmallintField
+      FieldName = 'KORISTI_INTERNE_PRIJEMNICE'
+    end
+    object sdsSystemMPSIFRA_MATICNOG_KOMITENTA: TIntegerField
+      FieldName = 'SIFRA_MATICNOG_KOMITENTA'
+    end
+    object sdsSystemMPDEF_TREBOVANJE_MAGACIN_IZ: TIntegerField
+      FieldName = 'DEF_TREBOVANJE_MAGACIN_IZ'
+    end
+    object sdsSystemMPSIFRA_MAGACINA_AVANS: TIntegerField
+      FieldName = 'SIFRA_MAGACINA_AVANS'
+    end
+    object sdsSystemMPSIFRA_DOK_AVANS: TIntegerField
+      FieldName = 'SIFRA_DOK_AVANS'
+    end
+    object sdsSystemMPPRIKAZI_DUGME_POSEBNI: TSmallintField
+      FieldName = 'PRIKAZI_DUGME_POSEBNI'
+    end
+    object sdsSystemMPSIFRA_ROBE_VAUCER_OS: TIntegerField
+      FieldName = 'SIFRA_ROBE_VAUCER_OS'
+    end
+    object sdsSystemMPSIFRA_DOKUMENTA_VAUCER: TIntegerField
+      FieldName = 'SIFRA_DOKUMENTA_VAUCER'
+    end
+    object sdsSystemMPSIFRA_ROBE_VAUCER_VN: TIntegerField
+      FieldName = 'SIFRA_ROBE_VAUCER_VN'
+    end
+    object sdsSystemMPDUGME_HRANA_PICE: TSmallintField
+      FieldName = 'DUGME_HRANA_PICE'
+    end
+    object sdsSystemMPKORISTI_RABAT_U_REZERVACIJI: TSmallintField
+      FieldName = 'KORISTI_RABAT_U_REZERVACIJI'
+    end
+    object sdsSystemMPSPOSTVENA_DEF_DOC2: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC2'
+    end
+    object sdsSystemMPSPOSTVENA_DEF_DOC3: TIntegerField
+      FieldName = 'SPOSTVENA_DEF_DOC3'
+    end
+    object sdsSystemMPPRIKAZI_RABAT_MP: TSmallintField
+      FieldName = 'PRIKAZI_RABAT_MP'
+    end
+    object sdsSystemMPPRIKAZI_DUGME_SOPSTVENA: TSmallintField
+      FieldName = 'PRIKAZI_DUGME_SOPSTVENA'
+    end
+    object sdsSystemMPPROIZVODNJA_NA_SERVERU: TSmallintField
+      FieldName = 'PROIZVODNJA_NA_SERVERU'
+    end
+    object sdsSystemMPPREBACI_KONTROLNI_PAZAR: TSmallintField
+      FieldName = 'PREBACI_KONTROLNI_PAZAR'
+    end
+    object sdsSystemMPPROVERI_NEFISK_RACUNE: TIntegerField
+      FieldName = 'PROVERI_NEFISK_RACUNE'
+    end
+    object sdsSystemMPPRAVA_ZA_PODESAVANJE: TIntegerField
+      FieldName = 'PRAVA_ZA_PODESAVANJE'
+    end
+    object sdsSystemMPPLUS_MINUS_KOLICINE: TSmallintField
+      FieldName = 'PLUS_MINUS_KOLICINE'
+    end
+    object sdsSystemMPZABRANA_IZMENE_STOPE_OTP: TSmallintField
+      FieldName = 'ZABRANA_IZMENE_STOPE_OTP'
+    end
+    object sdsSystemMPBAZEN_CREDIT_MINUS: TSmallintField
+      FieldName = 'BAZEN_CREDIT_MINUS'
+    end
+    object sdsSystemMPVIDLJIV_JEDAN_MAGACIN: TSmallintField
+      FieldName = 'VIDLJIV_JEDAN_MAGACIN'
+    end
+    object sdsSystemMPMAX_POPUST_RACUNA_SA_KESIRICIMA: TFMTBCDField
+      FieldName = 'MAX_POPUST_RACUNA_SA_KESIRICIMA'
+      Precision = 18
+      Size = 2
+    end
+    object sdsSystemMPOBRACUN_KESIRICI: TSmallintField
+      FieldName = 'OBRACUN_KESIRICI'
+    end
+    object sdsSystemMPSTAMPAJ_NEFISKALNI_POSLE_POSA: TSmallintField
+      FieldName = 'STAMPAJ_NEFISKALNI_POSLE_POSA'
+    end
+    object sdsSystemMPDOK_RACUN_POKLON: TIntegerField
+      FieldName = 'DOK_RACUN_POKLON'
+    end
+    object sdsSystemMPZABRANA_LAGERA_NA_POPISU: TSmallintField
+      FieldName = 'ZABRANA_LAGERA_NA_POPISU'
+    end
+    object sdsSystemMPKOD_PA_KOLICINA: TSmallintField
+      FieldName = 'KOD_PA_KOLICINA'
+    end
+    object sdsSystemMPPOPIS_FUNKCIJE: TSmallintField
+      FieldName = 'POPIS_FUNKCIJE'
+    end
+  end
+  object frxArtVaga: TfrxDBDataset
+    UserName = 'frxArtVaga'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'KOD=KOD'
+      'ARTIKAL=ARTIKAL'
+      'ID_VAGE=ID_VAGE'
+      'KOD_1=KOD_1'
+      'PLU=PLU'
+      'CENA=CENA')
+    DataSource = dsArtikli
+    BCDToCurrency = False
+    DataSetOptions = []
+    Left = 985
+    Top = 80
+  end
+end
